@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Faster_than_Light
         public MainWindow()
         {
             InitializeComponent();
+            DatabaseControl.GetPhonesForView();
             NavigateToPage1();
         }
 

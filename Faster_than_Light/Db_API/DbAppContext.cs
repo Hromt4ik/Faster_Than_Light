@@ -32,7 +32,6 @@ namespace Faster_than_Light.Db_API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Phone>().HasOne(p => p.CompanyEntity).WithMany(p => p.PhoneEntites);
-            //modelBuilder.Entity<Phone>().HasOne(p => p.CompanyEntity).WithMany(p => p.PhoneEntites);
 
             //Car - 2 
             modelBuilder.Entity<Car>().HasOne(t => t.LocationBaseEntity).WithMany(t => t.CarEntites);
@@ -41,7 +40,7 @@ namespace Faster_than_Light.Db_API
             //CargoCategory - 0
             //Client - 0
             //DriverIdentification - 0
-            //Employee - 1
+            //Employee - 1  sdfdsfsdfwersfdsfdserf
             modelBuilder.Entity<Employee>().HasOne(t => t.DriverIdentificationEntity).WithMany(t => t.EmployeeEntites);
 
             //LocationBase - 1
