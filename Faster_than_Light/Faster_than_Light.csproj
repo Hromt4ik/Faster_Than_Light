@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Image\logo.ico" />
+    <None Remove="Image\Logo.png" />
+    <None Remove="Image\logo_with_text.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\logo.ico" />
+    <Resource Include="Image\Logo.png" />
+    <Resource Include="Image\logo_with_text.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0-preview.4" />
+  </ItemGroup>
+
+</Project>
