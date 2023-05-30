@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Faster_than_Light.MainWindow;
 
-namespace Faster_than_Light
+namespace Faster_than_Light.Pages
 {
     /// <summary>
     /// Логика взаимодействия для AuthorizationPage.xaml
@@ -34,11 +35,24 @@ namespace Faster_than_Light
         private void Button_Click_Enter(object sender, RoutedEventArgs e)
         {
             //Добавить проверку на то что логин есть в базе
+            CheckPassword();
+
+        }
+
+        
+
+        public void CheckPassword ()
+        {
             if (password.Password.ToString() == "qqq")
             {
-                MessageBox.Show("yooohgy", "2312");
+                FrameLib.MainWindowFrame.Navigate(null);
             }
+        }
 
+        private void password_KeyDown(object sender, KeyEventArgs e)
+        {
+            CheckPassword();
         }
     }
 }
+

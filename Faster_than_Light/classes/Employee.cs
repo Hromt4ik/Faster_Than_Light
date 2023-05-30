@@ -23,8 +23,7 @@ namespace Faster_than_Light.classes
         public string Post { get; set; }
         public int GuideReferencesID { get; set; }
 
-        public DriverIdentification DriverIdentificationEntity { get; set; }
-
+        public List<DriverIdentification> DriverIdentificationEntites { get; set; }
         public List<LocationBase> LocationBaseEntites { get; set; }
         public List<PointReception> PointReceptionEntites { get; set; }
         public List<Warehouse> WarehouseEntites { get; set; }

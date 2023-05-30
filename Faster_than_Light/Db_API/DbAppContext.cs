@@ -39,10 +39,10 @@ namespace Faster_than_Light.Db_API
 
             //CargoCategory - 0
             //Client - 0
-            //DriverIdentification - 0
-            //Employee - 1  sdfdsfsdfwersfdsfdserf
-            modelBuilder.Entity<Employee>().HasOne(t => t.DriverIdentificationEntity).WithMany(t => t.EmployeeEntites);
-
+            //DriverIdentification - 1
+            modelBuilder.Entity<DriverIdentification>().HasOne(t => t.EmployeeEntity).WithMany(t => t.DriverIdentificationEntites);
+            
+            //Employee - 0
             //LocationBase - 1
             modelBuilder.Entity<LocationBase>().HasOne(t => t.EmployeeEntity).WithMany(t => t.LocationBaseEntites);
 

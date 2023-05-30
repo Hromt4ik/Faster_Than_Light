@@ -1,6 +1,4 @@
-﻿using Faster_than_Light.Db_API;
-using Faster_than_Light.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,28 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Faster_than_Light
+namespace Faster_than_Light.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для CarInfo.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CarInfo : Page
     {
-        public MainWindow()
+        public CarInfo()
         {
             InitializeComponent();
-            FrameLib.MainWindowFrame = FrameAuthorization;
-            NavigateToPage1();
         }
-
-        
-
-        public void NavigateToPage1()
-        {
-            FrameLib.MainWindowFrame.Navigate(new AuthorizationPage());
-        }
-
-
-
     }
 }

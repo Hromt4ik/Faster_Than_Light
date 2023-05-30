@@ -14,8 +14,7 @@ namespace Faster_than_Light.classes
         public JsonObject Category { get; set; }
         public DateOnly DateReceipt { get; set; }
         public DateOnly TerminationDate { get; set; }
-         
-       public List<Employee> EmployeeEntites { get; set; }  
+       public Employee EmployeeEntity { get; set; }  
 
     }
 }

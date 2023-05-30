@@ -8,15 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Image\logo.ico" />
-    <None Remove="Image\Logo.png" />
-    <None Remove="Image\logo_with_text.png" />
+    <Compile Remove="Новая папка\**" />
+    <EmbeddedResource Remove="Новая папка\**" />
+    <None Remove="Новая папка\**" />
+    <Page Remove="Новая папка\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Image\gear_with_key.png" />
+    <None Remove="Image\logo.ico" />
+    <None Remove="Image\Logo.png" />
+    <None Remove="Image\logo_with_text.png" />
+    <None Remove="Image\Track.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\gear_with_key.png" />
     <Resource Include="Image\logo.ico" />
     <Resource Include="Image\Logo.png" />
     <Resource Include="Image\logo_with_text.png" />
+    <Resource Include="Image\Track.png" />
   </ItemGroup>
 
   <ItemGroup>
