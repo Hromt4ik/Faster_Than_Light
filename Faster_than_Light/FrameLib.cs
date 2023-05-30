@@ -10,6 +10,7 @@ namespace Faster_than_Light
     public static class FrameLib
     {
             public static Frame MainWindowFrame { get; set; }
+            public static Frame MainWindowFrame { get; set; }
 
     }
 }

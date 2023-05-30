@@ -21,7 +21,7 @@
         <!--Visibility="Collapsed"-->
         <StackPanel  Grid.Row="0" Background="#046380" Grid.Column="0" Grid.RowSpan="2" >
             <StackPanel>
-                <Button x:Name="ButtonCar"  Background="Transparent" BorderBrush="Transparent">
+                <Button x:Name="ButtonCar" Click="ButtonCar_Click"  Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="10" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Машины</TextBlock>
                         <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/Track.png" MaxHeight="50" MinHeight="15" />
@@ -66,6 +66,7 @@
         
         
         <Frame Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  Grid.ColumnSpan="2" x:Name="FrameAuthorization" NavigationUIVisibility="Hidden"  />
+        <Frame Grid.Column="1" Grid.Row="1" x:Name="FrameCarInfo" NavigationUIVisibility="Hidden"  />
 
     </Grid>
 </Window>

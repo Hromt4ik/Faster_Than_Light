@@ -26,6 +26,7 @@ namespace Faster_than_Light
         {
             InitializeComponent();
             FrameLib.MainWindowFrame = FrameAuthorization;
+            FrameLib.FrameCarInfo = FrameCarInfo;
             NavigateToPage1();
         }
 
@@ -36,7 +37,9 @@ namespace Faster_than_Light
             FrameLib.MainWindowFrame.Navigate(new AuthorizationPage());
         }
 
-
-
+        private void ButtonCar_Click(object sender, RoutedEventArgs e)
+        {
+            FrameLib.MainWindowFrame.Navigate(new Ca());
+        }
     }
 }
