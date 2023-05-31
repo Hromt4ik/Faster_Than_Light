@@ -19,7 +19,7 @@ namespace Faster_than_Light.classes
         public string Model { get; set; }
         public int Mileage { get; set; }
         public int NextMaintenance { get; set; }
-        public StatusEnum.MachineStatuses Status { get; set; }
+        public string Status  { get; set; }
 
         [ForeignKey("LocationBaseEntity")] public int LocationBase { get; set; }
         [ForeignKey("EmployeEntity")] public int DriverID { get; set; }
@@ -27,6 +27,9 @@ namespace Faster_than_Light.classes
         public LocationBase LocationBaseEntity { get; set; }
         public Employee EmployeEntity { get; set; }
         public List<Package> PackageEntites { get; set; }
+
+  
+
 
     }
 }

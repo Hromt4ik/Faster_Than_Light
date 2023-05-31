@@ -69,7 +69,7 @@ namespace Faster_than_Light.Db_API
         {
             using (DbAppContext ctx = new DbAppContext())
             {
-                return ctx.Car.ToList();
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeEntity).ToList();
             }
         }
 

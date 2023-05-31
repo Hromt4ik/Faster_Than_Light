@@ -25,7 +25,7 @@ namespace Faster_than_Light.Db_API
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(
-                "Host=localhost;Username=postgres;Password=123;Database=Test4");
+                "Host=localhost;Username=postgres;Password=123;Database=Test5");
 
         }
 

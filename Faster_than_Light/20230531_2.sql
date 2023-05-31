@@ -21,7 +21,7 @@ CREATE TABLE "Employee"(
     "ResidentialAddress" character varying(200),
     "Email" character varying(100) UNIQUE,
     "Post" character varying(200),
-    "GuideReferencesID" integer
+
 	
 	
 );

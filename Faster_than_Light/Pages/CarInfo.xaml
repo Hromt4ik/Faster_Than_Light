@@ -66,8 +66,7 @@
                                     Binding="{Binding Path=LocationBase}" x:Name="LocationBaseView"/>
                 <DataGridTextColumn Header="Назначеный Водитель"
                                     Binding="{Binding Path=DriverID}" x:Name="DriverIDView"/>
-                <DataGridTextColumn Header="Компания"
-                                    Binding="{Binding Path=CompanyEntity.Title}" x:Name="companyView"/>
+                
                 
             </DataGrid.Columns>
             

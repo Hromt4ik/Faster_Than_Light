@@ -29,7 +29,7 @@ namespace Faster_than_Light.classes
         public string PackageType { get; set; }
         public decimal DeliveryCost { get; set; }
         [ForeignKey("CargoСategoryEntity")]  public int CargoСategory { get; set; }
-        public StatusEnum.ParcelStatuses Status { get; set; }
+        public string Status { get; set; }
         [ForeignKey("CarEntity")] public int CarID { get; set; }
 
         public Client ClientEntity { get; set; }

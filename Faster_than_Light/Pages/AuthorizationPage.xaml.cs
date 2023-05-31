@@ -33,10 +33,9 @@ namespace Faster_than_Light.Pages
 
         private void Button_Click_Enter(object sender, RoutedEventArgs e)
         {
-            //if()
-            //{
-            //    Check_Enter();
-            //}
+
+              Check_Enter();
+
                 
             
         }
@@ -91,7 +90,10 @@ namespace Faster_than_Light.Pages
 
         private void Password_KeyDown(object sender, KeyEventArgs e)
         {
-            Check_Enter();
+            if(e.Key == Key.Enter) {
+                Check_Enter();
+            }
+            
         }
     }
 }
