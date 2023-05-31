@@ -23,7 +23,9 @@ namespace Faster_than_Light.classes
         public DateTime DateDeliveryToPoint { get; set; }
         public DateTime DateIssue { get; set; }
         [ForeignKey("EmployeeEntity")] public int EmployeeID { get; set; }
-        public JsonObject Dimensions { get; set; }
+        public int Length { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
         public string PackageType { get; set; }
         public decimal DeliveryCost { get; set; }
         [ForeignKey("CargoСategoryEntity")]  public int CargoСategory { get; set; }

@@ -15,7 +15,7 @@
                 <TextBlock HorizontalAlignment="Center" FontSize="24">Логин</TextBlock>
                 <TextBox Name="login" FontSize="22"></TextBox>
                 <TextBlock HorizontalAlignment="Center"  FontSize="24">Пароль</TextBlock>
-                <PasswordBox KeyDown="password_KeyDown" Name="password"  FontSize="22"  ></PasswordBox>
+                <PasswordBox KeyDown="Password_KeyDown" Name="password"  FontSize="22"  ></PasswordBox>
             </StackPanel>
             <StackPanel Margin=" 0 10" Orientation="Horizontal">
                 <Button FontSize="20" Click="Button_Click_Clear" Margin="10 5 0 0" Width="110" Height="40" BorderBrush="#046380" Background="White">Очистить</Button>

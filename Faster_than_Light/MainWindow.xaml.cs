@@ -28,6 +28,7 @@ namespace Faster_than_Light
             FrameLib.MainWindowFrame = FrameAuthorization;
             FrameLib.FrameCarInfo = FrameCarInfo;
             NavigateToPage1();
+            
         }
 
         
@@ -43,6 +44,56 @@ namespace Faster_than_Light
         }
 
         private void FrameAuthorization_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
+
+        public void Change_Visabilyty_Visible()
+        {
+            MainStackPanel.Visibility = Visibility.Visible;
+        }
+
+        public void Change_Visabilyty_Collapsed()
+        {
+            MainStackPanel.Visibility = Visibility.Collapsed;
+        }
+
+        private void ButtonDriverIdentification_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonCargoCategory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonClient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonLocationBase_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonPackage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonPointReception_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonWarehouse_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonEmploee_Click(object sender, RoutedEventArgs e)
         {
 
         }

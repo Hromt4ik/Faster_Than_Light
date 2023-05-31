@@ -9,8 +9,8 @@
       Title="CarInfo">
 
     <Grid Background="White">
-        
-        <DataGrid Name="CarDataGridView" Grid.Column="1" Margin="0 10 0 0" AutoGenerateColumns="False"
+
+        <DataGrid Margin="10 10 10 100" HorizontalGridLinesBrush="#046380"  Name="CarDataGridView" Grid.Column="1"  AutoGenerateColumns="False"
                   FontSize="16">
             
                 <DataGrid.Resources>

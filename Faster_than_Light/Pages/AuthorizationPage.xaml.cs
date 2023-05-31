@@ -28,30 +28,70 @@ namespace Faster_than_Light.Pages
 
         private void Button_Click_Clear(object sender, RoutedEventArgs e)
         {
-            login.Text = string.Empty;
-            password.Clear();
+            Clear_box();
         }
 
         private void Button_Click_Enter(object sender, RoutedEventArgs e)
         {
-            //Добавить проверку на то что логин есть в базе
-            CheckPassword();
-
+            if (e.Key == Key.Enter)
+            {
+                Check_Enter();
+            }
+                
+            
         }
 
-        
 
-        public void CheckPassword ()
+
+        public void Check_Enter()
         {
-            if (password.Password.ToString() == "qqq")
+            //Добавить проверку на то что логин есть в базе
+            if (CheckLogin() && CheckPassword())
             {
                 FrameLib.MainWindowFrame.Navigate(null);
             }
+            else
+            {
+                Clear_box();
+            }
+        }
+        public void Clear_box()
+        {
+            login.Text = string.Empty;
+            password.Clear();
         }
 
-        private void password_KeyDown(object sender, KeyEventArgs e)
+        public bool CheckLogin()
         {
-            CheckPassword();
+            if (login.Text == String.Empty)
+            {
+                MessageBox.Show("Логин не может быть пустым", "Неверный ввод", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool CheckPassword()
+        {
+            if (password.Password.ToString() == "qqq")
+            {
+                MessageBox.Show("Неправильный Пароль", "Неверный ввод", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+
+            }
+            if (password.Password.ToString() == String.Empty)
+            {
+                MessageBox.Show("Пароль не введен", "Введите пароль", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+
+            }
+            return true;
+        }
+
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            Check_Enter();
         }
     }
 }

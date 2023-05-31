@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Faster_than_Light"
         mc:Ignorable="d"
         Title="Быстрее света" WindowState="Maximized" MinHeight="550" MinWidth="800"  Icon="Image/Logo.ico">
-    <Grid>
+    <Grid x:Name="MainGrid"  >
         <Grid.RowDefinitions>
             <RowDefinition  MinHeight="25" Height="*" />
             <RowDefinition Height="15*"/>
@@ -16,10 +16,10 @@
             <ColumnDefinition Width="7*" />
         </Grid.ColumnDefinitions>
 
-        <!--Visibility="Collapsed"-->
-        <StackPanel Grid.Row="0" Background="#046380" Grid.Column="0" Grid.RowSpan="2" >
+        <!---->
+        <StackPanel x:Name="MainStackPanel" Grid.Row="0" Background="#046380" Grid.Column="0" Grid.RowSpan="2" >
             <StackPanel Margin="10 0 0 0"  HorizontalAlignment="Left">
-                <Button x:Name="ButtonDriverIdentification" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonDriverIdentification_Click" x:Name="ButtonDriverIdentification" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/DriverIdentification_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">ВУ</TextBlock>
@@ -27,7 +27,7 @@
                 </Button>
             </StackPanel >
             <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonCargoCategory" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonCargoCategory_Click" x:Name="ButtonCargoCategory" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/CargoСategory_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Категории</TextBlock>
@@ -35,7 +35,7 @@
                 </Button>
             </StackPanel >
             <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonClient" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonClient_Click" x:Name="ButtonClient" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/Client_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Клиенты</TextBlock>
@@ -51,7 +51,7 @@
                 </Button>
             </StackPanel>
             <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonLocationBase" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonLocationBase_Click" x:Name="ButtonLocationBase" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/LocationBase_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Места базирования</TextBlock>
@@ -59,7 +59,7 @@
                 </Button>
             </StackPanel>
             <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonPackage" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonPackage_Click" x:Name="ButtonPackage" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/Package_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Посылки</TextBlock>
@@ -67,7 +67,7 @@
                 </Button>
             </StackPanel>
             <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonPointReception" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonPointReception_Click" x:Name="ButtonPointReception" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/PointReception_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Пункты выдачи</TextBlock>
@@ -75,7 +75,7 @@
                 </Button>
             </StackPanel>
             <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonWarehouse" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonWarehouse_Click" x:Name="ButtonWarehouse" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/Warehouse_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Склады</TextBlock>
@@ -83,7 +83,7 @@
                 </Button>
             </StackPanel>
             <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonEmploee" Background="Transparent" BorderBrush="Transparent">
+                <Button Click="ButtonEmploee_Click" x:Name="ButtonEmploee" Background="Transparent" BorderBrush="Transparent">
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/Employee_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Сотрудники</TextBlock>

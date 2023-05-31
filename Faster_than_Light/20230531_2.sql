@@ -1,12 +1,12 @@
 CREATE TABLE "Client" (
  	"ClientID" serial PRIMARY KEY,
-    "Name" character varying(50) NOT NULL,
-    "Surname" character varying(50) NOT NULL,
+    "Name" character varying(50)  ,
+    "Surname" character varying(50)  ,
     "Patronymic" character varying(50),
-    "Birthdate" date NOT NULL,
-    "SeriaNumberPassport" character(10) NOT NULL UNIQUE,
-    "PhoneNumber" character varying(11) NOT NULL,
-    "Email" character varying(100) NOT NULL UNIQUE
+    "Birthdate" date  ,
+    "SeriaNumberPassport" character(10)   UNIQUE,
+    "PhoneNumber" character varying(11)  ,
+    "Email" character varying(100)   UNIQUE
 );
 
 CREATE TABLE "Employee"(
@@ -28,9 +28,12 @@ CREATE TABLE "Employee"(
 
 CREATE TABLE "DriverIdentification"(
 	"GuideReferencesID" serial PRIMARY KEY,
-    "DriverLicense" character(10) NOT NULL UNIQUE,
-    "Category" json NOT NULL,
-    "DateReceipt" date NOT NULL,
+    "DriverLicense" character(10)   UNIQUE,
+    "B" BOOLEAN,
+	"BE" BOOLEAN,
+	"C" BOOLEAN,
+	"CE" BOOLEAN,
+    "DateReceipt" date  ,
     "TerminationDate" date,
 	"EmployeeID" INTEGER,
 	
@@ -41,17 +44,17 @@ CREATE TABLE "DriverIdentification"(
 
 CREATE TABLE "Warehouse"(
     "WarehouseID" serial PRIMARY KEY,
-    "Address" character varying(200) NOT NULL,
-    "Region" character varying(200) NOT NULL,
+    "Address" character varying(200)  ,
+    "Region" character varying(200)  ,
     "Director" integer,
 	FOREIGN KEY ("Director") REFERENCES "Employee" ("EmployeeID")
 );
 
 CREATE TABLE "PointReception"(
 	"PointID" serial PRIMARY KEY,
-    "Address" character varying(200) NOT NULL,
-    "Director" integer NOT NULL,
-    "WarehouseID" integer NOT NULL,
+    "Address" character varying(200)  ,
+    "Director" integer  ,
+    "WarehouseID" integer  ,
 	
 	FOREIGN KEY ("Director") REFERENCES "Employee" ("EmployeeID"),
 	FOREIGN KEY ("WarehouseID") REFERENCES "Warehouse" ("WarehouseID")
@@ -59,8 +62,8 @@ CREATE TABLE "PointReception"(
 
 CREATE TABLE "CargoСategory"(
 	"CategoryID" serial PRIMARY KEY,
-    "Name" character varying(200) NOT NULL,
-    "TransportationCoefficient" numeric(10, 2) NOT NULL,
+    "Name" character varying(200)  ,
+    "TransportationCoefficient" numeric(10, 2)  ,
     "Comments" character varying(500)
 );
 
@@ -76,14 +79,14 @@ CREATE TABLE "LocationBase"(
 
 CREATE TABLE "Car"(
 	"CarID" serial PRIMARY KEY,
-    "VIN" character varying(17) NOT NULL UNIQUE,
-    "StateNumber" character varying(9) NOT NULL,
-    "Stamp" character varying(200) NOT NULL,
-    "Model" character varying(200) NOT NULL,
-    "Mileage" integer NOT NULL,
-    "NextMaintenance" integer NOT NULL,
-    "Status" text NOT NULL,
-    "LocationBase" integer NOT NULL,
+    "VIN" character varying(17)   UNIQUE,
+    "StateNumber" character varying(9)  ,
+    "Stamp" character varying(200)  ,
+    "Model" character varying(200)  ,
+    "Mileage" integer  ,
+    "NextMaintenance" integer  ,
+    "Status" text  ,
+    "LocationBase" integer  ,
     "DriverID" integer,
 	
 	FOREIGN KEY ("LocationBase") REFERENCES "LocationBase" ("LocationBaseID"),
@@ -92,20 +95,22 @@ CREATE TABLE "Car"(
 
 CREATE TABLE "Package"(
 	"PackageID" serial PRIMARY KEY,
-    "ClientID" integer NOT NULL,
+    "ClientID" integer  ,
     "Comments" character varying(500),
-    "SendingAddress" integer NOT NULL,
-    "DeliveryAddress" integer NOT NULL,
-    "Weight" numeric(10, 2) NOT NULL,
-    "DateAcceptance" timestamp without time zone NOT NULL,
-    "DateDeliveryToPoint" timestamp without time zone NOT NULL,
-    "DateIssue" timestamp without time zone NOT NULL,
-    "EmployeeID" integer NOT NULL,
-    "Dimensions" json NOT NULL,
-    "PackageType" text NOT NULL,
-    "DeliveryCost" numeric(10, 2) NOT NULL,
-    "CargoCategory" integer NOT NULL,
-    "Status" text NOT NULL,
+    "SendingAddress" integer  ,
+    "DeliveryAddress" integer  ,
+    "Weight" numeric(10, 2)  ,
+    "DateAcceptance" timestamp without time zone  ,
+    "DateDeliveryToPoint" timestamp without time zone  ,
+    "DateIssue" timestamp without time zone  ,
+    "EmployeeID" integer  ,
+    "Length" integer,
+	"Width" integer,
+	"Height" integer,
+    "PackageType" text  ,
+    "DeliveryCost" numeric(10, 2)  ,
+    "CargoCategory" integer  ,
+    "Status" text  ,
     "CarID" integer,
 	FOREIGN KEY ("ClientID") REFERENCES "Client" ("ClientID"),
 	FOREIGN KEY ("SendingAddress") REFERENCES "PointReception" ("PointID"),

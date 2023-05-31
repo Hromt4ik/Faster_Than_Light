@@ -14,7 +14,10 @@ namespace Faster_than_Light.classes
     {
         [Key] public int GuideReferencesID { get; set; }
         public string DriverLicense { get; set; }
-        public JsonObject Category { get; set; }
+        public bool  B { get; set; }
+        public bool  BE { get; set; }
+        public bool  C { get; set; }
+        public bool  CE { get; set; }
 
         public DateTime DateReceipt { get; set; }
         public DateTime TerminationDate { get; set; }
@@ -22,12 +25,7 @@ namespace Faster_than_Light.classes
 
         public Employee EmployeeEntity { get; set; }
 
-        DriverIdentification() {
-        
-            Category = new JsonObject();
-
-        }
-
+       
 
     }
 }
