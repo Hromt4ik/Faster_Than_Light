@@ -15,19 +15,53 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Image\CargoСategory.png" />
+    <None Remove="Image\CargoСategory_white.png" />
+    <None Remove="Image\Client.png" />
+    <None Remove="Image\Client_white.png" />
+    <None Remove="Image\DriverIdentification.png" />
+    <None Remove="Image\DriverIdentification_white.png" />
+    <None Remove="Image\Employee.png" />
+    <None Remove="Image\Employee_white.png" />
     <None Remove="Image\gear_with_key.png" />
+    <None Remove="Image\LocationBase.png" />
+    <None Remove="Image\LocationBase_white.png" />
     <None Remove="Image\logo.ico" />
     <None Remove="Image\Logo.png" />
     <None Remove="Image\logo_with_text.png" />
+    <None Remove="Image\Package.png" />
+    <None Remove="Image\Package_white.png" />
+    <None Remove="Image\PointReception.png" />
+    <None Remove="Image\PointReception_white.png" />
     <None Remove="Image\Track.png" />
+    <None Remove="Image\Track_white.png" />
+    <None Remove="Image\Warehouse.png" />
+    <None Remove="Image\Warehouse_white.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Image\CargoСategory.png" />
+    <Resource Include="Image\CargoСategory_white.png" />
+    <Resource Include="Image\Client.png" />
+    <Resource Include="Image\Client_white.png" />
+    <Resource Include="Image\DriverIdentification.png" />
+    <Resource Include="Image\DriverIdentification_white.png" />
+    <Resource Include="Image\Employee.png" />
+    <Resource Include="Image\Employee_white.png" />
     <Resource Include="Image\gear_with_key.png" />
+    <Resource Include="Image\LocationBase.png" />
+    <Resource Include="Image\LocationBase_white.png" />
     <Resource Include="Image\logo.ico" />
     <Resource Include="Image\Logo.png" />
     <Resource Include="Image\logo_with_text.png" />
+    <Resource Include="Image\Package.png" />
+    <Resource Include="Image\Package_white.png" />
+    <Resource Include="Image\PointReception.png" />
+    <Resource Include="Image\PointReception_white.png" />
     <Resource Include="Image\Track.png" />
+    <Resource Include="Image\Track_white.png" />
+    <Resource Include="Image\Warehouse.png" />
+    <Resource Include="Image\Warehouse_white.png" />
   </ItemGroup>
 
   <ItemGroup>

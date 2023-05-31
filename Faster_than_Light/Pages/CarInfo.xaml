@@ -13,16 +13,16 @@
                   FontSize="16">
             <DataGrid.Resources>
                 <Style TargetType="DataGridRow">
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick_1"/>
                 </Style>
             </DataGrid.Resources>
-            <DataGrid.ContextMenu>
-                <ContextMenu>
+            <!--<DataGrid.ContextMenu>
+                --><!--<ContextMenu>
                     <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
                     <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
                     <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
-                </ContextMenu>
-            </DataGrid.ContextMenu>
+                </ContextMenu>--><!--
+            </DataGrid.ContextMenu>-->
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

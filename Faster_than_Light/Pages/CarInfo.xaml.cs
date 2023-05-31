@@ -24,5 +24,25 @@ namespace Faster_than_Light.Pages
         {
             InitializeComponent();
         }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void removeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

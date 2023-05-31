@@ -39,7 +39,12 @@ namespace Faster_than_Light
 
         private void ButtonCar_Click(object sender, RoutedEventArgs e)
         {
-            FrameLib.MainWindowFrame.Navigate(new Ca());
+            FrameLib.FrameCarInfo.Navigate(new CarInfo());
+        }
+
+        private void FrameAuthorization_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 }
