@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Faster_than_Light.Pages
         public CarInfo()
         {
             InitializeComponent();
+            CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
         }
 
         private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -30,10 +32,7 @@ namespace Faster_than_Light.Pages
 
         }
 
-        private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
-        {
 
-        }
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
@@ -44,5 +43,7 @@ namespace Faster_than_Light.Pages
         {
 
         }
+
+
     }
 }

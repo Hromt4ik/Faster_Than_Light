@@ -6,16 +6,19 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Faster_than_Light.classes
 {
     public class Employee
     {
-        public int EmployeeID { get; set; }
+        [Key] public int EmployeeID { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Patronymic { get; set; }
-        public DateOnly Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
         public string SeriaNumberPassport { get; set; }
         public string PhoneNumber { get; set; }
         public string ResidentialAddress { get; set; }

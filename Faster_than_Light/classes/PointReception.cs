@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Faster_than_Light.classes
 {
     public class PointReception
     {
-        public int PointID { get; set;}
+        [Key] public int PointID { get; set;}
         public string Address { get; set;}
-        public int Director { get; set;}
-        public int WarehouseID { get; set;}
+        [ForeignKey("EmployeeEntity")]  public int Director { get; set;}
+        [ForeignKey("WarehouseEntity")]  public int WarehouseID { get; set;}
 
         public Employee EmployeeEntity { get; set;}
         public Warehouse WarehouseEntity { get; set;}

@@ -65,7 +65,7 @@ namespace Faster_than_Light.Db_API
 
     public static class DatabaseControl
     {
-        public static List<Car> GetPhonesForView()
+        public static List<Car> GetCarForView()
         {
             using (DbAppContext ctx = new DbAppContext())
             {

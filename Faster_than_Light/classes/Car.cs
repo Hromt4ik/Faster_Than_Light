@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Faster_than_Light.classes
 {
     public class Car
     {
 
-        public int CarID { get; set; }
+        [Key] public int CarID { get; set; }
         public string VIN { get; set; }
         public string StateNumber { get; set; }
         public string Stamp { get; set; }
@@ -17,12 +20,12 @@ namespace Faster_than_Light.classes
         public int Mileage { get; set; }
         public int NextMaintenance { get; set; }
         public StatusEnum.MachineStatuses Status { get; set; }
-        public int LocationBase { get; set; }
-        public int DriverID { get; set; }
+
+        [ForeignKey("LocationBaseEntity")] public int LocationBase { get; set; }
+        [ForeignKey("EmployeEntity")] public int DriverID { get; set; }
 
         public LocationBase LocationBaseEntity { get; set; }
         public Employee EmployeEntity { get; set; }
-
         public List<Package> PackageEntites { get; set; }
 
     }

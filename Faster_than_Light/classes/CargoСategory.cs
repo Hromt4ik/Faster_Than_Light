@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Faster_than_Light.classes
 {
     public class CargoСategory
     {
-        public int CategoryID { get; set; }
+        [Key] public int CategoryID { get; set; }
         public string Name { get; set; }
         public decimal TransportationCoefficient { get; set; }
         public string Comments { get; set; }
