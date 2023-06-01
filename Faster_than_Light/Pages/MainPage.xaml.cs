@@ -29,7 +29,7 @@ namespace Faster_than_Light.Pages
 
         }
 
-        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void CarDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }

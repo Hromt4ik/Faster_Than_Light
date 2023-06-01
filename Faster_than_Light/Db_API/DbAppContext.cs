@@ -35,7 +35,7 @@ namespace Faster_than_Light.Db_API
 
             //Car - 2 
             modelBuilder.Entity<Car>().HasOne(t => t.LocationBaseEntity).WithMany(t => t.CarEntites);
-            modelBuilder.Entity<Car>().HasOne(t => t.EmployeEntity).WithMany(t => t.CarEntites);
+            modelBuilder.Entity<Car>().HasOne(t => t.EmployeeEntity).WithMany(t => t.CarEntites);
 
             //CargoCategory - 0
             //Client - 0

@@ -69,10 +69,68 @@ namespace Faster_than_Light.Db_API
         {
             using (DbAppContext ctx = new DbAppContext())
             {
-                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeEntity).ToList();
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).ToList();
+            }
+        }
+        public static List<CargoСategory> GetCargoСategoryForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.CargoСategory.ToList();
+            }
+        }
+        public static List<Client> GetClientForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Client.ToList();
+            }
+        }
+        public static List<DriverIdentification> GetDriverIdentificationForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.DriverIdentification.Include(t => t.EmployeeEntity).ToList();
+            }
+        }
+        public static List<Employee> GetEmployeeForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Employee.ToList();
+            }
+        }
+        public static List<LocationBase> GetLocationBaseForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.LocationBase.Include(t => t.EmployeeEntity).ToList();
+            }
+        }
+        public static List<Package> GetPackageForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoСategoryEntity).Include(t => t.CarEntity).ToList();
+            }
+        }
+        public static List<PointReception> GetPointReceptionForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.PointReception.Include(t => t.WarehouseEntity).Include(t => t.EmployeeEntity).ToList();
+            }
+        }
+        public static List<Warehouse> GetWarehouseForView()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Warehouse.Include(t => t.EmployeeEntity).ToList();
             }
         }
 
-       
+
+
     }
 }
