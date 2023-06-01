@@ -21,7 +21,7 @@ namespace Faster_than_Light.classes
 
         public DateTime DateReceipt { get; set; }
         public DateTime TerminationDate { get; set; }
-        [ForeignKey("EmployeeEntity")] public int EmploeeID { get; set; }
+        [ForeignKey("EmployeeEntity")] public int EmployeeID { get; set; }
 
         public Employee EmployeeEntity { get; set; }
 

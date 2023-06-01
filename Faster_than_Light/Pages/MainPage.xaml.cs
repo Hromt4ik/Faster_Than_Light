@@ -26,6 +26,7 @@ namespace Faster_than_Light.Pages
             
             InitializeComponent();
             CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
+            DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
 
         }
 

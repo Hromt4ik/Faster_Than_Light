@@ -45,7 +45,74 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">ВУ</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid HorizontalAlignment="Left" Background="White">
+                    <StackPanel>
 
+                    </StackPanel>
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="DriverIdentificationDataGridView"   AutoGenerateColumns="False"
+                  FontSize="16">
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="CarDataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!--<DataGrid.ContextMenu>
+                -->
+                        <!--<ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>-->
+                        <!--
+            </DataGrid.ContextMenu>-->
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                                <Image Height="20" Source="/Image/edit-button.png" />
+                                            </Button>
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                                <Image Source="/Image/remove.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn  Header="ID ВУ"
+                                    Binding="{Binding Path=GuideReferencesID}" x:Name="GuideReferencesIDView"/>
+                            <DataGridTextColumn Header="Номер водительских прав"
+                                    Binding="{Binding Path=DriverLicense}" x:Name="DriverLicenseView"/>
+                            <DataGridCheckBoxColumn Header="B"
+                                    Binding="{Binding Path=B}" x:Name="BView"/>
+                            <DataGridCheckBoxColumn Header="BE"
+                                    Binding="{Binding Path=BE}" x:Name="BEView"/>
+                            <DataGridCheckBoxColumn Header="C"
+                                    Binding="{Binding Path=C}" x:Name="CView"/>
+                            <DataGridCheckBoxColumn Header="CE"
+                                    Binding="{Binding Path=CE}" x:Name="CEView"/>
+                            <DataGridTextColumn Header="Дата Получения"
+                                    Binding="{Binding Path=DateReceipt}" x:Name="DateReceiptView"/>
+                            <DataGridTextColumn Header="Дата Окончания"
+                                    Binding="{Binding Path=TerminationDate}" x:Name="TerminationDateView"/>
+                            <DataGridTextColumn Header="Сотрудник"
+                                    Binding="{Binding Path=EmployeeID}" x:Name="EmploeeIDView"/>
+                            
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
 
             </TabItem>
 
@@ -56,7 +123,66 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Категории</TextBlock>
                     </StackPanel >
                 </TabItem.Header>
-                ew9ur9863478r6786r7863
+                <Grid HorizontalAlignment="Left" Background="White">
+                    <StackPanel>
+
+                    </StackPanel>
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="CargoСategoryDataGridView"   AutoGenerateColumns="False"
+                  FontSize="16">
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="CarDataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!--<DataGrid.ContextMenu>
+                -->
+                        <!--<ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>-->
+                        <!--
+            </DataGrid.ContextMenu>-->
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                                <Image Height="20" Source="/Image/edit-button.png" />
+                                            </Button>
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                                <Image Source="/Image/remove.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn  Header="ID Категории"
+                                    Binding="{Binding Path=CategoryID}" x:Name="CategoryIDView"/>
+                            <DataGridTextColumn Header="Номер водительских прав"
+                                    Binding="{Binding Path=Name}" x:Name="NameView"/>
+
+                            <DataGridTextColumn Header="Дата Получения"
+                                    Binding="{Binding Path=TransportationCoefficient}" x:Name="TransportationCoefficientView"/>
+                            <DataGridTextColumn Header="Дата Окончания"
+                                    Binding="{Binding Path=Comments}" x:Name="CommentsView"/>
+                           
+
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Left" >
                 <TabItem.Header>
@@ -76,9 +202,9 @@
                 </TabItem.Header>
                 <Grid HorizontalAlignment="Left" Background="White">
                     <StackPanel>
-                        
+
                     </StackPanel>
-                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380"  Name="CarDataGridView" Grid.Column="1"  AutoGenerateColumns="False"
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380"  Name="CarDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">
 
                         <DataGrid.Resources>
@@ -201,6 +327,6 @@
             </TabItem>
         </TabControl>
 
-        
+
     </Grid>
 </Page>
