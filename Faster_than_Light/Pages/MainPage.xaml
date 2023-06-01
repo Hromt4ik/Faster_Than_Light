@@ -9,100 +9,198 @@
       Title="MainPage">
 
     <Grid Name="mainGrid2" >
-        <Grid.RowDefinitions>
-            <RowDefinition  MinHeight="25" Height="*" />
-            <RowDefinition Height="15*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition  MaxWidth="350" MinWidth="250" Width="3*" />
-            <ColumnDefinition Width="7*" />
-        </Grid.ColumnDefinitions>
 
+        <Rectangle Fill="#046380"></Rectangle>
         <!---->
-        <StackPanel x:Name="MainStackPanel" Grid.Row="0" Background="#046380" Grid.Column="0" Grid.RowSpan="2" >
-            <StackPanel Margin="10 0 0 0"  HorizontalAlignment="Left">
-                <Button Click="ButtonDriverIdentification_Click" x:Name="ButtonDriverIdentification" Background="Transparent" BorderBrush="Transparent">
-                    <StackPanel Orientation="Horizontal">
-                        <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/DriverIdentification_white.png" MaxHeight="50" MinHeight="15" />
+        <TabControl x:Name="MainStackPanel" TabStripPlacement="Left">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid Name="Panel">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Panel" Property="Background" Value="#033b4d" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Panel" Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            <TabItem HorizontalAlignment="Left" >
+                <TabItem.Header>
+                    <StackPanel  Orientation="Horizontal">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/DriverIdentification_white.png" MaxHeight="50" MinHeight="15"/>
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">ВУ</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel >
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button Click="ButtonCargoCategory_Click" x:Name="ButtonCargoCategory" Background="Transparent" BorderBrush="Transparent">
-                    <StackPanel Orientation="Horizontal">
+                </TabItem.Header>
+
+
+            </TabItem>
+
+            <TabItem HorizontalAlignment="Left" >
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal"  >
                         <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/CargoСategory_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Категории</TextBlock>
-                    </StackPanel>
-                </Button>
-            </StackPanel >
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button Click="ButtonClient_Click" x:Name="ButtonClient" Background="Transparent" BorderBrush="Transparent">
+                    </StackPanel >
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
+            <TabItem HorizontalAlignment="Left" >
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/Client_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Клиенты</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel >
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button x:Name="ButtonCar" Click="ButtonCar_Click"  Background="Transparent" BorderBrush="Transparent">
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
+            <TabItem HorizontalAlignment="Left" >
+                <TabItem.Header >
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/Track_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Машины</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button Click="ButtonLocationBase_Click" x:Name="ButtonLocationBase" Background="Transparent" BorderBrush="Transparent">
+                </TabItem.Header>
+                <Grid HorizontalAlignment="Left" Background="White">
+                    <StackPanel>
+                        
+                    </StackPanel>
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380"  Name="CarDataGridView" Grid.Column="1"  AutoGenerateColumns="False"
+                  FontSize="16">
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!--<DataGrid.ContextMenu>
+                -->
+                        <!--<ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>-->
+                        <!--
+            </DataGrid.ContextMenu>-->
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                                <Image Height="20" Source="/Image/edit-button.png" />
+                                            </Button>
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                                <Image Source="/Image/remove.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn  Header="ID Машины"
+                                    Binding="{Binding Path=CarID}" x:Name="CarIDView"/>
+                            <DataGridTextColumn Header="VIN"
+                                    Binding="{Binding Path=VIN}" x:Name="VINView"/>
+                            <DataGridTextColumn Header="Гос. Номер"
+                                    Binding="{Binding Path=StateNumber}" x:Name="StateNumberView"/>
+                            <DataGridTextColumn Header="Марка"
+                                    Binding="{Binding Path=Stamp}" x:Name="StampView"/>
+                            <DataGridTextColumn Header="Модель"
+                                    Binding="{Binding Path=Model}" x:Name="ModelView"/>
+                            <DataGridTextColumn Header="Пробег"
+                                    Binding="{Binding Path=Mileage}" x:Name="MileageView"/>
+                            <DataGridTextColumn Header="Следующее ТО"
+                                    Binding="{Binding Path=NextMaintenance}" x:Name="NextMaintenanceView"/>
+                            <DataGridTextColumn Header="Статус"
+                                    Binding="{Binding Path=Status}" x:Name="StatusView"/>
+                            <DataGridTextColumn Header="Место Базирования"
+                                    Binding="{Binding Path=LocationBase}" x:Name="LocationBaseView"/>
+                            <DataGridTextColumn Header="Назначеный Водитель"
+                                    Binding="{Binding Path=DriverID}" x:Name="DriverIDView"/>
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+            <TabItem HorizontalAlignment="Left">
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/LocationBase_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Места базирования</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button Click="ButtonPackage_Click" x:Name="ButtonPackage" Background="Transparent" BorderBrush="Transparent">
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
+            <TabItem HorizontalAlignment="Left">
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/Package_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Посылки</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button Click="ButtonPointReception_Click" x:Name="ButtonPointReception" Background="Transparent" BorderBrush="Transparent">
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
+            <TabItem HorizontalAlignment="Left">
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/PointReception_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Пункты выдачи</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button Click="ButtonWarehouse_Click" x:Name="ButtonWarehouse" Background="Transparent" BorderBrush="Transparent">
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
+            <TabItem HorizontalAlignment="Left">
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/Warehouse_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Склады</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-            <StackPanel Margin="10 0 0 0" HorizontalAlignment="Left">
-                <Button Click="ButtonEmploee_Click" x:Name="ButtonEmploee" Background="Transparent" BorderBrush="Transparent">
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
+            <TabItem HorizontalAlignment="Left">
+                <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/Employee_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Сотрудники</TextBlock>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-        </StackPanel>
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
 
+            <TabItem HorizontalAlignment="Left">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/gear_with_key.png" MaxHeight="50" MinHeight="15" />
+                        <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Администрирование</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                ew9ur9863478r6786r7863
+            </TabItem>
+        </TabControl>
 
-        <StackPanel  HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0"  Grid.Column="1">
-            <!--<Viewbox VerticalAlignment="Center" MaxWidth="500"   >
-                <TextBlock> Функции технического специалиста</TextBlock>
-            </Viewbox>-->
-            <Button VerticalAlignment="Center" VerticalContentAlignment="Center" MaxHeight="60" ToolTip="Функции технического специалиста" Background="Transparent" BorderBrush="Transparent" >
-                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/gear_with_key.png" MaxHeight="60" MinHeight="25"/>
-            </Button>
-        </StackPanel>
-        <Frame  Grid.Row="1" Grid.Column="1" x:Name="FrameCarInfo" NavigationUIVisibility="Hidden"  />
+        
     </Grid>
 </Page>

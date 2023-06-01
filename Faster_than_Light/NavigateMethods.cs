@@ -14,5 +14,9 @@ namespace Faster_than_Light
             
             FrameLib.FrameMainPage.Navigate(new MainPage());
         }
+
+        public static void MainPageClose() {
+            FrameLib.FrameMainPage.Navigate(null);
+        }
     }
 }

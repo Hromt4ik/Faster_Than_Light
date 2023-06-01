@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,56 +25,30 @@ namespace Faster_than_Light.Pages
         {
             
             InitializeComponent();
-            FrameLib.FrameCarInfo = FrameCarInfo;
+            CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
+
         }
 
-        private void ButtonCar_Click(object sender, RoutedEventArgs e)
-        {
-            FrameLib.FrameCarInfo.Navigate(new CarInfo());
-        }
-        private void FrameAuthorization_Navigated(object sender, NavigationEventArgs e)
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
 
-        private void ButtonDriverIdentification_Click(object sender, RoutedEventArgs e)
+
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ButtonCargoCategory_Click(object sender, RoutedEventArgs e)
+        private void removeButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ButtonClient_Click(object sender, RoutedEventArgs e)
+        private void TabItem_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
-        }
-
-        private void ButtonLocationBase_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonPackage_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonPointReception_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonWarehouse_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonEmploee_Click(object sender, RoutedEventArgs e)
-        {
-
+            
         }
     }
 }
