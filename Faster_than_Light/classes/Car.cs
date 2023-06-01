@@ -19,7 +19,7 @@ namespace Faster_than_Light.classes
         public string Model { get; set; }
         public int Mileage { get; set; }
         public int NextMaintenance { get; set; }
-        public string Status  { get; set; }
+        public string Status  { get; set; } = String.Empty;
 
         [ForeignKey("LocationBaseEntity")] public int LocationBase { get; set; }
         [ForeignKey("EmployeEntity")] public int DriverID { get; set; }

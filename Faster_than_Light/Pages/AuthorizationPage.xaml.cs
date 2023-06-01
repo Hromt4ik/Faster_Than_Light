@@ -36,6 +36,7 @@ namespace Faster_than_Light.Pages
 
               Check_Enter();
 
+
                 
             
         }
@@ -47,7 +48,8 @@ namespace Faster_than_Light.Pages
             //Добавить проверку на то что логин есть в базе
             if (CheckLogin() && CheckPassword())
             {
-                FrameLib.MainWindowFrame.Navigate(null);
+                FrameLib.FrameAuthorization.Navigate(null);
+                NavigateMethods.MainPageOpen();
             }
             else
             {
