@@ -24,6 +24,7 @@
     <None Remove="Image\Employee.png" />
     <None Remove="Image\Employee_white.png" />
     <None Remove="Image\gear_with_key.png" />
+    <None Remove="Image\gear_with_key_white.png" />
     <None Remove="Image\LocationBase.png" />
     <None Remove="Image\LocationBase_white.png" />
     <None Remove="Image\logo.ico" />
@@ -49,6 +50,7 @@
     <Resource Include="Image\Employee.png" />
     <Resource Include="Image\Employee_white.png" />
     <Resource Include="Image\gear_with_key.png" />
+    <Resource Include="Image\gear_with_key_white.png" />
     <Resource Include="Image\LocationBase.png" />
     <Resource Include="Image\LocationBase_white.png" />
     <Resource Include="Image\logo.ico" />

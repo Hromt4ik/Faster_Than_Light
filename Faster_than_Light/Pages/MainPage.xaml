@@ -132,7 +132,7 @@
 
                         <DataGrid.Resources>
                             <Style TargetType="DataGridRow">
-                                <EventSetter Event="MouseDoubleClick" Handler="CarDataGridRow_MouseDoubleClick"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="CargoСategoryDataGridRow_MouseDoubleClick"/>
                             </Style>
                         </DataGrid.Resources>
                         <!--<DataGrid.ContextMenu>
@@ -191,7 +191,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Клиенты</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                ew9ur9863478r6786r7863
+               312
             </TabItem>
             <TabItem HorizontalAlignment="Left" >
                 <TabItem.Header >
@@ -319,7 +319,7 @@
             <TabItem HorizontalAlignment="Left">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/gear_with_key.png" MaxHeight="50" MinHeight="15" />
+                        <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/gear_with_key_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Администрирование</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
