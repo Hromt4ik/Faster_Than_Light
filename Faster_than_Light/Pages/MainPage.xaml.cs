@@ -25,12 +25,18 @@ namespace Faster_than_Light.Pages
         {
             
             InitializeComponent();
-            CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
-            CargoСategoryDataGridView.ItemsSource= DatabaseControl.GetCargoСategoryForView();
+            
             DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
-
+            ClientDataGridView.ItemsSource = DatabaseControl.GetClientForView();
+            CargoСategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
+            LocationBaseDataGridView.ItemsSource = DatabaseControl.GetLocationBaseForView();
         }
 
+        private void DriverIdentification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
         private void CarDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
@@ -46,6 +52,11 @@ namespace Faster_than_Light.Pages
 
         }
 
+        private void LocationBaseDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
@@ -56,7 +67,5 @@ namespace Faster_than_Light.Pages
         {
 
         }
-
-   
     }
 }

@@ -21,6 +21,8 @@
     <None Remove="Image\Client_white.png" />
     <None Remove="Image\DriverIdentification.png" />
     <None Remove="Image\DriverIdentification_white.png" />
+    <None Remove="Image\edit.png" />
+    <None Remove="Image\edit_blue.png" />
     <None Remove="Image\Employee.png" />
     <None Remove="Image\Employee_white.png" />
     <None Remove="Image\gear_with_key.png" />
@@ -36,6 +38,8 @@
     <None Remove="Image\PointReception_white.png" />
     <None Remove="Image\Track.png" />
     <None Remove="Image\Track_white.png" />
+    <None Remove="Image\trashcan.png" />
+    <None Remove="Image\trashcan_blue.png" />
     <None Remove="Image\Warehouse.png" />
     <None Remove="Image\Warehouse_white.png" />
   </ItemGroup>
@@ -47,6 +51,8 @@
     <Resource Include="Image\Client_white.png" />
     <Resource Include="Image\DriverIdentification.png" />
     <Resource Include="Image\DriverIdentification_white.png" />
+    <Resource Include="Image\edit.png" />
+    <Resource Include="Image\edit_blue.png" />
     <Resource Include="Image\Employee.png" />
     <Resource Include="Image\Employee_white.png" />
     <Resource Include="Image\gear_with_key.png" />
@@ -62,6 +68,8 @@
     <Resource Include="Image\PointReception_white.png" />
     <Resource Include="Image\Track.png" />
     <Resource Include="Image\Track_white.png" />
+    <Resource Include="Image\trashcan.png" />
+    <Resource Include="Image\trashcan_blue.png" />
     <Resource Include="Image\Warehouse.png" />
     <Resource Include="Image\Warehouse_white.png" />
   </ItemGroup>
