@@ -169,12 +169,12 @@
                             </DataGridTemplateColumn>
                             <DataGridTextColumn  Header="ID Категории"
                                     Binding="{Binding Path=CategoryID}" x:Name="CategoryIDView"/>
-                            <DataGridTextColumn Header="Номер водительских прав"
+                            <DataGridTextColumn Header="Наименование"
                                     Binding="{Binding Path=Name}" x:Name="NameView"/>
 
-                            <DataGridTextColumn Header="Дата Получения"
+                            <DataGridTextColumn Header="Коэфициент"
                                     Binding="{Binding Path=TransportationCoefficient}" x:Name="TransportationCoefficientView"/>
-                            <DataGridTextColumn Header="Дата Окончания"
+                            <DataGridTextColumn Header="Комментарий"
                                     Binding="{Binding Path=Comments}" x:Name="CommentsView"/>
 
 
@@ -394,14 +394,12 @@
                                     Binding="{Binding Path=LocationBaseID}" x:Name="LocationBaseIDView"/>
                             <DataGridTextColumn Header="Адрес"
                                     Binding="{Binding Path=Address}" x:Name="AddressLocationView"/>
-
                             <DataGridTextColumn Header="Количсетво мест"
                                     Binding="{Binding Path=NumberSeats}" x:Name="NumberSeatsView"/>
                             <DataGridTextColumn Header="Регион"
                                     Binding="{Binding Path=Region}" x:Name="RegionView"/>
                             <DataGridTextColumn Header="Директор"
                                     Binding="{Binding Path=Director}" x:Name="DirectorView"/>
-
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -415,7 +413,89 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Посылки</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                ew9ur9863478r6786r7863
+                <Grid HorizontalAlignment="Left" Background="White">
+                    <StackPanel>
+
+                    </StackPanel>
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="PackageDataGridView"   AutoGenerateColumns="False"
+                  FontSize="16">
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="PackageDataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!--<DataGrid.ContextMenu>
+                -->
+                        <!--<ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>-->
+                        <!--
+            </DataGrid.ContextMenu>-->
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
+                                            </Button>
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn  Header="ID Посылки"
+                                    Binding="{Binding Path=PackageID}" x:Name="PackageIDiew"/>
+                            <DataGridTextColumn Header="Клиент"
+                                    Binding="{Binding Path=ClientID}" x:Name="ClientID"/>
+                            <DataGridTextColumn Header="Комментарий"
+                                    Binding="{Binding Path=Comments}" x:Name="Comments"/>
+                            <DataGridTextColumn Header="Адрес отправки"
+                                    Binding="{Binding Path=SendingAddress}" x:Name="SendingAddressView"/>
+                            <DataGridTextColumn Header="Адрес доставки"
+                                    Binding="{Binding Path=DeliveryAddress}" x:Name="DeliveryAddressView"/>
+                            <DataGridTextColumn Header="Вес"
+                                    Binding="{Binding Path=Weight}" x:Name="WeightView"/>
+                            <DataGridTextColumn Header="Дата Принятия"
+                                    Binding="{Binding Path=DateAcceptance}" x:Name="DateAcceptanceView"/>
+                            <DataGridTextColumn Header="Дата доставки"
+                                    Binding="{Binding Path=DateDeliveryToPoint}" x:Name="DateDeliveryToPointView"/>
+                            <DataGridTextColumn Header="Дата выдачи"
+                                    Binding="{Binding Path=DateIssue}" x:Name="DateIssueView"/>
+                            <DataGridTextColumn Header="ID Сотрудника"
+                                    Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDView"/>
+                            <DataGridTextColumn Header="Длина"
+                                    Binding="{Binding Path=Length}" x:Name="LengthView"/>
+                            <DataGridTextColumn Header="Ширина"
+                                    Binding="{Binding Path=Width}" x:Name="WidthView"/>
+                            <DataGridTextColumn Header="Высота"
+                                    Binding="{Binding Path=Height}" x:Name="HeightView"/>
+                            <DataGridTextColumn Header="Тип упаковки"
+                                    Binding="{Binding Path=PackageType}" x:Name="PackageTypeView"/>
+                            <DataGridTextColumn Header="Стоимость доставки"
+                                    Binding="{Binding Path=DeliveryCost}" x:Name="DeliveryCostView"/>
+                            <DataGridTextColumn Header="Категория"
+                                    Binding="{Binding Path=CargoCategoryEntity.Name}" x:Name="CargoCategoryView"/>
+                            <DataGridTextColumn Header="Статус"
+                                    Binding="{Binding Path=Status}" x:Name="StatusPackageView"/>
+                            <DataGridTextColumn Header="Машина"
+                                    Binding="{Binding Path=CarID}" x:Name="CarIDPackageView"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Left">
                 <TabItem.Header>
@@ -424,7 +504,62 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Пункты выдачи</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                ew9ur9863478r6786r7863
+                <Grid HorizontalAlignment="Left" Background="White">
+                    <StackPanel>
+
+                    </StackPanel>
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="PointReceptionDataGridView"   AutoGenerateColumns="False"
+                  FontSize="16">
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="PointReceptionDataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!--<DataGrid.ContextMenu>
+                -->
+                        <!--<ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>-->
+                        <!--
+            </DataGrid.ContextMenu>-->
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
+                                            </Button>
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
+
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn  Header="ID Места базирования"
+                                    Binding="{Binding Path=PointID}" x:Name = "PointIDView"/>
+                            <DataGridTextColumn Header="Адрес"
+                                    Binding="{Binding Path=Address}" x:Name = "AddressPointView"/>
+                            <DataGridTextColumn Header="Директор"
+                                    Binding="{Binding Path=Director}" x:Name = "DirectorPointView"/>
+                            <DataGridTextColumn Header="Склад"
+                                    Binding="{Binding Path=WarehouseID}" x:Name = "WarehouseID"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Left">
                 <TabItem.Header>
@@ -452,7 +587,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Администрирование</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                ew9ur9863478r6786r7863
+                ну емае
             </TabItem>
         </TabControl>
 

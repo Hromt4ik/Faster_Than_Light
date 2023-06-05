@@ -28,7 +28,7 @@ namespace Faster_than_Light.classes
         public int Height { get; set; }
         public string PackageType { get; set; }
         public decimal DeliveryCost { get; set; }
-        [ForeignKey("CargoСategoryEntity")]  public int CargoСategory { get; set; }
+        [ForeignKey("CargoCategoryEntity")]  public int CargoCategory { get; set; }
         public string Status { get; set; }
         [ForeignKey("CarEntity")] public int CarID { get; set; }
 
@@ -36,7 +36,7 @@ namespace Faster_than_Light.classes
         public PointReception SendingAddressEntity { get; set; }
         public PointReception DeliveryAddressEntity { get; set; }
         public Employee EmployeeEntity { get; set; }
-        public CargoСategory CargoСategoryEntity { get; set; }
+        public CargoCategory CargoCategoryEntity { get; set; }
         public Car CarEntity { get; set; }
 
 

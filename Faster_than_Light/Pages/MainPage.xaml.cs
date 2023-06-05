@@ -1,4 +1,5 @@
-﻿using Faster_than_Light.Db_API;
+﻿using Faster_than_Light.classes;
+using Faster_than_Light.Db_API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,8 @@ namespace Faster_than_Light.Pages
             CargoСategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
             CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
             LocationBaseDataGridView.ItemsSource = DatabaseControl.GetLocationBaseForView();
+            PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
+            PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
         }
 
         private void DriverIdentification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -57,6 +60,15 @@ namespace Faster_than_Light.Pages
 
         }
 
+        private void PackageDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void PointReceptionDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
 
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
@@ -67,5 +79,7 @@ namespace Faster_than_Light.Pages
         {
 
         }
+
+
     }
 }

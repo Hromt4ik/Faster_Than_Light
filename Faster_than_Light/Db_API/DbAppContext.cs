@@ -11,7 +11,7 @@ namespace Faster_than_Light.Db_API
     public class DbAppContext : DbContext
     {
         public DbSet<Car> Car { get; set; }
-        public DbSet<CargoСategory> CargoСategory { get; set; }
+        public DbSet<CargoCategory> CargoCategory { get; set; }
         public DbSet<Client> Client { get; set; }
         public DbSet<DriverIdentification> DriverIdentification { get; set; }
         public DbSet<Employee> Employee { get; set; }
@@ -51,7 +51,7 @@ namespace Faster_than_Light.Db_API
             modelBuilder.Entity<Package>().HasOne(t => t.SendingAddressEntity).WithMany(t => t.PackageSendingAddress);
             modelBuilder.Entity<Package>().HasOne(t => t.DeliveryAddressEntity).WithMany(t => t.PackageDeliveryAddress);
             modelBuilder.Entity<Package>().HasOne(t => t.EmployeeEntity).WithMany(t => t.PackageEntites);
-            modelBuilder.Entity<Package>().HasOne(t => t.CargoСategoryEntity).WithMany(t => t.PackageEntites);
+            modelBuilder.Entity<Package>().HasOne(t => t.CargoCategoryEntity).WithMany(t => t.PackageEntites);
             modelBuilder.Entity<Package>().HasOne(t => t.CarEntity).WithMany(t => t.PackageEntites);
 
             //PointReception - 2 

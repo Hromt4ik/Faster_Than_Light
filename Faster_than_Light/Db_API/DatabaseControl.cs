@@ -72,11 +72,11 @@ namespace Faster_than_Light.Db_API
                 return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).ToList();
             }
         }
-        public static List<CargoСategory> GetCargoСategoryForView()
+        public static List<CargoCategory> GetCargoСategoryForView()
         {
             using (DbAppContext ctx = new DbAppContext())
             {
-                return ctx.CargoСategory.ToList();
+                return ctx.CargoCategory.ToList();
             }
         }
         public static List<Client> GetClientForView()
@@ -112,7 +112,7 @@ namespace Faster_than_Light.Db_API
             using (DbAppContext ctx = new DbAppContext())
             {
                 return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
-                    .Include(t => t.EmployeeEntity).Include(t => t.CargoСategoryEntity).Include(t => t.CarEntity).ToList();
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).ToList();
             }
         }
         public static List<PointReception> GetPointReceptionForView()

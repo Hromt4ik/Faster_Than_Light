@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Faster_than_Light.classes
 {
-    public class CargoСategory
+    public class CargoCategory
     {
         [Key] public int CategoryID { get; set; }
         public string Name { get; set; }
