@@ -70,6 +70,16 @@ namespace Faster_than_Light.Pages
 
         }
 
+        private void WarehouseDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
         private void editButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -80,6 +90,6 @@ namespace Faster_than_Light.Pages
 
         }
 
-
+      
     }
 }

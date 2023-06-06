@@ -547,14 +547,14 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Места базирования"
+                            <DataGridTextColumn  Header="ID Пункта Выдачи"
                                     Binding="{Binding Path=PointID}" x:Name = "PointIDView"/>
                             <DataGridTextColumn Header="Адрес"
                                     Binding="{Binding Path=Address}" x:Name = "AddressPointView"/>
                             <DataGridTextColumn Header="Директор"
                                     Binding="{Binding Path=Director}" x:Name = "DirectorPointView"/>
                             <DataGridTextColumn Header="Склад"
-                                    Binding="{Binding Path=WarehouseID}" x:Name = "WarehouseID"/>
+                                    Binding="{Binding Path=WarehouseID}" x:Name = "WarehouseIDPointView"/>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -568,7 +568,62 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Склады</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                ew9ur9863478r6786r7863
+                <Grid HorizontalAlignment="Left" Background="White">
+                    <StackPanel>
+
+                    </StackPanel>
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="WarehouseDataGridView"   AutoGenerateColumns="False"
+                  FontSize="16">
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="WarehouseDataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!--<DataGrid.ContextMenu>
+                -->
+                        <!--<ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>-->
+                        <!--
+            </DataGrid.ContextMenu>-->
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
+                                            </Button>
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
+
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn  Header="ID Склада"
+                                    Binding="{Binding Path=WarehouseID}" x:Name = "WarehouseIDView"/>
+                            <DataGridTextColumn Header="Адрес"
+                                    Binding="{Binding Path=Address}" x:Name = "AddressWarehouseView"/>
+                            <DataGridTextColumn Header="Регион"
+                                    Binding="{Binding Path=Region}" x:Name = "RegionWarehouseView"/>
+                            <DataGridTextColumn Header="Директор"
+                                    Binding="{Binding Path=Director}" x:Name = "DirectorWarehouseView"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Left">
                 <TabItem.Header>
