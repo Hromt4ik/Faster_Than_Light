@@ -19,6 +19,8 @@
     <None Remove="Image\CargoСategory_white.png" />
     <None Remove="Image\Client.png" />
     <None Remove="Image\Client_white.png" />
+    <None Remove="Image\door.png" />
+    <None Remove="Image\door_white.png" />
     <None Remove="Image\DriverIdentification.png" />
     <None Remove="Image\DriverIdentification_white.png" />
     <None Remove="Image\edit.png" />
@@ -49,6 +51,8 @@
     <Resource Include="Image\CargoСategory_white.png" />
     <Resource Include="Image\Client.png" />
     <Resource Include="Image\Client_white.png" />
+    <Resource Include="Image\door.png" />
+    <Resource Include="Image\door_white.png" />
     <Resource Include="Image\DriverIdentification.png" />
     <Resource Include="Image\DriverIdentification_white.png" />
     <Resource Include="Image\edit.png" />

@@ -11,12 +11,22 @@ namespace Faster_than_Light
     {
         public static void MainPageOpen()
         {
-            
             FrameLib.FrameMainPage.Navigate(new MainPage());
         }
 
         public static void MainPageClose() {
             FrameLib.FrameMainPage.Navigate(null);
         }
+
+        public static void AuthorizationPageOpen()
+        {
+            FrameLib.FrameAuthorization.Navigate(new AuthorizationPage());
+        }
+
+        public static void AuthorizationPageClose()
+        {
+            FrameLib.FrameAuthorization.Navigate(null);
+        }
+
     }
 }

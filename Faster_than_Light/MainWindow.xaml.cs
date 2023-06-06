@@ -28,22 +28,15 @@ namespace Faster_than_Light
 
             FrameLib.FrameAuthorization = FrameAuthorization;
             FrameLib.FrameMainPage = FrameMainPage;
-            
 
-            NavigateToPage1();
+
+            NavigateMethods.AuthorizationPageOpen();
             
         }
 
         
 
-        public void NavigateToPage1()
-        {
-            FrameLib.FrameAuthorization.Navigate(new AuthorizationPage());
-        }
 
-        private void FrameAuthorization_Navigated(object sender, NavigationEventArgs e)
-        {
 
-        }
     }
 }

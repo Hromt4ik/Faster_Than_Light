@@ -34,6 +34,8 @@ namespace Faster_than_Light.Pages
             LocationBaseDataGridView.ItemsSource = DatabaseControl.GetLocationBaseForView();
             PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
             PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
+            WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
+            EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
         }
 
         private void DriverIdentification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -75,12 +77,16 @@ namespace Faster_than_Light.Pages
 
         }
 
+        private void EmployeeDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
 
 
 
 
 
-        private void editButton_Click(object sender, RoutedEventArgs e)
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -90,6 +96,11 @@ namespace Faster_than_Light.Pages
 
         }
 
-      
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateMethods.MainPageClose();
+            sessionData.LogOutAdmin();
+            NavigateMethods.AuthorizationPageOpen();
+        }
     }
 }

@@ -25,8 +25,7 @@ namespace Faster_than_Light.classes
         public string Email { get; set; }
         public string Post { get; set; }
         
-        //не надо добавлять
-        //public int GuideReferencesID { get; set; }
+
 
         public List<DriverIdentification> DriverIdentificationEntites { get; set; }
         public List<LocationBase> LocationBaseEntites { get; set; }

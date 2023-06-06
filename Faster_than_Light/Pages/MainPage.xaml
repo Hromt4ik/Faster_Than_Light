@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Faster_than_Light.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="800" MinHeight="550" MinWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800" MinHeight="600" MinWidth="800"
       Title="MainPage">
 
     <Grid Name="mainGrid2" >
@@ -75,7 +75,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
@@ -154,7 +154,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
@@ -223,7 +223,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
@@ -253,13 +253,8 @@
                                     Binding="{Binding Path=PhoneNumber}" x:Name="PhoneNumberClientView"/>
                             <DataGridTextColumn Header="Email"
                                     Binding="{Binding Path=Email}" x:Name="EmailClientView"/>
-
-
-
                         </DataGrid.Columns>
-
                     </DataGrid>
-
                 </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Left" >
@@ -299,7 +294,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
@@ -377,7 +372,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
@@ -443,7 +438,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
@@ -474,7 +469,7 @@
                             <DataGridTextColumn Header="Дата выдачи"
                                     Binding="{Binding Path=DateIssue}" x:Name="DateIssueView"/>
                             <DataGridTextColumn Header="ID Сотрудника"
-                                    Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDView"/>
+                                    Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDPackageView"/>
                             <DataGridTextColumn Header="Длина"
                                     Binding="{Binding Path=Length}" x:Name="LengthView"/>
                             <DataGridTextColumn Header="Ширина"
@@ -534,7 +529,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
@@ -591,21 +586,19 @@
             </DataGrid.ContextMenu>-->
 
                         <DataGrid.Columns>
-
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="editButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
                                         BorderThickness="0" Name="removeButton" Click="removeButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
-
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
@@ -620,9 +613,7 @@
                             <DataGridTextColumn Header="Директор"
                                     Binding="{Binding Path=Director}" x:Name = "DirectorWarehouseView"/>
                         </DataGrid.Columns>
-
                     </DataGrid>
-
                 </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Left">
@@ -632,7 +623,72 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Сотрудники</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                ew9ur9863478r6786r7863
+                <Grid HorizontalAlignment="Left" Background="White">
+                    <StackPanel>
+
+                    </StackPanel>
+                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="EmployeeDataGridView"   AutoGenerateColumns="False"
+                  FontSize="16">
+
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="EmployeeDataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <!--<DataGrid.ContextMenu>
+                -->
+                        <!--<ContextMenu>
+                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
+                </ContextMenu>-->
+                        <!--
+            </DataGrid.ContextMenu>-->
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
+                                            </Button>
+                                            <Button Height="25" Width="25"
+                                        Background="Transparent"
+                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
+
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn  Header="ID Сотрудника"
+                                    Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDView"/>
+                            <DataGridTextColumn Header="Имя"
+                                    Binding="{Binding Path=Name}" x:Name="NameEmployeeView"/>
+                            <DataGridTextColumn Header="Фамилия"
+                                    Binding="{Binding Path=Surname}" x:Name="SurnameEmployeeView"/>
+                            <DataGridTextColumn Header="Отчество"
+                                    Binding="{Binding Path=Patronymic}" x:Name="PatronymicEmployeeView"/>
+                            <DataGridTextColumn Header="Дата Рождения"
+                                    Binding="{Binding Path=Birthdate}" x:Name="BirthdateEmployeeiew"/>
+                            <DataGridTextColumn Header="Серия и номер паспорта"
+                                    Binding="{Binding Path=SeriaNumberPassport}" x:Name="SeriaNumberPassportEmployeeView"/>
+                            <DataGridTextColumn Header="Номер телефона"
+                                    Binding="{Binding Path=PhoneNumber}" x:Name="PhoneNumberEmployeeView"/>
+                            <DataGridTextColumn Header="Адрес Проживания"
+                                    Binding="{Binding Path=ResidentialAddress}" x:Name="ResidentialAddressEmployeeView"/>
+                            <DataGridTextColumn Header="Email"
+                                    Binding="{Binding Path=Email}" x:Name="EmailEmployeeView"/>
+                            <DataGridTextColumn Header="Должность"
+                                    Binding="{Binding Path=Post}" x:Name="PostEmployeeView"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </TabItem>
 
             <TabItem HorizontalAlignment="Left">
@@ -645,7 +701,15 @@
                 ну емае
             </TabItem>
         </TabControl>
-
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button Margin="10 0 0 10" Background="Transparent" BorderBrush="Transparent" Name="Exit" Click="Exit_Click">
+                <StackPanel Orientation="Horizontal">
+                   
+                    <Image MaxHeight="50" MinHeight="15" RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/door_white.png" />
+                    <TextBlock HorizontalAlignment="Center" Margin="10" Foreground="white" FontSize="18"> Выход</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
 
     </Grid>
 </Page>
