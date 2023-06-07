@@ -65,6 +65,9 @@ namespace Faster_than_Light.Db_API
 
     public static class DatabaseControl
     {
+
+
+        //Get for View All tables--------------------------------------------------
         public static List<Car> GetCarForView()
         {
             using (DbAppContext ctx = new DbAppContext())
@@ -129,8 +132,27 @@ namespace Faster_than_Light.Db_API
                 return ctx.Warehouse.Include(t => t.EmployeeEntity).ToList();
             }
         }
+        //-------------------------------------------------------------- end
 
 
+
+        //Add all tables -----------------------------------------------------------------
+        public static void AddCar(Car Car)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Car.Add(Car);
+                ctx.SaveChanges();
+            }
+        }
+        public static void AddCargoCategory(CargoCategory CargoCategory)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.CargoCategory.Add(CargoCategory);
+                ctx.SaveChanges();
+            }
+        }
         public static void AddClient(Client client)
         {
             using (DbAppContext ctx = new DbAppContext())
@@ -139,7 +161,134 @@ namespace Faster_than_Light.Db_API
                 ctx.SaveChanges();
             }
         }
+        public static void AddDriverIdentification(DriverIdentification DriverIdentification)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.DriverIdentification.Add(DriverIdentification);
+                ctx.SaveChanges();
+            }
+        }
+        public static void AddEmployee(Employee Employee)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Employee.Add(Employee);
+                ctx.SaveChanges();
+            }
+        }
+        public static void AddLocationBase(LocationBase LocationBase)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.LocationBase.Add(LocationBase);
+                ctx.SaveChanges();
+            }
+        }
+        public static void AddPackage(Package Package)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Package.Add(Package);
+                ctx.SaveChanges();
+            }
+        }
+        public static void AddPointReception(PointReception PointReception)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.PointReception.Add(PointReception);
+                ctx.SaveChanges();
+            }
+        }
+        public static void AddWarehouse(Warehouse Warehouse)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Warehouse.Add(Warehouse);
+                ctx.SaveChanges();
+            }
+        }
 
 
+        //--------------------------------------------------------------- end
+
+
+        //Delete all tables ---------------------------------------------------
+
+        public static void DelCar(Car Car)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Car.Remove(Car);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelCargoCategory(CargoCategory CargoCategory)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.CargoCategory.Remove(CargoCategory);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelClient(Client client)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Client.Remove(client);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelDriverIdentification(DriverIdentification DriverIdentification)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.DriverIdentification.Remove(DriverIdentification);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelEmployee(Employee Employee)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Employee.Remove(Employee);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelLocationBase(LocationBase LocationBase)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.LocationBase.Remove(LocationBase);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelPackage(Package Package)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Package.Remove(Package);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelPointReception(PointReception PointReception)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.PointReception.Remove(PointReception);
+                ctx.SaveChanges();
+            }
+        }
+        public static void DelWarehouse(Warehouse Warehouse)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Warehouse.Remove(Warehouse);
+                ctx.SaveChanges();
+            }
+        }
+
+        //--------------------------------------------------------------- end
     }
 }
