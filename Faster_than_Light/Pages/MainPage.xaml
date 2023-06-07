@@ -88,23 +88,23 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID ВУ"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID ВУ"
                                     Binding="{Binding Path=GuideReferencesID}" x:Name="GuideReferencesIDView"/>
-                            <DataGridTextColumn Header="Номер водительских прав"
+                            <DataGridTextColumn IsReadOnly="True" Header="Номер водительских прав"
                                     Binding="{Binding Path=DriverLicense}" x:Name="DriverLicenseView"/>
-                            <DataGridCheckBoxColumn Header="B"
+                            <DataGridCheckBoxColumn IsReadOnly="True" Header="B"
                                     Binding="{Binding Path=B}" x:Name="BView"/>
-                            <DataGridCheckBoxColumn Header="BE"
+                            <DataGridCheckBoxColumn IsReadOnly="True" Header="BE"
                                     Binding="{Binding Path=BE}" x:Name="BEView"/>
-                            <DataGridCheckBoxColumn Header="C"
+                            <DataGridCheckBoxColumn IsReadOnly="True" Header="C"
                                     Binding="{Binding Path=C}" x:Name="CView"/>
-                            <DataGridCheckBoxColumn Header="CE"
+                            <DataGridCheckBoxColumn IsReadOnly="True" Header="CE"
                                     Binding="{Binding Path=CE}" x:Name="CEView"/>
-                            <DataGridTextColumn Header="Дата Получения"
+                            <DataGridTextColumn IsReadOnly="True" Header="Дата Получения"
                                     Binding="{Binding Path=DateReceipt}" x:Name="DateReceiptView"/>
-                            <DataGridTextColumn Header="Дата Окончания"
+                            <DataGridTextColumn IsReadOnly="True" Header="Дата Окончания"
                                     Binding="{Binding Path=TerminationDate}" x:Name="TerminationDateView"/>
-                            <DataGridTextColumn Header="Сотрудник"
+                            <DataGridTextColumn IsReadOnly="True" Header="Сотрудник"
                                     Binding="{Binding Path=EmployeeID}" x:Name="EmploeeIDView"/>
 
 
@@ -164,13 +164,13 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Категории"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID Категории"
                                     Binding="{Binding Path=CategoryID}" x:Name="CategoryIDView"/>
-                            <DataGridTextColumn Header="Наименование"
+                            <DataGridTextColumn IsReadOnly="True" Header="Наименование"
                                     Binding="{Binding Path=Name}" x:Name="NameView"/>
-                            <DataGridTextColumn Header="Коэфициент"
+                            <DataGridTextColumn IsReadOnly="True" Header="Коэфициент"
                                     Binding="{Binding Path=TransportationCoefficient}" x:Name="TransportationCoefficientView"/>
-                            <DataGridTextColumn Header="Комментарий"
+                            <DataGridTextColumn IsReadOnly="True" Header="Комментарий"
                                     Binding="{Binding Path=Comments}" x:Name="CommentsView"/>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -187,9 +187,9 @@
                     <StackPanel Margin="10">
                         <TextBlock FontSize="24">Клиенты</TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <Button Margin="0 10 10 10" Background="#046380" FontSize="" Padding="5" Foreground="White">Добавить</Button>
-                            <Button Margin="10" Background="White" Padding="5">Изменить</Button>
-                            <Button Margin="10" Background="White" Padding="5">Удалить</Button>
+                            <Button Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="ClientDataGridView"   AutoGenerateColumns="False"
@@ -209,9 +209,7 @@
                 </ContextMenu>-->
                         <!--
             </DataGrid.ContextMenu>-->
-
                         <DataGrid.Columns>
-
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -230,22 +228,21 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Клиента"
+                            <DataGridTextColumn IsReadOnly="True" Header="ID Клиента"
                                     Binding="{Binding Path=ClientID}" x:Name="ClientIDView"/>
-                            <DataGridTextColumn Header="Имя"
+                            <DataGridTextColumn IsReadOnly="True" Header="Имя"
                                     Binding="{Binding Path=Name}" x:Name="NameClientView"/>
-
-                            <DataGridTextColumn Header="Фамилия"
+                            <DataGridTextColumn IsReadOnly="True" Header="Фамилия"
                                     Binding="{Binding Path=Surname}" x:Name="SurnameClientView"/>
-                            <DataGridTextColumn Header="Отчество"
+                            <DataGridTextColumn IsReadOnly="True" Header="Отчество"
                                     Binding="{Binding Path=Patronymic}" x:Name="PatronymicClientView"/>
-                            <DataGridTextColumn Header="Дата Рождения"
+                            <DataGridTextColumn IsReadOnly="True" Header="Дата Рождения"
                                     Binding="{Binding Path=Birthdate}" x:Name="BirthdateClientiew"/>
-                            <DataGridTextColumn Header="Серия и номер паспорта"
+                            <DataGridTextColumn IsReadOnly="True" Header="Серия и номер паспорта"
                                     Binding="{Binding Path=SeriaNumberPassport}" x:Name="SeriaNumberPassportClientView"/>
-                            <DataGridTextColumn Header="Номер телефона"
+                            <DataGridTextColumn IsReadOnly="True" Header="Номер телефона"
                                     Binding="{Binding Path=PhoneNumber}" x:Name="PhoneNumberClientView"/>
-                            <DataGridTextColumn Header="Email"
+                            <DataGridTextColumn IsReadOnly="True" Header="Email"
                                     Binding="{Binding Path=Email}" x:Name="EmailClientView"/>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -301,25 +298,25 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Машины"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID Машины"
                                     Binding="{Binding Path=CarID}" x:Name="CarIDView"/>
-                            <DataGridTextColumn Header="VIN"
+                            <DataGridTextColumn IsReadOnly="True" Header="VIN"
                                     Binding="{Binding Path=VIN}" x:Name="VINView"/>
-                            <DataGridTextColumn Header="Гос. Номер"
+                            <DataGridTextColumn IsReadOnly="True" Header="Гос. Номер"
                                     Binding="{Binding Path=StateNumber}" x:Name="StateNumberView"/>
-                            <DataGridTextColumn Header="Марка"
+                            <DataGridTextColumn IsReadOnly="True" Header="Марка"
                                     Binding="{Binding Path=Stamp}" x:Name="StampView"/>
-                            <DataGridTextColumn Header="Модель"
+                            <DataGridTextColumn IsReadOnly="True" Header="Модель"
                                     Binding="{Binding Path=Model}" x:Name="ModelView"/>
-                            <DataGridTextColumn Header="Пробег"
+                            <DataGridTextColumn IsReadOnly="True" Header="Пробег"
                                     Binding="{Binding Path=Mileage}" x:Name="MileageView"/>
-                            <DataGridTextColumn Header="Следующее ТО"
+                            <DataGridTextColumn IsReadOnly="True" Header="Следующее ТО"
                                     Binding="{Binding Path=NextMaintenance}" x:Name="NextMaintenanceView"/>
-                            <DataGridTextColumn Header="Статус"
+                            <DataGridTextColumn IsReadOnly="True" Header="Статус"
                                     Binding="{Binding Path=Status}" x:Name="StatusView"/>
-                            <DataGridTextColumn Header="Место Базирования"
+                            <DataGridTextColumn IsReadOnly="True" Header="Место Базирования"
                                     Binding="{Binding Path=LocationBase}" x:Name="LocationBaseView"/>
-                            <DataGridTextColumn Header="Назначеный Водитель"
+                            <DataGridTextColumn IsReadOnly="True" Header="Назначеный Водитель"
                                     Binding="{Binding Path=DriverID}" x:Name="DriverIDView"/>
 
 
@@ -373,21 +370,20 @@
                                         Background="Transparent"
                                         BorderThickness="0" Name="removeButton" Click="removeButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
-
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Места базирования"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID Места базирования"
                                     Binding="{Binding Path=LocationBaseID}" x:Name="LocationBaseIDView"/>
-                            <DataGridTextColumn Header="Адрес"
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес"
                                     Binding="{Binding Path=Address}" x:Name="AddressLocationView"/>
-                            <DataGridTextColumn Header="Количсетво мест"
+                            <DataGridTextColumn IsReadOnly="True" Header="Количсетво мест"
                                     Binding="{Binding Path=NumberSeats}" x:Name="NumberSeatsView"/>
-                            <DataGridTextColumn Header="Регион"
+                            <DataGridTextColumn IsReadOnly="True" Header="Регион"
                                     Binding="{Binding Path=Region}" x:Name="RegionView"/>
-                            <DataGridTextColumn Header="Директор"
+                            <DataGridTextColumn IsReadOnly="True" Header="Директор"
                                     Binding="{Binding Path=Director}" x:Name="DirectorView"/>
                         </DataGrid.Columns>
 
@@ -444,41 +440,41 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Посылки"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID Посылки"
                                     Binding="{Binding Path=PackageID}" x:Name="PackageIDiew"/>
-                            <DataGridTextColumn Header="Клиент"
+                            <DataGridTextColumn IsReadOnly="True" Header="Клиент"
                                     Binding="{Binding Path=ClientID}" x:Name="ClientID"/>
-                            <DataGridTextColumn Header="Комментарий"
+                            <DataGridTextColumn IsReadOnly="True" Header="Комментарий"
                                     Binding="{Binding Path=Comments}" x:Name="Comments"/>
-                            <DataGridTextColumn Header="Адрес отправки"
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки"
                                     Binding="{Binding Path=SendingAddress}" x:Name="SendingAddressView"/>
-                            <DataGridTextColumn Header="Адрес доставки"
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес доставки"
                                     Binding="{Binding Path=DeliveryAddress}" x:Name="DeliveryAddressView"/>
-                            <DataGridTextColumn Header="Вес"
+                            <DataGridTextColumn IsReadOnly="True" Header="Вес"
                                     Binding="{Binding Path=Weight}" x:Name="WeightView"/>
-                            <DataGridTextColumn Header="Дата Принятия"
+                            <DataGridTextColumn IsReadOnly="True" Header="Дата Принятия"
                                     Binding="{Binding Path=DateAcceptance}" x:Name="DateAcceptanceView"/>
-                            <DataGridTextColumn Header="Дата доставки"
+                            <DataGridTextColumn IsReadOnly="True" Header="Дата доставки"
                                     Binding="{Binding Path=DateDeliveryToPoint}" x:Name="DateDeliveryToPointView"/>
-                            <DataGridTextColumn Header="Дата выдачи"
+                            <DataGridTextColumn IsReadOnly="True" Header="Дата выдачи"
                                     Binding="{Binding Path=DateIssue}" x:Name="DateIssueView"/>
-                            <DataGridTextColumn Header="ID Сотрудника"
+                            <DataGridTextColumn IsReadOnly="True" Header="ID Сотрудника"
                                     Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDPackageView"/>
-                            <DataGridTextColumn Header="Длина"
+                            <DataGridTextColumn IsReadOnly="True" Header="Длина"
                                     Binding="{Binding Path=Length}" x:Name="LengthView"/>
-                            <DataGridTextColumn Header="Ширина"
+                            <DataGridTextColumn IsReadOnly="True" Header="Ширина"
                                     Binding="{Binding Path=Width}" x:Name="WidthView"/>
-                            <DataGridTextColumn Header="Высота"
+                            <DataGridTextColumn IsReadOnly="True" Header="Высота"
                                     Binding="{Binding Path=Height}" x:Name="HeightView"/>
-                            <DataGridTextColumn Header="Тип упаковки"
+                            <DataGridTextColumn IsReadOnly="True" Header="Тип упаковки"
                                     Binding="{Binding Path=PackageType}" x:Name="PackageTypeView"/>
-                            <DataGridTextColumn Header="Стоимость доставки"
+                            <DataGridTextColumn IsReadOnly="True" Header="Стоимость доставки"
                                     Binding="{Binding Path=DeliveryCost}" x:Name="DeliveryCostView"/>
-                            <DataGridTextColumn Header="Категория"
+                            <DataGridTextColumn IsReadOnly="True" Header="Категория"
                                     Binding="{Binding Path=CargoCategoryEntity.Name}" x:Name="CargoCategoryView"/>
-                            <DataGridTextColumn Header="Статус"
+                            <DataGridTextColumn IsReadOnly="True" Header="Статус"
                                     Binding="{Binding Path=Status}" x:Name="StatusPackageView"/>
-                            <DataGridTextColumn Header="Машина"
+                            <DataGridTextColumn IsReadOnly="True" Header="Машина"
                                     Binding="{Binding Path=CarID}" x:Name="CarIDPackageView"/>
                         </DataGrid.Columns>
 
@@ -536,14 +532,14 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Пункта Выдачи"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID Пункта Выдачи"
                                     Binding="{Binding Path=PointID}" x:Name = "PointIDView"/>
-                            <DataGridTextColumn Header="Адрес"
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес"
                                     Binding="{Binding Path=Address}" x:Name = "AddressPointView"/>
-                            <DataGridTextColumn Header="Директор"
+                            <DataGridTextColumn IsReadOnly="True" Header="Директор"
                                     Binding="{Binding Path=Director}" x:Name = "DirectorPointView"/>
-                            <DataGridTextColumn Header="Склад"
-                                    Binding="{Binding Path=WarehouseID}" x:Name = "WarehouseIDPointView"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Склад"
+                                    Binding="{Binding Path=WarehouseEntity.Region}" x:Name = "WarehouseIDPointView"/>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -598,13 +594,13 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Склада"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID Склада"
                                     Binding="{Binding Path=WarehouseID}" x:Name = "WarehouseIDView"/>
-                            <DataGridTextColumn Header="Адрес"
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес"
                                     Binding="{Binding Path=Address}" x:Name = "AddressWarehouseView"/>
-                            <DataGridTextColumn Header="Регион"
+                            <DataGridTextColumn IsReadOnly="True" Header="Регион"
                                     Binding="{Binding Path=Region}" x:Name = "RegionWarehouseView"/>
-                            <DataGridTextColumn Header="Директор"
+                            <DataGridTextColumn IsReadOnly="True" Header="Директор"
                                     Binding="{Binding Path=Director}" x:Name = "DirectorWarehouseView"/>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -660,25 +656,25 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  Header="ID Сотрудника"
+                            <DataGridTextColumn IsReadOnly="True"  Header="ID Сотрудника"
                                     Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDView"/>
-                            <DataGridTextColumn Header="Имя"
+                            <DataGridTextColumn IsReadOnly="True" Header="Имя"
                                     Binding="{Binding Path=Name}" x:Name="NameEmployeeView"/>
-                            <DataGridTextColumn Header="Фамилия"
+                            <DataGridTextColumn IsReadOnly="True" Header="Фамилия"
                                     Binding="{Binding Path=Surname}" x:Name="SurnameEmployeeView"/>
-                            <DataGridTextColumn Header="Отчество"
+                            <DataGridTextColumn IsReadOnly="True" Header="Отчество"
                                     Binding="{Binding Path=Patronymic}" x:Name="PatronymicEmployeeView"/>
-                            <DataGridTextColumn Header="Дата Рождения"
+                            <DataGridTextColumn IsReadOnly="True" Header="Дата Рождения"
                                     Binding="{Binding Path=Birthdate}" x:Name="BirthdateEmployeeiew"/>
-                            <DataGridTextColumn Header="Серия и номер паспорта"
+                            <DataGridTextColumn IsReadOnly="True" Header="Серия и номер паспорта"
                                     Binding="{Binding Path=SeriaNumberPassport}" x:Name="SeriaNumberPassportEmployeeView"/>
-                            <DataGridTextColumn Header="Номер телефона"
+                            <DataGridTextColumn IsReadOnly="True" Header="Номер телефона"
                                     Binding="{Binding Path=PhoneNumber}" x:Name="PhoneNumberEmployeeView"/>
-                            <DataGridTextColumn Header="Адрес Проживания"
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес Проживания"
                                     Binding="{Binding Path=ResidentialAddress}" x:Name="ResidentialAddressEmployeeView"/>
-                            <DataGridTextColumn Header="Email"
+                            <DataGridTextColumn IsReadOnly="True" Header="Email"
                                     Binding="{Binding Path=Email}" x:Name="EmailEmployeeView"/>
-                            <DataGridTextColumn Header="Должность"
+                            <DataGridTextColumn IsReadOnly="True" Header="Должность"
                                     Binding="{Binding Path=Post}" x:Name="PostEmployeeView"/>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -698,12 +694,10 @@
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <Button Margin="10 0 0 10" Background="Transparent" BorderBrush="Transparent" Name="Exit" Click="Exit_Click">
                 <StackPanel Orientation="Horizontal">
-                   
                     <Image MaxHeight="50" MinHeight="15" RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/door_white.png" />
                     <TextBlock HorizontalAlignment="Center" Margin="10" Foreground="white" FontSize="18">Выход</TextBlock>
                 </StackPanel>
             </Button>
         </StackPanel>
-
     </Grid>
 </Page>
