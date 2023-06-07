@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace Faster_than_Light
 {
-    class Check
+    public class Check
     {
+        public bool Empty(string message) {
+        
+            if (string.IsNullOrEmpty(message))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool NoEmpty(string message)
+        {
+
+            if (string.IsNullOrEmpty(message))
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
+
     }
 }
