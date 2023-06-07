@@ -5,24 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.AddWindows"
         mc:Ignorable="d"
-        Title="AddClient" Height="450" Width="800">
+        Title="AddClient" MinHeight="250" MaxHeight="250" MinWidth="480" MaxWidth="480">
     <Grid>
-        <StackPanel Name="Main">
-            <StackPanel Name="Fio" Orientation="Horizontal">
-                <StackPanel>
-                    <TextBlock>Имя</TextBlock>
-                </StackPanel>
-                <StackPanel>
-
-                    <TextBlock>Фамилия</TextBlock>
-                </StackPanel>
-                <StackPanel>
-
-                    <TextBlock>Отчество</TextBlock>
-                </StackPanel>
-
+        <StackPanel>
+            <StackPanel Margin=" 10 10 0 0">
+                <TextBlock FontSize="24">Клиент (Создание)</TextBlock>
             </StackPanel>
-            
+            <StackPanel Name="Main">
+                <StackPanel Name="Fio" Orientation="Horizontal">
+                    <StackPanel x:Name="Name" Margin="10">
+                        <TextBlock>Имя</TextBlock>
+                        <TextBox Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="Surname" Margin="10">
+                        <TextBlock>Фамилия</TextBlock>
+                        <TextBox Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
+                    </StackPanel>
+                    <StackPanel Name="Patronomic" Margin="10">
+                        <TextBlock>Отчество</TextBlock>
+                        <TextBox Width="130" BorderBrush="#046380" MaxLength="50"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" x:Name="OtherData">
+                    <StackPanel x:Name="Birthdate" Margin="10">
+                        <TextBlock>Дата Рождения</TextBlock>
+                        <DatePicker Width="100" BorderBrush="#046380"></DatePicker>
+                    </StackPanel>
+                    <StackPanel x:Name="SeriaNumberPassport" Margin="10">
+                        <TextBlock>Серия и Номер Паспорта</TextBlock>
+                        <TextBox Width="150" BorderBrush="#046380" MaxLength="10" ></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="PhoneNumber" Margin="10">
+                        <TextBlock>Номер Телефона</TextBlock>
+                        <TextBox Width="150" BorderBrush="#046380" MaxLength="11" ></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" x:Name="EmailStack">
+                    <StackPanel x:Name="Email" Margin="10 0 0 0">
+                        <TextBlock>Email</TextBlock>
+                        <TextBox Width="200" BorderBrush="#046380" MaxLength="100"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="20 0 0 0" Orientation="Horizontal">
+                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Добавить</Button>
+                        <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

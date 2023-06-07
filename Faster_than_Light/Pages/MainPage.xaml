@@ -45,7 +45,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">ВУ</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid  Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -80,7 +80,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
 
                                             </Button>
@@ -124,7 +124,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Категории</TextBlock>
                     </StackPanel >
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -157,7 +157,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>
@@ -183,11 +183,11 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Клиенты</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel Margin="10">
                         <TextBlock FontSize="24">Клиенты</TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <Button Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                            <Button x:Name="AddClientButton" Click="AddClientButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
                             <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
                             <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
                         </StackPanel>
@@ -221,7 +221,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>
@@ -255,7 +255,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Машины</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -290,7 +290,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
 
                                             </Button>
@@ -333,7 +333,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Места базирования</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -368,7 +368,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>
@@ -398,7 +398,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Посылки</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -433,7 +433,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>
@@ -489,7 +489,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Пункты выдачи</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -524,7 +524,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
 
                                             </Button>
@@ -553,7 +553,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Склады</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -587,7 +587,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>
@@ -613,7 +613,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Сотрудники</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                <Grid HorizontalAlignment="Left" Background="White">
+                <Grid Background="White">
                     <StackPanel>
 
                     </StackPanel>
@@ -648,7 +648,7 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="removeButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
 
                                             </Button>

@@ -131,6 +131,15 @@ namespace Faster_than_Light.Db_API
         }
 
 
+        public static void AddClient(Client client)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                ctx.Client.Add(client);
+                ctx.SaveChanges();
+            }
+        }
+
 
     }
 }

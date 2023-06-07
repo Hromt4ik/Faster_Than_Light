@@ -24,9 +24,7 @@ namespace Faster_than_Light.Pages
     {
         public MainPage()
         {
-            
             InitializeComponent();
-            
             DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
             ClientDataGridView.ItemsSource = DatabaseControl.GetClientForView();
             CargoСategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
@@ -91,7 +89,7 @@ namespace Faster_than_Light.Pages
 
         }
 
-        private void removeButton_Click(object sender, RoutedEventArgs e)
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -101,6 +99,18 @@ namespace Faster_than_Light.Pages
             NavigateMethods.MainPageClose();
             sessionData.LogOutAdmin();
             NavigateMethods.AuthorizationPageOpen();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindows.AddClient win = new AddWindows.AddClient();
+            win.ShowDialog();
+
         }
     }
 }
