@@ -28,6 +28,50 @@ namespace Faster_than_Light.AddWindows
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+            if (Check.Empty(NameBox.Text))
+            {
+                MessageBox.Show("Введите имя", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(SurnameBox.Text))
+            {
+                MessageBox.Show("Введите фамилию", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(PatronomicBox.Text))
+            {
+                MessageBox.Show("Введите отчество", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(Convert.ToString(BirthdateBox.Text)))
+            {
+                MessageBox.Show("Введите дату рождения", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(SeriaNumberPassportBox.Text))
+            {
+                MessageBox.Show("Введите серию и номер паспорта", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(PhoneNumberBox.Text))
+            {
+                MessageBox.Show("Введите номер телефона", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(EmailBox.Text))
+            {
+                MessageBox.Show("Введите Email", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+
             DatabaseControl.AddClient(new classes.Client
             {
                 Name = NameBox.Text,

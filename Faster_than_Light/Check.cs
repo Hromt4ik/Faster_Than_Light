@@ -8,18 +8,8 @@ namespace Faster_than_Light
 {
     public class Check
     {
-        public bool Empty(string message) {
+        public static bool Empty(string message) {
         
-            if (string.IsNullOrEmpty(message))
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool NoEmpty(string message)
-        {
-
             if (string.IsNullOrEmpty(message))
             {
                 return true;
@@ -28,7 +18,14 @@ namespace Faster_than_Light
         }
 
 
+        //public static bool Phone(string message)
+        //{
 
+        //}
+        //public static bool Email(string message)
+        //{
+
+        //}
 
     }
 }
