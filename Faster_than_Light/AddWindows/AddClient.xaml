@@ -13,37 +13,37 @@
             </StackPanel>
             <StackPanel Name="Main">
                 <StackPanel Name="Fio" Orientation="Horizontal">
-                    <StackPanel x:Name="Name" Margin="10">
-                        <TextBlock>Имя</TextBlock>
-                        <TextBox Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
-                    </StackPanel>
-                    <StackPanel x:Name="Surname" Margin="10">
+                    <StackPanel x:Name="SurnameStack" Margin="10">
                         <TextBlock>Фамилия</TextBlock>
-                        <TextBox Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
+                        <TextBox x:Name="SurnameBox" Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
                     </StackPanel>
-                    <StackPanel Name="Patronomic" Margin="10">
+                    <StackPanel x:Name="NameStack" Margin="10">
+                        <TextBlock>Имя</TextBlock>
+                        <TextBox x:Name="NameBox"  Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
+                    </StackPanel>
+                    <StackPanel Name="PatronomicStack" Margin="10">
                         <TextBlock>Отчество</TextBlock>
-                        <TextBox Width="130" BorderBrush="#046380" MaxLength="50"></TextBox>
+                        <TextBox x:Name="PatronomicBox" Width="130" BorderBrush="#046380" MaxLength="50"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" x:Name="OtherData">
-                    <StackPanel x:Name="Birthdate" Margin="10">
+                    <StackPanel x:Name="BirthdateStack" Margin="10">
                         <TextBlock>Дата Рождения</TextBlock>
-                        <DatePicker Width="100" BorderBrush="#046380"></DatePicker>
+                        <DatePicker x:Name="BirthdateBox" Width="100" BorderBrush="#046380"></DatePicker>
                     </StackPanel>
-                    <StackPanel x:Name="SeriaNumberPassport" Margin="10">
+                    <StackPanel x:Name="SeriaNumberPassportStack" Margin="10">
                         <TextBlock>Серия и Номер Паспорта</TextBlock>
-                        <TextBox Width="150" BorderBrush="#046380" MaxLength="10" ></TextBox>
+                        <TextBox x:Name="SeriaNumberPassportBox" Width="150" BorderBrush="#046380" MaxLength="10" ></TextBox>
                     </StackPanel>
-                    <StackPanel x:Name="PhoneNumber" Margin="10">
+                    <StackPanel x:Name="PhoneNumberStack" Margin="10">
                         <TextBlock>Номер Телефона</TextBlock>
-                        <TextBox Width="150" BorderBrush="#046380" MaxLength="11" ></TextBox>
+                        <TextBox x:Name="PhoneNumberBox" Width="150" BorderBrush="#046380" MaxLength="11" ></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" x:Name="EmailStack">
-                    <StackPanel x:Name="Email" Margin="10 0 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="EmailStack" Margin="10 0 0 0">
                         <TextBlock>Email</TextBlock>
-                        <TextBox Width="200" BorderBrush="#046380" MaxLength="100"></TextBox>
+                        <TextBox x:Name="EmailBox" Width="200" BorderBrush="#046380" MaxLength="100"></TextBox>
                     </StackPanel>
                     <StackPanel Margin="20 0 0 0" Orientation="Horizontal">
                         <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Добавить</Button>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Faster_than_Light
 {
@@ -26,6 +27,11 @@ namespace Faster_than_Light
         public static void AuthorizationPageClose()
         {
             FrameLib.FrameAuthorization.Navigate(null);
+        }
+
+        static public class GridStorage
+        {
+            static public DataGrid grid { set; get; }
         }
 
     }

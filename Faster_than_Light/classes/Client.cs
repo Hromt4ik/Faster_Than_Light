@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Windows.Controls;
 
 namespace Faster_than_Light.classes
 {
@@ -21,5 +22,7 @@ namespace Faster_than_Light.classes
         public string Email { get; set; }
 
         public List<Package> PackageEntites { get; set; }
+
+
     }
 }

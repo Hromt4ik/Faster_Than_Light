@@ -25,21 +25,19 @@ namespace Faster_than_Light.Pages
         public MainPage()
         {
             InitializeComponent();
-            DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
-            ClientDataGridView.ItemsSource = DatabaseControl.GetClientForView();
-            CargoСategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
             CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
+            CargoСategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            ClientDataGridView.ItemsSource = DatabaseControl.GetClientForView();
+            DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
+            EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
             LocationBaseDataGridView.ItemsSource = DatabaseControl.GetLocationBaseForView();
             PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
             PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
             WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
-            EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
-        }
-
-        private void DriverIdentification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
 
         }
+
+
         private void CarDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
@@ -51,6 +49,10 @@ namespace Faster_than_Light.Pages
         }
 
         private void ClientDataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        private void DriverIdentification_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
@@ -109,6 +111,7 @@ namespace Faster_than_Light.Pages
         private void AddClientButton_Click(object sender, RoutedEventArgs e)
         {
             AddWindows.AddClient win = new AddWindows.AddClient();
+            NavigateMethods.GridStorage.grid = ClientDataGridView;
             win.ShowDialog();
 
         }

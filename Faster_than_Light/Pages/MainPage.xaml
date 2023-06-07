@@ -101,9 +101,9 @@
                             <DataGridCheckBoxColumn IsReadOnly="True" Header="CE"
                                     Binding="{Binding Path=CE}" x:Name="CEView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Получения"
-                                    Binding="{Binding Path=DateReceipt}" x:Name="DateReceiptView"/>
+                                    Binding="{Binding Path=DateReceipt, StringFormat=dd.MM.yyyy}" x:Name="DateReceiptView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Окончания"
-                                    Binding="{Binding Path=TerminationDate}" x:Name="TerminationDateView"/>
+                                    Binding="{Binding Path=TerminationDate, StringFormat=dd.MM.yyyy}" x:Name="TerminationDateView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Сотрудник"
                                     Binding="{Binding Path=EmployeeID}" x:Name="EmploeeIDView"/>
 
@@ -230,10 +230,10 @@
                             </DataGridTemplateColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="ID Клиента"
                                     Binding="{Binding Path=ClientID}" x:Name="ClientIDView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Имя"
-                                    Binding="{Binding Path=Name}" x:Name="NameClientView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Фамилия"
                                     Binding="{Binding Path=Surname}" x:Name="SurnameClientView"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Имя"
+                                    Binding="{Binding Path=Name}" x:Name="NameClientView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Отчество"
                                     Binding="{Binding Path=Patronymic}" x:Name="PatronymicClientView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Рождения"
