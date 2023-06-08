@@ -48,20 +48,20 @@
                     </StackPanel>
                     <StackPanel x:Name="BaseStack" Margin="10 0 0 0">
                         <TextBlock>Место базирования</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="BaseView" SelectedValuePath="id_position">
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="BaseView" SelectedValuePath="LocationBaseID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                    <TextBlock Text="{Binding Path = LocationBaseID}" ></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                     <StackPanel x:Name="DriverStack" Margin="10 0 0 0">
-                        <TextBlock>Должность</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="DriverView" SelectedValuePath="id_position">
+                        <TextBlock>Водитель</TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="DriverView" SelectedValuePath="EmployeeID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                    <TextBlock Text="{Binding Path=EmployeeID}" ></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>

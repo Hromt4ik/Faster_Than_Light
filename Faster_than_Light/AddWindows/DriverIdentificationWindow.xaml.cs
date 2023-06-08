@@ -32,6 +32,7 @@ namespace Faster_than_Light.AddWindows
         {
 
 
+
             if(!((bool)BChecked.IsChecked || (bool)BE.IsChecked || (bool)CChecked.IsChecked || (bool)CE.IsChecked))
             {
                 MessageBox.Show("Выберите хотя бы 1 категорию", "Категории не выбраны", MessageBoxButton.OK, MessageBoxImage.Warning);

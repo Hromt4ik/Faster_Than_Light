@@ -136,5 +136,10 @@ namespace Faster_than_Light.Pages
             NavigateMethods.GridStorage.grid = CargoCategoryDataGridView;
             win.ShowDialog();
         }
+
+        private void AddCarButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

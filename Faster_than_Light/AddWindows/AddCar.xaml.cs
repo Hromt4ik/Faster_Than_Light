@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,16 +23,22 @@ namespace Faster_than_Light.AddWindows
         public AddCar()
         {
             InitializeComponent();
+            BaseView.ItemsSource = DatabaseControl.GetLocationBaseForView();
+            DriverView.ItemsSource = DatabaseControl.GetEmployeeForView();
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+            
 
+
+            
+            Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -23,5 +23,17 @@ namespace Faster_than_Light.EditWindow
         {
             InitializeComponent();
         }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

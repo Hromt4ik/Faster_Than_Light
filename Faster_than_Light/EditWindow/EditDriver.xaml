@@ -34,7 +34,7 @@
                     <TextBlock Height="20" Margin="10 10 5 0 " >Категории</TextBlock>
                     <StackPanel  Margin="0 5 0 5">
                         <TextBlock HorizontalAlignment="Center">B</TextBlock>
-                        <CheckBox x:Name="B"  BorderBrush="#046380" Checked="B_Checked" ></CheckBox>
+                        <CheckBox x:Name="B"  BorderBrush="#046380"  ></CheckBox>
                     </StackPanel>
                     <StackPanel  Margin="5 5 0 5 ">
                         <TextBlock>BE</TextBlock>

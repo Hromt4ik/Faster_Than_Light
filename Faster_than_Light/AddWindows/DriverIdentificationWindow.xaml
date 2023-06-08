@@ -19,7 +19,13 @@
                     </StackPanel>
                     <StackPanel Margin="10">
                         <TextBlock>ID Сотрудника</TextBlock>
-                        <TextBox x:Name="EmployeeID" Width="80" BorderBrush="#046380"></TextBox>
+                        <ComboBox Height="18" Width="80"  BorderBrush="#046380"  Name="DriverView" SelectedValuePath="EmployeeID">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=EmployeeID}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </StackPanel>
                     <StackPanel x:Name="DateReceiptStack" Margin="10 10 10 10 ">
                         <TextBlock>Дата получения</TextBlock>
