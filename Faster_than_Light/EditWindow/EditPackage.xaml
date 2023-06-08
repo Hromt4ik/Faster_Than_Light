@@ -5,8 +5,147 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.EditWindow"
         mc:Ignorable="d"
-        Title="EditPackage" Height="450" Width="800">
+       Title="EditCar" MinHeight="400" MaxHeight="400" MinWidth="480" MaxWidth="480">
     <Grid>
-        
+        <StackPanel>
+            <StackPanel Margin=" 10 10 0 0">
+                <TextBlock FontSize="24">Посылка (Редактирование)</TextBlock>
+            </StackPanel>
+            <StackPanel Name="Main">
+                <StackPanel Name="Fio" Orientation="Horizontal">
+                    <StackPanel x:Name="ClientIdStack" Margin="10">
+                        <TextBlock>Клиент</TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="ClientIdView" SelectedValuePath="id_position">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel x:Name="SendingStack" Margin="10">
+                        <TextBlock>Адрес отправки</TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="SendingView" SelectedValuePath="id_position">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel x:Name="DeliveryStack" Margin="10">
+                        <TextBlock>Адрес доставки</TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="DeliveryView" SelectedValuePath="id_position">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" x:Name="OtherTwoData">
+
+                    <StackPanel x:Name="LenghtStack" Margin="10 0 0 0">
+                        <TextBlock>Длина</TextBlock>
+                        <TextBox x:Name="LenghtBox" Width="140" BorderBrush="#046380" MaxLength="13" ></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="WidthStack" Margin="10 0 0 0">
+                        <TextBlock>Ширина</TextBlock>
+                        <TextBox x:Name="WidthBox" Width="140" BorderBrush="#046380" MaxLength="13" ></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="HeightStack" Margin="10 0 0 0">
+                        <TextBlock>Высота</TextBlock>
+                        <TextBox x:Name="HeightBox" Width="140" BorderBrush="#046380" MaxLength="13" ></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <StackPanel x:Name="DateIssueStack" Margin="10 0 0 0">
+                        <TextBlock>Дата получения клиентом</TextBlock>
+                        <DatePicker x:Name="DateIssueBox" Width="150" BorderBrush="#046380"></DatePicker>
+                    </StackPanel>
+                    <StackPanel x:Name="EmployeeStack" Margin="10 0 0 0">
+                        <TextBlock>Сотрудник</TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="EmployeeView" SelectedValuePath="id_position">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel x:Name="CategoryStack" Margin="10 0 0 0">
+                        <TextBlock>Категория</TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="CategoryView" SelectedValuePath="id_position">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" x:Name="OtherData">
+
+                    <StackPanel x:Name="WeightStack" Margin="10 5 0 0">
+                        <TextBlock>Вес</TextBlock>
+                        <TextBox x:Name="ModelBox" Width="150" BorderBrush="#046380" MaxLength="13" ></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="DateAcceptanceStack" Margin="10 0 0 0">
+                        <TextBlock>Дата принятия</TextBlock>
+                        <DatePicker x:Name="DateAcceptanceeBox" Width="130" BorderBrush="#046380"></DatePicker>
+                    </StackPanel>
+                    <StackPanel x:Name="DateDeliveryToPointStack" Margin="10 0 0 0">
+                        <TextBlock>Дата доставки в пункт</TextBlock>
+                        <DatePicker x:Name="DateDeliveryToPointBox" Width="130" BorderBrush="#046380"></DatePicker>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" x:Name="OtherThreeData">
+
+                    <StackPanel x:Name="TypeStack" Margin="10 5 0 0">
+                        <TextBlock>Тип посылки</TextBlock>
+                        <TextBox x:Name="TypeBox" Width="150" BorderBrush="#046380" MaxLength="50" ></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="СarIDStack" Margin="10 5 0 0">
+                        <TextBlock>Категория</TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="СarIDView" SelectedValuePath="id_position">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel x:Name="StatusStack" Margin="10 5 0 0">
+                        <TextBlock>Статус</TextBlock>
+                        <TextBox x:Name="StatusBox" Width="150" BorderBrush="#046380" MaxLength="50" ></TextBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" x:Name="OtherFourData">
+
+                    <StackPanel x:Name="CostStack" Margin="10 5 0 0">
+                        <TextBlock>Цена</TextBlock>
+                        <TextBox x:Name="CostBox" Width="150" BorderBrush="#046380" MaxLength="13" ></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="CommStack" Margin="10 5 0 0">
+                        <TextBlock>Комментарий</TextBlock>
+                        <TextBox x:Name="CommBox" Width="150" Height="40" BorderBrush="#046380" MaxLength="500" ></TextBox>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Height="30" Margin="0 20 0 0" >
+                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Ок</Button>
+                        <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
