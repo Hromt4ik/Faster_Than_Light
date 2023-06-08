@@ -17,7 +17,7 @@ namespace Faster_than_Light
             }
             return false;
         }
-
+         
 
         public static bool Phone(string phoneNumber) => Regex.IsMatch(phoneNumber, @"8\d{10}");
  
