@@ -1,0 +1,41 @@
+﻿<Window x:Class="Faster_than_Light.AddWindows.AddCargoCategory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Faster_than_Light.AddWindows"
+        mc:Ignorable="d"
+        Title="AddCategory" MinHeight="200" MaxHeight="250" MinWidth="480" MaxWidth="480">
+    <Grid>
+        <StackPanel>
+            <StackPanel Margin=" 10 10 0 0">
+                <TextBlock FontSize="24">Категории (Создание)</TextBlock>
+            </StackPanel>
+            <StackPanel Name="Main">
+                <StackPanel Name="Fio" Orientation="Horizontal">
+                    <StackPanel x:Name="AdressStack" Margin="10">
+                        <TextBlock>Название</TextBlock>
+                        <TextBox x:Name="AdressBox" Width="135" BorderBrush="#046380" MaxLength="200"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel x:Name="CoeffStack" Margin="10">
+                        <TextBlock>Коэффициент транспортировки</TextBlock>
+                        <TextBox x:Name="CoeffBox" Width="200" BorderBrush="#046380" MaxLength="200"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="CommStack" Margin="10 0 10 10">
+                        <TextBlock>Комментарий</TextBlock>
+                        <TextBox x:Name="CommBox" Width="200" Height="40" BorderBrush="#046380" MaxLength="500"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="30" Margin="0 10 0 0" >
+                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Добавить</Button>
+                        <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
