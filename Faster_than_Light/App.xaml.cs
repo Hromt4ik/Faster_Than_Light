@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Faster_than_Light
 {
-    /// <summary>
+    /// <summary>fffff
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
