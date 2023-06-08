@@ -26,7 +26,7 @@ namespace Faster_than_Light.Pages
         {
             InitializeComponent();
             CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
-            CargoСategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            CargoCategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
             ClientDataGridView.ItemsSource = DatabaseControl.GetClientForView();
             DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
             EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
@@ -127,6 +127,13 @@ namespace Faster_than_Light.Pages
         {
             AddWindows.DriverIdentificationWindow win = new AddWindows.DriverIdentificationWindow();
             NavigateMethods.GridStorage.grid = DriverIdentificationDataGridView;
+            win.ShowDialog();
+        }
+
+        private void AddCategoriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindows.AddCargoCategory win = new AddWindows.AddCargoCategory();
+            NavigateMethods.GridStorage.grid = CargoCategoryDataGridView;
             win.ShowDialog();
         }
     }

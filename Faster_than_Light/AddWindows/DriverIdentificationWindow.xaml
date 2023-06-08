@@ -12,7 +12,7 @@
                 <TextBlock FontSize="24">Водительское Удостоверение (Создание)</TextBlock>
             </StackPanel>
             <StackPanel Name="Main">
-                <StackPanel Name="Fio" Orientation="Horizontal">
+                <StackPanel  Orientation="Horizontal">
                     <StackPanel Margin="10">
                         <TextBlock>Номер</TextBlock>
                         <TextBox x:Name="DriverLicense" Width="100" BorderBrush="#046380" MaxLength="10"></TextBox>
@@ -34,7 +34,7 @@
                     <TextBlock Height="20" Margin="10 10 5 0 " >Категории</TextBlock>
                     <StackPanel  Margin="0 5 0 5">
                         <TextBlock HorizontalAlignment="Center">B</TextBlock>
-                        <CheckBox x:Name="B"  BorderBrush="#046380" Checked="B_Checked" ></CheckBox>
+                        <CheckBox x:Name="BChecked"  BorderBrush="#046380"  ></CheckBox>
                     </StackPanel>
                     <StackPanel  Margin="5 5 0 5 ">
                         <TextBlock>BE</TextBlock>
@@ -42,7 +42,7 @@
                     </StackPanel>
                     <StackPanel  Margin="5 5 0 5 ">
                         <TextBlock HorizontalAlignment="Center">C</TextBlock>
-                        <CheckBox x:Name="C"  BorderBrush="#046380" ></CheckBox>
+                        <CheckBox x:Name="CChecked"  BorderBrush="#046380" ></CheckBox>
                     </StackPanel>
                     <StackPanel  Margin="5 5 0 5 ">
                         <TextBlock>CE</TextBlock>
