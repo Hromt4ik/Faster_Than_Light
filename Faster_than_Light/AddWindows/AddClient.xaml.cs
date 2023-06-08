@@ -58,7 +58,7 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
-            if (Check.IsPositivNumber(SeriaNumberPassportBox))
+            if (Check.IsPositivNumber(SeriaNumberPassportBox.Text))
             {
                 return;
             }
