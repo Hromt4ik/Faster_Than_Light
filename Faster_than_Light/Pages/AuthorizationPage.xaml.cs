@@ -34,10 +34,7 @@ namespace Faster_than_Light.Pages
         private void Button_Click_Enter(object sender, RoutedEventArgs e)
         {
 
-              Check_Enter();
-
-
-                
+              Check_Enter();      
             
         }
 
@@ -94,8 +91,7 @@ namespace Faster_than_Light.Pages
         {
             if(e.Key == Key.Enter) {
                 Check_Enter();
-            }
-            
+            } 
         }
     }
 }

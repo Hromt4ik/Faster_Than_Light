@@ -23,5 +23,15 @@ namespace Faster_than_Light.AddWindows
         {
             InitializeComponent();
         }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

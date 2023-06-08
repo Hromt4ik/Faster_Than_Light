@@ -70,6 +70,16 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (!(Check.Phone(PhoneNumberBox.Text)))
+            {
+                MessageBox.Show("Введите номер телефона в формате: \n 8ХХХХХХХХХХ", "Телефон введен некоректно", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!(Check.Email(EmailBox.Text)))
+            {
+                MessageBox.Show("Введите коректный Email", "Поле заполнено некоректно", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
 
             DatabaseControl.AddClient(new classes.Client
@@ -81,7 +91,7 @@ namespace Faster_than_Light.AddWindows
                 SeriaNumberPassport = SeriaNumberPassportBox.Text,
                 PhoneNumber = PhoneNumberBox.Text,
                 Email = EmailBox.Text,
-            }) ;
+            });
 
 
             GridStorage.grid.ItemsSource = null;

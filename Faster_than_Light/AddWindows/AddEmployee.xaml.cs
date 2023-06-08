@@ -96,7 +96,8 @@ namespace Faster_than_Light.AddWindows
                 PhoneNumber = PhoneNumberBox.Text,
                 ResidentialAddress = resAdressBox.Text,
                 Email = EmailBox.Text,
-                Post = postBox.Text,
+                Post = postBox.Text
+
             });
 
 

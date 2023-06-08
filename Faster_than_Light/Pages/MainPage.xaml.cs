@@ -115,5 +115,22 @@ namespace Faster_than_Light.Pages
             win.ShowDialog();
 
         }
+
+        private void AddEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindows.AddEmployee win = new AddWindows.AddEmployee();
+            NavigateMethods.GridStorage.grid = EmployeeDataGridView;
+            win.ShowDialog();
+        }
+
+        private void Password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                //Добавь Проверку
+                sessionData.LogInAdmin();
+            }
+        }
+
     }
 }
