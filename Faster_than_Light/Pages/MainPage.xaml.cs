@@ -123,14 +123,11 @@ namespace Faster_than_Light.Pages
             win.ShowDialog();
         }
 
-        private void Password_KeyDown(object sender, KeyEventArgs e)
+        private void AddDriverIdentificationButton_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Key == Key.Enter)
-            {
-                //Добавь Проверку
-                sessionData.LogInAdmin();
-            }
+            AddWindows.DriverIdentificationWindow win = new AddWindows.DriverIdentificationWindow();
+            NavigateMethods.GridStorage.grid = DriverIdentificationDataGridView;
+            win.ShowDialog();
         }
-
     }
 }

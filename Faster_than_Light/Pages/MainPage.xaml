@@ -46,8 +46,13 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid  Background="White">
-                    <StackPanel>
-
+                    <StackPanel Margin="10">
+                        <TextBlock FontSize="24">Водительские Удостоверения</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AddDriverIdentificationButton" Click="AddDriverIdentificationButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                        </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="DriverIdentificationDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">

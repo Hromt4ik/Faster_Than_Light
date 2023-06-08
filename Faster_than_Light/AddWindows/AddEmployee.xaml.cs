@@ -85,6 +85,17 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (!(Check.Phone(PhoneNumberBox.Text)))
+            {
+                MessageBox.Show("Введите номер телефона в формате: \n 8ХХХХХХХХХХ", "Телефон введен некоректно", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!(Check.Email(EmailBox.Text)))
+            {
+                MessageBox.Show("Введите коректный Email", "Поле заполнено некоректно", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             DatabaseControl.AddEmployee(new classes.Employee
             {
                 Password = passwordBox.Text,

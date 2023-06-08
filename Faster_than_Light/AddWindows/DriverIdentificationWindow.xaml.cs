@@ -32,11 +32,12 @@ namespace Faster_than_Light.AddWindows
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+            Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
