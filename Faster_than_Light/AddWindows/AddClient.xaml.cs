@@ -58,6 +58,11 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (Check.IsPositivNumber(SeriaNumberPassportBox))
+            {
+                return;
+            }
+
             if (Check.Empty(PhoneNumberBox.Text))
             {
                 MessageBox.Show("Введите номер телефона", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);

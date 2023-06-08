@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.AddWindows"
         mc:Ignorable="d"
-        Title="AddCategory" MinHeight="300" MaxHeight="300" MinWidth="460" MaxWidth="460">
+        Title="Создание: Категория" MinHeight="320" MaxHeight="320" MinWidth="460" MaxWidth="460">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
-                <TextBlock FontSize="24">Категории (Создание)</TextBlock>
+                <TextBlock FontSize="24">Категория (Создание)</TextBlock>
             </StackPanel>
             <StackPanel Name="Main">
                 <StackPanel Name="Fio" Orientation="Horizontal">
-                    <StackPanel x:Name="AdressStack" Margin="10">
+                    <StackPanel x:Name="Name" Margin="10">
                         <TextBlock>Название</TextBlock>
-                        <TextBox x:Name="AdressBox" Width="135" BorderBrush="#046380" MaxLength="200"></TextBox>
+                        <TextBox x:Name="NameBox" Width="135" BorderBrush="#046380" MaxLength="200"></TextBox>
                     </StackPanel>
 
                     <StackPanel x:Name="CoeffStack" Margin="10">
                         <TextBlock>Коэффициент транспортировки</TextBlock>
-                        <TextBox x:Name="CoeffBox" Width="200" BorderBrush="#046380" MaxLength="200"></TextBox>
+                        <TextBox x:Name="CoeffBox" Width="200" BorderBrush="#046380" MaxLength="10"></TextBox>
                     </StackPanel>
                 </StackPanel>
 
@@ -32,7 +32,7 @@
                     </StackPanel>
 
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Height="30" Margin="0 10 0 0" >
+                <StackPanel Orientation="Horizontal" Height="30" Margin="0 10 0 0">
                     <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Добавить</Button>
                     <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
                 </StackPanel>

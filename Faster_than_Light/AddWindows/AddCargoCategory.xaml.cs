@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,12 +27,18 @@ namespace Faster_than_Light.AddWindows
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
+            DatabaseControl.AddCargoCategory(new classes.CargoCategory
+            {
+                Name = NameBox.Text
 
+            });
+
+            Close();
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

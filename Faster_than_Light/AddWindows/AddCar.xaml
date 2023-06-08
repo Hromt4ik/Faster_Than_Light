@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.AddWindows"
         mc:Ignorable="d"
-        Title="AddCar" MinHeight="270" MaxHeight="270" MinWidth="480" MaxWidth="480">
+        Title="Создание: Машина" MinHeight="270" MaxHeight="270" MinWidth="480" MaxWidth="480">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
@@ -61,7 +61,7 @@
                         <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="DriverView" SelectedValuePath="EmployeeID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=EmployeeID}" ></TextBlock>
+                                    <TextBlock Text="{Binding Path = EmployeeID}" ></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>

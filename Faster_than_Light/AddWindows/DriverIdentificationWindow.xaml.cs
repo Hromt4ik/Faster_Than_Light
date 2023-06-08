@@ -24,6 +24,7 @@ namespace Faster_than_Light.AddWindows
         public DriverIdentificationWindow()
         {
             InitializeComponent();
+            DriverView.ItemsSource = DatabaseControl.GetEmployeeForView();
         }
 
 
@@ -42,7 +43,7 @@ namespace Faster_than_Light.AddWindows
             DatabaseControl.AddDriverIdentification(new classes.DriverIdentification
             {
                 DriverLicense = DriverLicense.Text,
-                EmployeeID = Convert.ToInt32(EmployeeID.Text),
+                EmployeeID = (int)DriverView.SelectedValue,
                 DateReceipt = DateTime.SpecifyKind(Convert.ToDateTime(DateReceipt.SelectedDate.Value), DateTimeKind.Utc),
                 TerminationDate = DateTime.SpecifyKind(Convert.ToDateTime(TerminationDate.SelectedDate.Value), DateTimeKind.Utc),
                 B = (bool)BChecked.IsChecked,
