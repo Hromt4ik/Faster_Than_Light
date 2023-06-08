@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.AddWindows"
         mc:Ignorable="d"
-        Title="AddCategory" MinHeight="250" MaxHeight="250" MinWidth="460" MaxWidth="460">
+        Title="AddCategory" MinHeight="300" MaxHeight="300" MinWidth="460" MaxWidth="460">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
@@ -28,7 +28,7 @@
                     <StackPanel x:Name="CommStack" Margin="10 0 10 10">
                         <TextBlock>Комментарий</TextBlock>
                         <TextBox SpellCheck.IsEnabled="True" Language="ru-ru" x:Name="CommBox" TextWrapping="Wrap"
-                                 Width="355" Height="50" BorderBrush="#046380" MaxLength="500"></TextBox>
+                                 Width="355" Height="100" BorderBrush="#046380" MaxLength="500"></TextBox>
                     </StackPanel>
 
                 </StackPanel>
