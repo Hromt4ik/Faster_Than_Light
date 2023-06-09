@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Faster_than_Light.Db_API
 {
@@ -134,6 +135,14 @@ namespace Faster_than_Light.Db_API
         }
         //-------------------------------------------------------------- end
 
+        public static Employee GetUser(int login, string password)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Employee.Where(p => p.EmployeeID == login && p.Password == password).FirstOrDefault();
+               
+            }
+        }
 
 
         //Add all tables -----------------------------------------------------------------

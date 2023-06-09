@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Faster_than_Light.classes;
+using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +23,9 @@ namespace Faster_than_Light.Pages
     /// </summary>
     public partial class AuthorizationPage : Page
     {
+
+
+        
         public AuthorizationPage()
         {
             InitializeComponent();
@@ -42,16 +47,18 @@ namespace Faster_than_Light.Pages
 
         public void Check_Enter()
         {
-            //Добавить проверку на то что логин есть в базе
-            if (CheckLogin() && CheckPassword())
-            {
-                FrameLib.FrameAuthorization.Navigate(null);
-                NavigateMethods.MainPageOpen();
-            }
-            else
+            
+            if (!(CheckLogin() && CheckPassword()))
             {
                 Clear_box();
+                return;
             }
+
+            Employee user = DatabaseControl.GetUser(Convert.ToInt32(login.Text), password.Password.ToString());
+                
+                FrameLib.FrameAuthorization.Navigate(null);
+                NavigateMethods.MainPageOpen();
+      
         }
         public void Clear_box()
         {
@@ -67,17 +74,17 @@ namespace Faster_than_Light.Pages
                 return false;
             }
 
+            if (!Check.IsPositivNumber(login.Text)){
+                return false;
+            }
+
+
+
             return true;
         }
 
         public bool CheckPassword()
         {
-            if (password.Password.ToString() == "qqq")
-            {
-                MessageBox.Show("Неправильный Пароль", "Неверный ввод", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return false;
-
-            }
             if (password.Password.ToString() == String.Empty)
             {
                 MessageBox.Show("Пароль не введен", "Введите пароль", MessageBoxButton.OK, MessageBoxImage.Warning);

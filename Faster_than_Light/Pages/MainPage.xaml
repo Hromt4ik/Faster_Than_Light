@@ -79,7 +79,7 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditDriverIdentificationButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"

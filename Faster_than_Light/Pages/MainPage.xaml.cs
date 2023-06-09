@@ -164,10 +164,7 @@ namespace Faster_than_Light.Pages
 
         }
 
-        private void EditDriverIdentificationButton_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void DelDriverIdentificationButton_Click(object sender, RoutedEventArgs e)
         {
@@ -186,21 +183,25 @@ namespace Faster_than_Light.Pages
 
         }
 
-        private void DriverIdentificationMenuItem_Click(object sender, RoutedEventArgs e)
+        private void EditDriverIdentificationButton_Click(object sender, RoutedEventArgs e)
         {
             DriverIdentification temp = DriverIdentificationDataGridView.SelectedItem as DriverIdentification;
 
             if (temp != null)
             {
-                DatabaseControl.UpdateDriverIdentification(temp);
-
-                DriverIdentificationDataGridView.ItemsSource = null;
-                DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
+                EditWindow.EditDriver win = new EditWindow.EditDriver(temp);
+                NavigateMethods.GridStorage.grid = DriverIdentificationDataGridView;
+                win.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void DriverIdentificationMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

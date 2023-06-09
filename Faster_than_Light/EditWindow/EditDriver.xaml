@@ -56,7 +56,7 @@
                     </StackPanel>
 
                     <StackPanel Margin="80 0 0 0" Orientation="Horizontal">
-                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Height="30" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Добавить</Button>
+                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Height="30" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Cохранить</Button>
                         <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Height="30" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
                     </StackPanel>
                 </StackPanel>
