@@ -54,7 +54,7 @@ namespace Faster_than_Light.Pages
                 return;
             }
 
-            Employee user = DatabaseControl.GetUser(login.Text, password.Password.ToString());
+            Employee user = DatabaseControl.GetUser(login.Text);
 
             if (user == null)
             {
