@@ -76,7 +76,7 @@ namespace Faster_than_Light.Db_API
                 return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).ToList();
             }
         }
-        public static List<CargoCategory> GetCargoСategoryForView()
+        public static List<CargoCategory> GetCargoCategoryForView()
         {
             using (DbAppContext ctx = new DbAppContext())
             {

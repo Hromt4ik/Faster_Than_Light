@@ -49,7 +49,7 @@ namespace Faster_than_Light.EditWindow
 
             DatabaseControl.UpdateCargoCategory(temp);
             GridStorage.grid.ItemsSource = null;
-            GridStorage.grid.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            GridStorage.grid.ItemsSource = DatabaseControl.GetCargoCategoryForView();
             Close();
         }
 

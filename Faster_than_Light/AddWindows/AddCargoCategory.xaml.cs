@@ -61,7 +61,7 @@ namespace Faster_than_Light.AddWindows
             }) ;
 
             GridStorage.grid.ItemsSource = null;
-            GridStorage.grid.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            GridStorage.grid.ItemsSource = DatabaseControl.GetCargoCategoryForView();
             Close();
         }
 

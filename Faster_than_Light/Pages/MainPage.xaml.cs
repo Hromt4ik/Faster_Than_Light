@@ -26,7 +26,7 @@ namespace Faster_than_Light.Pages
         {
             InitializeComponent();
             CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
-            CargoCategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            CargoCategoryDataGridView.ItemsSource = DatabaseControl.GetCargoCategoryForView();
             ClientDataGridView.ItemsSource = DatabaseControl.GetClientForView();
             DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
             EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
@@ -268,7 +268,7 @@ namespace Faster_than_Light.Pages
                 DatabaseControl.DelCargoCategory(temp);
 
                 CargoCategoryDataGridView.ItemsSource = null;
-                CargoCategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+                CargoCategoryDataGridView.ItemsSource = DatabaseControl.GetCargoCategoryForView();
             }
             else
             {
@@ -277,6 +277,21 @@ namespace Faster_than_Light.Pages
         }
 
         private void RemoveCategoriesMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveWarehouseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WarehouseMenuItem_Click(object sender, RoutedEventArgs e)
         {
 
         }

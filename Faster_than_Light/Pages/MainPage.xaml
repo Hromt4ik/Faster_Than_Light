@@ -64,7 +64,7 @@
                         <DataGrid.ContextMenu>
 
                             <ContextMenu>
-                                <MenuItem Header="Подробнее" Click="DriverIdentificationMenuItem_Click"></MenuItem>
+                             
                                 <MenuItem Header="Редактировать" Click="EditDriverIdentificationButton_Click"></MenuItem>
                                 <MenuItem Header="Удалить" Click="DelDriverIdentificationButton_Click"></MenuItem>
                             </ContextMenu>
@@ -147,7 +147,7 @@
                         </DataGrid.Resources>
                         <DataGrid.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Подробнее" Click="RemoveCategoriesMenuItem_Click"></MenuItem>
+                                
                                 <MenuItem Header="Редактировать" Click="EditCategoriesButton_Click"></MenuItem>
                                 <MenuItem Header="Удалить" Click="RemoveCategoriesButton_Click"></MenuItem>
                             </ContextMenu>
@@ -210,7 +210,7 @@
                         <!--<DataGrid.ContextMenu>
                 -->
                         <!--<ContextMenu>
-                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                  
                     <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
                     <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
                 </ContextMenu>-->
@@ -282,7 +282,7 @@
                         <!--<DataGrid.ContextMenu>
                 -->
                         <!--<ContextMenu>
-                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+
                     <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
                     <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
                 </ContextMenu>-->
@@ -364,7 +364,7 @@
                         </DataGrid.Resources>
                         <DataGrid.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Подробнее" Click="LocationBaseDataMenuItem_Click"></MenuItem>
+                                
                                 <MenuItem Header="Редактировать" Click="LocationBaseDataEditButton_Click"></MenuItem>
                                 <MenuItem Header="Удалить" Click="LocationBaseRemoveButton_Click"></MenuItem>
                             </ContextMenu>
@@ -434,7 +434,7 @@
                         <!--<DataGrid.ContextMenu>
                 -->
                         <!--<ContextMenu>
-                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    
                     <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
                     <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
                 </ContextMenu>-->
@@ -530,7 +530,7 @@
                         <!--<DataGrid.ContextMenu>
                 -->
                         <!--<ContextMenu>
-                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                    
                     <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
                     <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
                 </ContextMenu>-->
@@ -599,7 +599,7 @@
                         <DataGrid.ContextMenu>
 
                             <ContextMenu>
-                                <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                                
                                 <MenuItem Header="Редактировать" Click="EditWarehouseButton_Click"></MenuItem>
                                 <MenuItem Header="Удалить" Click="RemoveWarehouseButton_Click"></MenuItem>
                             </ContextMenu>
@@ -664,7 +664,7 @@
                         <!--<DataGrid.ContextMenu>
                 -->
                         <!--<ContextMenu>
-                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                   
                     <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
                     <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
                 </ContextMenu>-->
@@ -717,15 +717,14 @@
                 </Grid>
             </TabItem>
 
-            <TabItem HorizontalAlignment="Left">
+            <!--<TabItem HorizontalAlignment="Left">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/gear_with_key_white.png" MaxHeight="50" MinHeight="15" />
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Администрирование</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-
-            </TabItem>
+            </TabItem>-->
         </TabControl>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <Button Margin="10 0 0 10" Background="Transparent" BorderBrush="Transparent" Name="Exit" Click="Exit_Click">
