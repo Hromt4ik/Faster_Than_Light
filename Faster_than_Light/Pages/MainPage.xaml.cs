@@ -200,10 +200,7 @@ namespace Faster_than_Light.Pages
             }
         }
 
-        private void DriverIdentificationMenuItem_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void LocationBaseDataEditButton_Click(object sender, RoutedEventArgs e)
         {
@@ -238,10 +235,7 @@ namespace Faster_than_Light.Pages
             }
         }
 
-        private void LocationBaseDataMenuItem_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void EditCategoriesButton_Click(object sender, RoutedEventArgs e)
         {
@@ -276,10 +270,7 @@ namespace Faster_than_Light.Pages
             }
         }
 
-        private void RemoveCategoriesMenuItem_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -291,9 +282,6 @@ namespace Faster_than_Light.Pages
 
         }
 
-        private void WarehouseMenuItem_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }
