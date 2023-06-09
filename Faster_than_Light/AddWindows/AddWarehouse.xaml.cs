@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Faster_than_Light.NavigateMethods;
 
 namespace Faster_than_Light.AddWindows
 {
@@ -22,16 +24,27 @@ namespace Faster_than_Light.AddWindows
         public AddWarehouse()
         {
             InitializeComponent();
+            positionView.ItemsSource = DatabaseControl.GetEmployeeForView();
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+            DatabaseControl.AddWarehouse(new classes.Warehouse
+            {
+                Address = adresBox.Text,
+                Region = RegionBox.Text,
+                Director = (int)positionView.SelectedValue
+            });
 
+            GridStorage.grid.ItemsSource = null;
+            GridStorage.grid.ItemsSource = DatabaseControl.GetWarehouseForView();
+
+            Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

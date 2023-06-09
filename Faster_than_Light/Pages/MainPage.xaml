@@ -584,8 +584,8 @@
                         <TextBlock FontSize="24">Склады</TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="AddWarehouseButton" Click="AddWarehouseButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
-                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
-                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                            <Button Click="EditWarehouseButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Click="RemoveWarehouseButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="WarehouseDataGridView"   AutoGenerateColumns="False"
@@ -596,15 +596,15 @@
                                 <EventSetter Event="MouseDoubleClick" Handler="WarehouseDataGridRow_MouseDoubleClick"/>
                             </Style>
                         </DataGrid.Resources>
-                        <!--<DataGrid.ContextMenu>
-                -->
-                        <!--<ContextMenu>
-                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
-                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
-                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
-                </ContextMenu>-->
-                        <!--
-            </DataGrid.ContextMenu>-->
+                        <DataGrid.ContextMenu>
+
+                            <ContextMenu>
+                                <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
+                                <MenuItem Header="Редактировать" Click="EditWarehouseButton_Click"></MenuItem>
+                                <MenuItem Header="Удалить" Click="RemoveWarehouseButton_Click"></MenuItem>
+                            </ContextMenu>
+
+                        </DataGrid.ContextMenu>
 
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
@@ -613,12 +613,12 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditWarehouseButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveWarehouseButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>

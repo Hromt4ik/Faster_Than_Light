@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.AddWindows"
         mc:Ignorable="d"
-        Title="AddWarehouse" MinHeight="200" MaxHeight="200" MinWidth="480" MaxWidth="480">
+        Title="Склад (Создание)" MinHeight="200" MaxHeight="200" MinWidth="480" MaxWidth="480">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
@@ -13,13 +13,13 @@
             </StackPanel>
             <StackPanel Name="Main">
                 <StackPanel Name="Fio" Orientation="Horizontal">
-                    <StackPanel x:Name="SurnameStack" Margin="10">
+                    <StackPanel x:Name="adresStack" Margin="10">
                         <TextBlock>Адрес</TextBlock>
-                        <TextBox x:Name="SurnameBox" Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
+                        <TextBox x:Name="adresBox" Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
                     </StackPanel>
-                    <StackPanel x:Name="NameStack" Margin="10">
+                    <StackPanel x:Name="RegionStack" Margin="10">
                         <TextBlock>Регион</TextBlock>
-                        <TextBox x:Name="NameBox"  Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
+                        <TextBox x:Name="RegionBox"  Width="135" BorderBrush="#046380" MaxLength="50"></TextBox>
                     </StackPanel>
                     <StackPanel Name="PatronomicStack" Margin="10">
                         <TextBlock>Директор</TextBlock>

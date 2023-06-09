@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.EditWindow"
         mc:Ignorable="d"
-        Title="EditWarehouse" MinHeight="200" MaxHeight="200" MinWidth="480" MaxWidth="480">
+        Title="Склад (Редактирование)" MinHeight="200" MaxHeight="200" MinWidth="480" MaxWidth="480">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
@@ -23,10 +23,10 @@
                     </StackPanel>
                     <StackPanel Name="PatronomicStack" Margin="10">
                         <TextBlock>Директор</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="positionView" SelectedValuePath="id_position">
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="positionView" SelectedValuePath="EmployeeID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                    <TextBlock Text="{Binding Path=EmployeeID}" ></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
