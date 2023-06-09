@@ -20,7 +20,8 @@ CREATE TABLE "Employee"(
     "PhoneNumber" character varying(11),
     "ResidentialAddress" character varying(200),
     "Email" character varying(100) UNIQUE,
-    "Post" character varying(200));
+    "Post" character varying(200)
+    "Login" character varying(20));
 
 CREATE TABLE "DriverIdentification"(
 	"GuideReferencesID" serial PRIMARY KEY,
