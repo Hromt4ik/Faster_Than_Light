@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Faster_than_Light.classes;
+using Faster_than_Light.Db_API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Faster_than_Light.NavigateMethods;
 
 namespace Faster_than_Light.EditWindow
 {
@@ -19,19 +22,40 @@ namespace Faster_than_Light.EditWindow
     /// </summary>
     public partial class EditCargoCategory : Window
     {
-        public EditCargoCategory()
+
+        CargoCategory temp = new CargoCategory();
+        public EditCargoCategory(CargoCategory cargo)
         {
             InitializeComponent();
+            temp = cargo;
+            CommBox.Text = cargo.Comments;
+            NameBox.Text = cargo.Name;
+            CoeffBox.Text = cargo.TransportationCoefficient.ToString();
+
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (!Check.IsPositivNumber(CoeffBox.Text))
+            {
+                return;
+            }
+
+
+            temp.Name = NameBox.Text;
+            temp.Comments = CommBox.Text;
+            temp.TransportationCoefficient = Convert.ToDecimal(CoeffBox.Text);
+
+            DatabaseControl.UpdateCargoCategory(temp);
+            GridStorage.grid.ItemsSource = null;
+            GridStorage.grid.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -268,6 +268,26 @@ namespace Faster_than_Light.Db_API
             }
         }
 
+        public static void UpdateCargoCategory(CargoCategory Category)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                CargoCategory temp = ctx.CargoCategory.FirstOrDefault(p => p.CategoryID == Category.CategoryID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.Name = Category.Name;
+                temp.Comments = Category.Comments;
+                temp.TransportationCoefficient = Category.TransportationCoefficient;
+
+                ctx.SaveChanges();
+            }
+        }
+
 
         //--------------------------------------------------------------- end
 

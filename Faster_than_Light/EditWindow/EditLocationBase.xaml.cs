@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace Faster_than_Light.EditWindow
     /// </summary>
     public partial class EditLocationBase : Window
     {
-        public EditLocationBase()
+
+        LocationBase temp = new LocationBase();
+        public EditLocationBase(LocationBase Location)
         {
             InitializeComponent();
+            temp = Location;
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)

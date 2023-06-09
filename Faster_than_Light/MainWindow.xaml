@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light"
         mc:Ignorable="d"
-        Title="Быстрее света" WindowState="Maximized" MinHeight="650" MinWidth="800" Icon="/Image/Logo.ico"  >
+        Title="Быстрее света" WindowState="Maximized" MinHeight="650" MinWidth="900" Icon="/Image/Logo.ico"  >
     <Grid x:Name="MainGrid">
 
         <Frame  x:Name="FrameAuthorization" NavigationUIVisibility="Hidden"  />

@@ -32,9 +32,19 @@ namespace Faster_than_Light.AddWindows
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (Check.Empty(Convert.ToString(DateReceipt.Text)))
+            {
+                MessageBox.Show("Введите дату получения", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
+            if (Check.Empty(Convert.ToString(TerminationDate.Text)))
+            {
+                MessageBox.Show("Введите дату оканчания", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
-            if(!((bool)BChecked.IsChecked || (bool)BE.IsChecked || (bool)CChecked.IsChecked || (bool)CE.IsChecked))
+            if (!((bool)BChecked.IsChecked || (bool)BE.IsChecked || (bool)CChecked.IsChecked || (bool)CE.IsChecked))
             {
                 MessageBox.Show("Выберите хотя бы 1 категорию", "Категории не выбраны", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

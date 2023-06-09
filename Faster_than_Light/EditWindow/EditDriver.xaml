@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.EditWindow"
         mc:Ignorable="d"
-         Title="Водительское Удостоверение Редактирование" MinHeight="180" MaxHeight="180" MinWidth="480" MaxWidth="480" >
+        Title="EditDriver" Height="450" Width="800">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">

@@ -105,10 +105,7 @@ namespace Faster_than_Light.Pages
             NavigateMethods.AuthorizationPageOpen();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void AddClientButton_Click(object sender, RoutedEventArgs e)
         {
@@ -148,7 +145,9 @@ namespace Faster_than_Light.Pages
 
         private void AddLocationButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AddWindows.AddLocationBase win = new AddWindows.AddLocationBase();
+            NavigateMethods.GridStorage.grid = LocationBaseDataGridView;
+            win.ShowDialog();
         }
 
         private void AddPointReceptionButton_Click(object sender, RoutedEventArgs e)
@@ -202,6 +201,82 @@ namespace Faster_than_Light.Pages
         }
 
         private void DriverIdentificationMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LocationBaseDataEditButton_Click(object sender, RoutedEventArgs e)
+        {
+            //LocationBase temp = DriverIdentificationDataGridView.SelectedItem as LocationBase;
+
+            //if (temp != null)
+            //{
+            //    EditWindow.EditLocationBase win = new EditWindow.EditLocationBase(temp);
+            //    NavigateMethods.GridStorage.grid = EditLocationBaseDataGridView;
+            //    win.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            //}
+        }
+
+        private void LocationBaseRemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            LocationBase temp = LocationBaseDataGridView.SelectedItem as LocationBase;
+
+            if (temp != null)
+            {
+                DatabaseControl.DelLocationBase(temp);
+
+                LocationBaseDataGridView.ItemsSource = null;
+                LocationBaseDataGridView.ItemsSource = DatabaseControl.GetLocationBaseForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void LocationBaseDataMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditCategoriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            CargoCategory temp = CargoCategoryDataGridView.SelectedItem as CargoCategory;
+
+            if (temp != null)
+            {
+                EditWindow.EditCargoCategory win = new EditWindow.EditCargoCategory(temp);
+                NavigateMethods.GridStorage.grid = CargoCategoryDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void RemoveCategoriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            CargoCategory temp = CargoCategoryDataGridView.SelectedItem as CargoCategory;
+
+            if (temp != null)
+            {
+                DatabaseControl.DelCargoCategory(temp);
+
+                CargoCategoryDataGridView.ItemsSource = null;
+                CargoCategoryDataGridView.ItemsSource = DatabaseControl.GetCargoСategoryForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void RemoveCategoriesMenuItem_Click(object sender, RoutedEventArgs e)
         {
 
         }
