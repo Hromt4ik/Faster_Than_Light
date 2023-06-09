@@ -23,5 +23,13 @@ namespace Faster_than_Light
         
             IsAdmin = false;
         }
+        public static bool CheckedAdmin()
+        {
+            if (IsAdmin)
+            {
+                return true;
+            }
+            
+        }
     }
 }

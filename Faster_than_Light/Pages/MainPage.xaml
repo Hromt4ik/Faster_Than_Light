@@ -330,8 +330,6 @@
                                     Binding="{Binding Path=LocationBase}" x:Name="LocationBaseView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Назначеный Водитель"
                                     Binding="{Binding Path=DriverID}" x:Name="DriverIDView"/>
-
-
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -686,7 +684,6 @@
                                         Background="Transparent"
                                         BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
-
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
