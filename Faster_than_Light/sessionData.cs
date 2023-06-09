@@ -10,8 +10,8 @@ namespace Faster_than_Light
     {
         public static bool IsAdmin = false;
 
-        public static string Login = "";
-        public static string Password = "";
+        public static string Login = null;
+        public static string Password = null;
 
 
         public static void LogInAdmin() {

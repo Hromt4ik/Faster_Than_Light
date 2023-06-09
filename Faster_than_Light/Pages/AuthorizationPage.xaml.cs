@@ -54,10 +54,35 @@ namespace Faster_than_Light.Pages
                 return;
             }
 
-            Employee user = DatabaseControl.GetUser(Convert.ToInt32(login.Text), password.Password.ToString());
-                
-                FrameLib.FrameAuthorization.Navigate(null);
-                NavigateMethods.MainPageOpen();
+            Employee user = DatabaseControl.GetUser(login.Text, password.Password.ToString());
+
+            if (user == null)
+            {
+                MessageBox.Show("Пользователь не найден", "Неверный логин", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Clear_box();
+                return;
+            }
+
+            sessionData.Login = Convert.ToString(user.Login);
+            sessionData.Password = user.Password;
+
+
+            if (sessionData.Password != password.Password.ToString())
+            {
+
+                MessageBox.Show("Неверный Пароль", "Ошибка Ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
+                sessionData.Login = null;
+                sessionData.Password = null;
+                return;
+            }
+
+            if (user.Post == "Админ")
+            {
+                sessionData.LogInAdmin();
+            }
+
+            FrameLib.FrameAuthorization.Navigate(null);
+            NavigateMethods.MainPageOpen();
       
         }
         public void Clear_box()
@@ -73,12 +98,6 @@ namespace Faster_than_Light.Pages
                 MessageBox.Show("Логин не может быть пустым", "Неверный ввод", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
-
-            if (!Check.IsPositivNumber(login.Text)){
-                return false;
-            }
-
-
 
             return true;
         }

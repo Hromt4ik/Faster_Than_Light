@@ -100,6 +100,8 @@ namespace Faster_than_Light.Pages
         {
             NavigateMethods.MainPageClose();
             sessionData.LogOutAdmin();
+            sessionData.Password = null;
+            sessionData.Login = null;
             NavigateMethods.AuthorizationPageOpen();
         }
 

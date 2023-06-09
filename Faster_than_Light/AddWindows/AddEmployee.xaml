@@ -55,11 +55,15 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="login" Margin="10 10 0 0" Orientation="Vertical">
+                        <TextBlock>Логин</TextBlock>
+                        <TextBox x:Name="loginBox" Width="100" BorderBrush="#046380" MaxLength="20"></TextBox>
+                    </StackPanel>
                     <StackPanel x:Name="password" Margin="10 10 0 0" Orientation="Vertical">
                         <TextBlock>Пароль</TextBlock>
-                        <TextBox x:Name="passwordBox" Width="120" BorderBrush="#046380" MaxLength="100"></TextBox>
+                        <TextBox x:Name="passwordBox" Width="110" BorderBrush="#046380" MaxLength="20"></TextBox>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Height="30" Margin="100 20 0 0" >
+                    <StackPanel Orientation="Horizontal" Height="30" Margin="0 20 0 0" >
                         <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Добавить</Button>
                         <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
                     </StackPanel>
