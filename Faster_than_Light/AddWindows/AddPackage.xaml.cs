@@ -74,5 +74,10 @@ namespace Faster_than_Light.AddWindows
 
             Close();
         }
+
+        private void rezult_Click(object sender, RoutedEventArgs e)
+        {
+            //CostBox.Text = Convert.ToInt32(ModelBox.)
+        }
     }
 }

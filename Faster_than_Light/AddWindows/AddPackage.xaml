@@ -131,7 +131,7 @@
                     <StackPanel x:Name="CostStack" Margin="10 5 0 0">
                         <TextBlock>Цена</TextBlock>
                         <TextBox x:Name="CostBox" Width="150" BorderBrush="#046380" MaxLength="13" ></TextBox>
-                        <Button  Width="150" Foreground="White" BorderBrush="#046380" Background="#046380">Расчитать цену</Button>
+                        <Button Name="rezult" Click="rezult_Click" Width="150" Foreground="White" BorderBrush="#046380" Background="#046380">Расчитать цену</Button>
                     </StackPanel>
 
                    <StackPanel x:Name="CommStack" Margin="10 5 0 0">

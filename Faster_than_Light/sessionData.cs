@@ -30,6 +30,7 @@ namespace Faster_than_Light
                 return true;
             }
             
+            return false;
         }
     }
 }
