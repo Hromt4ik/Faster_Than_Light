@@ -30,7 +30,10 @@ namespace Faster_than_Light.AddWindows
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             
+            DatabaseControl.AddCar(new classes.Car
+            {
 
+            });
 
             
             Close();

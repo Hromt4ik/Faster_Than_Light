@@ -213,6 +213,37 @@ namespace Faster_than_Light.Db_API
 
         //--------------------------------------------------------------- end
 
+        //Edit all tables -----------------------------------------------------
+
+        public static void UpdateDriverIdentification(DriverIdentification driverIdentification)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                DriverIdentification temp = ctx.DriverIdentification.FirstOrDefault(
+                    p => p.GuideReferencesID == driverIdentification.GuideReferencesID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.DriverLicense = driverIdentification.DriverLicense;
+                temp.B = driverIdentification.B;
+                temp.BE = driverIdentification.BE;
+                temp.C = driverIdentification.C;
+                temp.CE = driverIdentification.CE;
+                temp.DateReceipt = driverIdentification.DateReceipt;
+                temp.TerminationDate = driverIdentification.TerminationDate;
+                temp.EmployeeID = driverIdentification.EmployeeID;
+
+
+                ctx.SaveChanges();
+            }
+        }
+
+
+        //--------------------------------------------------------------- end
 
         //Delete all tables ---------------------------------------------------
 
@@ -289,6 +320,8 @@ namespace Faster_than_Light.Db_API
             }
         }
 
-        //--------------------------------------------------------------- end
+
+
+
     }
 }

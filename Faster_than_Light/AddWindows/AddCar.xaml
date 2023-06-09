@@ -37,7 +37,7 @@
                         <TextBox x:Name="MileageBox" Width="135" BorderBrush="#046380" MaxLength="11" ></TextBox>
                     </StackPanel>
                     <StackPanel x:Name="NextMileageStack" Margin="10 0 0 0">
-                        <TextBlock>Следуюший пробег</TextBlock>
+                        <TextBlock>Следуюшие ТО</TextBlock>
                         <TextBox x:Name="NextMileageBox" Width="135" BorderBrush="#046380" MaxLength="11" ></TextBox>
                     </StackPanel>
                 </StackPanel>

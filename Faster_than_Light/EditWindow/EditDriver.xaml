@@ -5,21 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.EditWindow"
         mc:Ignorable="d"
-         Title="EditDriverIdentificationWindow" MinHeight="180" MaxHeight="180" MinWidth="480" MaxWidth="480" >
+         Title="Водительское Удостоверение Редактирование" MinHeight="180" MaxHeight="180" MinWidth="480" MaxWidth="480" >
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
-                <TextBlock FontSize="24">Водительское Удостоверение (Редактирование)</TextBlock>
+                <TextBlock FontSize="24">Водительское Удостоверение (Ред.)</TextBlock>
             </StackPanel>
             <StackPanel Name="Main">
-                <StackPanel Name="Fio" Orientation="Horizontal">
+                <StackPanel  Orientation="Horizontal">
                     <StackPanel Margin="10">
                         <TextBlock>Номер</TextBlock>
                         <TextBox x:Name="DriverLicense" Width="100" BorderBrush="#046380" MaxLength="10"></TextBox>
                     </StackPanel>
                     <StackPanel Margin="10">
                         <TextBlock>ID Сотрудника</TextBlock>
-                        <TextBox x:Name="EmployeeID" Width="80" BorderBrush="#046380"></TextBox>
+                        <ComboBox Height="20" Width="80"  BorderBrush="#046380"  Name="DriverView" SelectedValuePath="EmployeeID">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path = EmployeeID}" ></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </StackPanel>
                     <StackPanel x:Name="DateReceiptStack" Margin="10 10 10 10 ">
                         <TextBlock>Дата получения</TextBlock>
@@ -34,7 +40,7 @@
                     <TextBlock Height="20" Margin="10 10 5 0 " >Категории</TextBlock>
                     <StackPanel  Margin="0 5 0 5">
                         <TextBlock HorizontalAlignment="Center">B</TextBlock>
-                        <CheckBox x:Name="B"  BorderBrush="#046380"  ></CheckBox>
+                        <CheckBox x:Name="BChecked"  BorderBrush="#046380"  ></CheckBox>
                     </StackPanel>
                     <StackPanel  Margin="5 5 0 5 ">
                         <TextBlock>BE</TextBlock>
@@ -42,7 +48,7 @@
                     </StackPanel>
                     <StackPanel  Margin="5 5 0 5 ">
                         <TextBlock HorizontalAlignment="Center">C</TextBlock>
-                        <CheckBox x:Name="C"  BorderBrush="#046380" ></CheckBox>
+                        <CheckBox x:Name="CChecked"  BorderBrush="#046380" ></CheckBox>
                     </StackPanel>
                     <StackPanel  Margin="5 5 0 5 ">
                         <TextBlock>CE</TextBlock>
@@ -50,12 +56,9 @@
                     </StackPanel>
 
                     <StackPanel Margin="80 0 0 0" Orientation="Horizontal">
-                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Height="30" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Ок</Button>
+                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Height="30" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Добавить</Button>
                         <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Height="30" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
                     </StackPanel>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-
                 </StackPanel>
             </StackPanel>
         </StackPanel>

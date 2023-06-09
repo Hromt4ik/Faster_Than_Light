@@ -11,7 +11,6 @@
     <Grid Name="mainGrid2" >
 
         <Rectangle Fill="#046380"></Rectangle>
-        <!---->
         <TabControl x:Name="MainStackPanel" TabStripPlacement="Left">
             <TabControl.Resources>
                 <Style TargetType="TabItem">
@@ -50,8 +49,8 @@
                         <TextBlock FontSize="24">Водительские Удостоверения</TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="AddDriverIdentificationButton" Click="AddDriverIdentificationButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
-                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
-                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                            <Button x:Name="EditDriverIdentificationButton" Click="EditDriverIdentificationButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button x:Name ="DelDriverIdentificationButton" Click="DelDriverIdentificationButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="DriverIdentificationDataGridView"   AutoGenerateColumns="False"
@@ -62,15 +61,15 @@
                                 <EventSetter Event="MouseDoubleClick" Handler="DriverIdentification_MouseDoubleClick"/>
                             </Style>
                         </DataGrid.Resources>
-                        <!--<DataGrid.ContextMenu>
-                -->
-                        <!--<ContextMenu>
-                    <MenuItem Header="Подробнее" Click="MenuItem_Click"></MenuItem>
-                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
-                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
-                </ContextMenu>-->
-                        <!--
-            </DataGrid.ContextMenu>-->
+                        <DataGrid.ContextMenu>
+
+                            <ContextMenu>
+                                <MenuItem Header="Подробнее" Click="DriverIdentificationMenuItem_Click"></MenuItem>
+                                <MenuItem Header="Редактировать" Click="EditDriverIdentificationButton_Click"></MenuItem>
+                                <MenuItem Header="Удалить" Click="DelDriverIdentificationButton_Click"></MenuItem>
+                            </ContextMenu>
+
+                        </DataGrid.ContextMenu>
 
                         <DataGrid.Columns>
 
@@ -85,9 +84,8 @@
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="DelDriverIdentificationButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
-
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
@@ -350,8 +348,13 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Background="White">
-                    <StackPanel>
-
+                    <StackPanel Margin="10">
+                        <TextBlock FontSize="24">Места базирования</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AddLocationButton" Click="AddLocationButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                        </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="LocationBaseDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">
@@ -415,8 +418,13 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Background="White">
-                    <StackPanel>
-
+                    <StackPanel Margin="10">
+                        <TextBlock FontSize="24">Посылки</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AddPackageButton" Click="AddPackageButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                        </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="PackageDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">
@@ -506,8 +514,13 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Background="White">
-                    <StackPanel>
-
+                    <StackPanel Margin="10">
+                        <TextBlock FontSize="24">Пункты выдачи</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AddPointReceptionButton" Click="AddPointReceptionButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                        </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="PointReceptionDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">
@@ -570,8 +583,13 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Background="White">
-                    <StackPanel>
-
+                    <StackPanel Margin="10">
+                        <TextBlock FontSize="24">Склады</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="AddWarehouseButton" Click="AddWarehouseButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                        </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="WarehouseDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">

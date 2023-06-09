@@ -139,7 +139,68 @@ namespace Faster_than_Light.Pages
 
         private void AddCarButton_Click(object sender, RoutedEventArgs e)
         {
+            AddWindows.AddCar win = new AddWindows.AddCar();
+            NavigateMethods.GridStorage.grid = CarDataGridView;
+            win.ShowDialog();
+        }
 
+        private void AddLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddPointReceptionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddPackageButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddWarehouseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditDriverIdentificationButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelDriverIdentificationButton_Click(object sender, RoutedEventArgs e)
+        {
+            DriverIdentification temp = DriverIdentificationDataGridView.SelectedItem as DriverIdentification;
+
+                if(temp != null) {
+                DatabaseControl.DelDriverIdentification(temp);
+
+                DriverIdentificationDataGridView.ItemsSource = null;
+                DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+        }
+
+        private void DriverIdentificationMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            DriverIdentification temp = DriverIdentificationDataGridView.SelectedItem as DriverIdentification;
+
+            if (temp != null)
+            {
+                DatabaseControl.UpdateDriverIdentification(temp);
+
+                DriverIdentificationDataGridView.ItemsSource = null;
+                DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }
