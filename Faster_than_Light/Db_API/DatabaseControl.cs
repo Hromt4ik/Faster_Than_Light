@@ -145,6 +145,23 @@ namespace Faster_than_Light.Db_API
         }
 
 
+        //public static bool isPhoneUnique(string phone, string type)
+        //{
+        //    using (DbAppContext ctx = new DbAppContext())
+        //    {
+        //        if (type == "customer" && ctx.Customer.Where(p => p.PhoneNumber == phone).FirstOrDefault() != null)
+        //        {
+        //            return false;
+        //        }
+        //        else if (type == "provider" && ctx.Provider.Where(p => p.PhoneNumber == phone).FirstOrDefault() != null)
+        //        {
+        //            return false;
+        //        }
+
+        //        return true;
+        //    }
+        //}
+
         //Add all tables -----------------------------------------------------------------
         public static void AddCar(Car Car)
         {
