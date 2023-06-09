@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static Faster_than_Light.NavigateMethods;
 
 namespace Faster_than_Light.AddWindows
 {
@@ -32,10 +33,25 @@ namespace Faster_than_Light.AddWindows
             
             DatabaseControl.AddCar(new classes.Car
             {
+                VIN = VinBox.Text,
+                StateNumber = StateBox.Text,
+                Stamp = StampBox.Text,
+                Model = ModelBox.Text,
+                Mileage = Convert.ToInt32(MileageBox.Text),
+                NextMaintenance = Convert.ToInt32(NextMileageBox.Text),
+
+                Status = StatusBox.Text,
+
+                LocationBase = (int)BaseView.SelectedValue,
+                DriverID = (int)DriverView.SelectedValue,
+
 
             });
 
-            
+            GridStorage.grid.ItemsSource = null;
+            GridStorage.grid.ItemsSource = DatabaseControl.GetCarForView();
+
+
             Close();
         }
 

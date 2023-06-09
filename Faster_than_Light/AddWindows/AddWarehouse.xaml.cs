@@ -29,6 +29,27 @@ namespace Faster_than_Light.AddWindows
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+
+            if (Check.Empty(Convert.ToString(positionView.SelectedValue)))
+            {
+                MessageBox.Show("Выберите Директора", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(Convert.ToString(RegionBox.Text)))
+            {
+                MessageBox.Show("Заполните Регион", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+            if (Check.Empty(Convert.ToString(adresBox.Text)))
+            {
+                MessageBox.Show("Введите адрес склада", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
             DatabaseControl.AddWarehouse(new classes.Warehouse
             {
                 Address = adresBox.Text,

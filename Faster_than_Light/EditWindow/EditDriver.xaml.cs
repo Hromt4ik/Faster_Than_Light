@@ -62,7 +62,7 @@ namespace Faster_than_Light.EditWindow
             DatabaseControl.UpdateDriverIdentification(temp);
             GridStorage.grid.ItemsSource = null;
             GridStorage.grid.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
-            this.Close();
+            Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)

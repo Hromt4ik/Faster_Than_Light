@@ -152,17 +152,24 @@ namespace Faster_than_Light.Pages
 
         private void AddPointReceptionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AddWindows.AddPointReception win = new AddWindows.AddPointReception();
+            NavigateMethods.GridStorage.grid = PointReceptionDataGridView;
+            win.ShowDialog();
         }
 
         private void AddPackageButton_Click(object sender, RoutedEventArgs e)
         {
 
+            AddWindows.AddCar win = new AddWindows.AddCar();
+            NavigateMethods.GridStorage.grid = CarDataGridView;
+            win.ShowDialog();
         }
 
         private void AddWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AddWindows.AddWarehouse win = new AddWindows.AddWarehouse();
+            NavigateMethods.GridStorage.grid = WarehouseDataGridView;
+            win.ShowDialog();
         }
 
 
@@ -279,9 +286,43 @@ namespace Faster_than_Light.Pages
 
         private void RemoveWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
+            Warehouse temp = WarehouseDataGridView.SelectedItem as Warehouse;
+
+            if (temp != null)
+            {
+                DatabaseControl.DelWarehouse(temp);
+
+                WarehouseDataGridView.ItemsSource = null;
+                WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
         }
 
+        private void EditPackageButton_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void RemovePackageButton_Click(object sender, RoutedEventArgs e)
+        {
+            Package temp = PackageDataGridView.SelectedItem as Package;
+
+            if (temp != null)
+            {
+                DatabaseControl.DelPackage(temp);
+
+                PackageDataGridView.ItemsSource = null;
+                PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+        }
     }
 }
