@@ -82,9 +82,6 @@ namespace Faster_than_Light.Pages
         }
 
 
-
-
-
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -157,8 +154,8 @@ namespace Faster_than_Light.Pages
         private void AddPackageButton_Click(object sender, RoutedEventArgs e)
         {
 
-            AddWindows.AddCar win = new AddWindows.AddCar();
-            NavigateMethods.GridStorage.grid = CarDataGridView;
+            AddWindows.AddPackage win = new AddWindows.AddPackage();
+            NavigateMethods.GridStorage.grid = PackageDataGridView;
             win.ShowDialog();
         }
 

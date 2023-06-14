@@ -1,4 +1,5 @@
-﻿using Faster_than_Light.Db_API;
+﻿using Faster_than_Light.classes;
+using Faster_than_Light.Db_API;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,24 @@ namespace Faster_than_Light.AddWindows
             EmployeeView.ItemsSource = DatabaseControl.GetEmployeeForView();
             CategoryView.ItemsSource = DatabaseControl.GetCargoCategoryForView();
             CarIDView.ItemsSource = DatabaseControl.GetCarForView();
+
+            List<string> finalEnumList = new List<string>();
+            Array enumArray = (Array)Enum.GetValues(typeof(StatusEnum.PackageStatuses)).Cast<StatusEnum.PackageStatuses>();
+            foreach (StatusEnum.PackageStatuses element in enumArray)
+            {
+                finalEnumList.Add(StatusEnum.GetDescription(element));
+            }
+
+            statusComboBox.ItemsSource = finalEnumList;
+
+            List<string> finalPackageEnumList = new List<string>();
+            Array enumPackageArray = (Array)Enum.GetValues(typeof(StatusEnum.PackageType)).Cast<StatusEnum.PackageType>();
+            foreach (StatusEnum.PackageType element in enumPackageArray)
+            {
+                finalPackageEnumList.Add(StatusEnum.GetDescription(element));
+            }
+
+            typePackageComboBox.ItemsSource = finalPackageEnumList;
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
@@ -54,8 +73,8 @@ namespace Faster_than_Light.AddWindows
                DateAcceptance = DateTime.SpecifyKind(Convert.ToDateTime(DateAcceptanceeBox.SelectedDate.Value), DateTimeKind.Utc),
                DateDeliveryToPoint = DateTime.SpecifyKind(Convert.ToDateTime(DateDeliveryToPointBox.SelectedDate.Value), DateTimeKind.Utc),
 
-               PackageType = TypeBox.Text,
-               Status = StatusBox.Text,
+               PackageType = typePackageComboBox.SelectedItem.ToString(),
+               Status = statusComboBox.SelectedItem.ToString(),
 
                DeliveryCost = Convert.ToInt32(CostBox.Text),
                Comments = CommBox.Text,

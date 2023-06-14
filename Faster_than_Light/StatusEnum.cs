@@ -20,7 +20,7 @@ namespace Faster_than_Light.classes
             Repair,
         }
 
-        public enum ParcelStatuses
+        public enum PackageStatuses
         {
             [Description("Принята от клиента")]
             AcceptedFromClient,
@@ -40,6 +40,16 @@ namespace Faster_than_Light.classes
             Lost,
             [Description("Выдана")]
             Issued
+        }
+
+        public enum PackageType
+        {
+            [Description("Картон")]
+            Paperboard,
+            [Description("Полиэтилен")]
+            Polyatilen,
+            [Description("Пластик")]
+            Plastic,
         }
 
         public static string GetDescription<T>(this T enumValue)

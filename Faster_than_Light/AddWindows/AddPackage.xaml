@@ -107,22 +107,22 @@
                 <StackPanel Orientation="Horizontal" x:Name="OtherThreeData">
 
                     <StackPanel x:Name="TypeStack" Margin="10 5 0 0">
-                        <TextBlock>Тип посылки</TextBlock>
-                        <TextBox x:Name="TypeBox" Width="150" BorderBrush="#046380" MaxLength="50" ></TextBox>
+                        <TextBlock>Тип упаковки</TextBlock>
+                        <ComboBox Background="#046380" x:Name="typePackageComboBox" Height="22" Width="135"></ComboBox>
                     </StackPanel>
                     <StackPanel x:Name="СarIDStack" Margin="10 5 0 0">
                         <TextBlock>Машина</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="CarIDView" SelectedValuePath="CarID">
+                        <ComboBox Height="18" Width="135" x:Name="CarIDView" SelectedValuePath="CarID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=CarID.StateNumber}" ></TextBlock>
+                                    <TextBlock Text="{Binding Path=StateNumber}" ></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                     <StackPanel x:Name="StatusStack" Margin="10 5 0 0">
                         <TextBlock>Статус</TextBlock>
-                        <TextBox x:Name="StatusBox" Width="150" BorderBrush="#046380" MaxLength="50" ></TextBox>
+                        <ComboBox x:Name="statusComboBox" Height="22" Width="135"></ComboBox>
                     </StackPanel>
                 </StackPanel>
 
