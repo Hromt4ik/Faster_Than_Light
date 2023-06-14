@@ -34,7 +34,6 @@ namespace Faster_than_Light.Pages
             PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
             PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
             WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
-
         }
 
 
@@ -277,10 +276,7 @@ namespace Faster_than_Light.Pages
 
 
 
-        private void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
 
         private void RemoveWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -328,16 +324,32 @@ namespace Faster_than_Light.Pages
 
         }
 
-        private void RemoveWarehouseButton_Click(object sender, RoutedEventArgs e)
+        private void EditClientButton_Click(object sender, RoutedEventArgs e)
         {
-            Warehouse temp = WarehouseDataGridView.SelectedItem as Warehouse;
+            Client temp = ClientDataGridView.SelectedItem as Client;
 
             if (temp != null)
             {
-                DatabaseControl.DelWarehouse(temp);
+                EditWindow.EditClient win = new EditWindow.EditClient(temp);
+                NavigateMethods.GridStorage.grid = ClientDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
 
-                WarehouseDataGridView.ItemsSource = null;
-                WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
+        private void RemoveClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            Client temp = ClientDataGridView.SelectedItem as Client;
+
+            if (temp != null)
+            {
+                DatabaseControl.DelClient(temp);
+
+                ClientDataGridView.ItemsSource = null;
+                ClientDataGridView.ItemsSource = DatabaseControl.GetClientForView();
             }
             else
             {

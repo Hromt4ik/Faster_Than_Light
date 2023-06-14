@@ -108,8 +108,17 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Окончания"
                                     Binding="{Binding Path=TerminationDate, StringFormat=dd.MM.yyyy}" x:Name="TerminationDateView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Сотрудник"
-                                    Binding="{Binding Path=EmployeeID}" x:Name="EmploeeIDView"/>
-
+                                     x:Name="EmploeeIDView">
+                                
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                        <Binding Path="EmployeeID"/>
+                                        <Binding Path="EmployeeEntity.Name"/>
+                                        <Binding Path="EmployeeEntity.Surname"/>
+                                        <Binding Path="EmployeeEntity.Patronymic"/>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
 
 
                         </DataGrid.Columns>
@@ -159,12 +168,12 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditCategoriesButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveCategoriesButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>
@@ -195,8 +204,8 @@
                         <TextBlock FontSize="24">Клиенты</TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="AddClientButton" Click="AddClientButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
-                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
-                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                            <Button Click="EditClientButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Click="RemoveClientButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="ClientDataGridView"   AutoGenerateColumns="False"
@@ -207,15 +216,12 @@
                                 <EventSetter Event="MouseDoubleClick" Handler="ClientDataGridRow_MouseDoubleClick"/>
                             </Style>
                         </DataGrid.Resources>
-                        <!--<DataGrid.ContextMenu>
-                -->
-                        <!--<ContextMenu>
-                  
-                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
-                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
-                </ContextMenu>-->
-                        <!--
-            </DataGrid.ContextMenu>-->
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Редактировать" Click="EditClientButton_Click"></MenuItem>
+                                <MenuItem Header="Удалить" Click="RemoveClientButton_Click"></MenuItem>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
@@ -223,12 +229,12 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditClientButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveClientButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>

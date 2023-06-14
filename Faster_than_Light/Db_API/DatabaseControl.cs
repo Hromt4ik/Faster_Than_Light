@@ -288,6 +288,32 @@ namespace Faster_than_Light.Db_API
             }
         }
 
+        public static void UpdateClieny(Client client)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                Client temp = ctx.Client.FirstOrDefault(p => p.ClientID 
+                == client.ClientID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.Name = client.Name;
+                temp.Surname = client.Surname;
+                temp.Patronymic = client.Patronymic;
+                temp.Birthdate = client.Birthdate;
+                temp.SeriaNumberPassport = client.SeriaNumberPassport;
+                temp.PhoneNumber = client.PhoneNumber;
+                temp.Email = client.Email;
+                
+
+                ctx.SaveChanges();
+            }
+        }
+
 
         //--------------------------------------------------------------- end
 

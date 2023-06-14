@@ -1,6 +1,8 @@
-﻿using Faster_than_Light.Db_API;
+﻿using Faster_than_Light.classes;
+using Faster_than_Light.Db_API;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,11 +28,19 @@ namespace Faster_than_Light.AddWindows
             InitializeComponent();
             BaseView.ItemsSource = DatabaseControl.GetLocationBaseForView();
             DriverView.ItemsSource = DatabaseControl.GetEmployeeForView();
+
+            List<string> finalEnumList = new List<string>();
+            Array enumArray = (Array)Enum.GetValues(typeof(StatusEnum.MachineStatuses)).Cast<StatusEnum.MachineStatuses>();
+            foreach (StatusEnum.MachineStatuses element in enumArray)
+            {
+                finalEnumList.Add(StatusEnum.GetDescription(element));
+            }
+
+            statusComboBox.ItemsSource = finalEnumList;
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            
             DatabaseControl.AddCar(new classes.Car
             {
                 VIN = VinBox.Text,
@@ -39,8 +49,7 @@ namespace Faster_than_Light.AddWindows
                 Model = ModelBox.Text,
                 Mileage = Convert.ToInt32(MileageBox.Text),
                 NextMaintenance = Convert.ToInt32(NextMileageBox.Text),
-
-                Status = StatusBox.Text,
+                Status = statusComboBox.SelectedItem.ToString(),
 
                 LocationBase = (int)BaseView.SelectedValue,
                 DriverID = (int)DriverView.SelectedValue,

@@ -18,8 +18,8 @@ namespace Faster_than_Light.classes
         public string Stamp { get; set; }
         public string Model { get; set; }
         public int Mileage { get; set; }
-        public int NextMaintenance { get; set; }    
-        public string Status  { get; set; } = Convert.ToString(StatusEnum.MachineStatuses.AtTheBase);
+        public int NextMaintenance { get; set; }
+        public string Status { get; set; } = StatusEnum.GetDescription(StatusEnum.MachineStatuses.AtTheBase);
 
         [ForeignKey("LocationBaseEntity")] public int LocationBase { get; set; }
         [ForeignKey("EmployeeEntity")] public int DriverID { get; set; }

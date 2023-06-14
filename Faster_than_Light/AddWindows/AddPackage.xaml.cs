@@ -30,7 +30,6 @@ namespace Faster_than_Light.AddWindows
             EmployeeView.ItemsSource = DatabaseControl.GetEmployeeForView();
             CategoryView.ItemsSource = DatabaseControl.GetCargoCategoryForView();
             CarIDView.ItemsSource = DatabaseControl.GetCarForView();
-
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
