@@ -105,8 +105,6 @@ namespace Faster_than_Light.Pages
             NavigateMethods.AuthorizationPageOpen();
         }
 
-
-
         private void AddClientButton_Click(object sender, RoutedEventArgs e)
         {
             AddWindows.AddClient win = new AddWindows.AddClient();
@@ -323,6 +321,28 @@ namespace Faster_than_Light.Pages
                 MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
+        }
+
+        private void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveWarehouseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Warehouse temp = WarehouseDataGridView.SelectedItem as Warehouse;
+
+            if (temp != null)
+            {
+                DatabaseControl.DelWarehouse(temp);
+
+                WarehouseDataGridView.ItemsSource = null;
+                WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }
