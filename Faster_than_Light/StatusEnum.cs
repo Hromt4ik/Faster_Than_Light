@@ -30,7 +30,7 @@ namespace Faster_than_Light.classes
             AcceptedToWarehouse,
             [Description("Отправлена в город выдачи")]
             SentToDestinationCity,
-            [Description("Принята в город выдачи")]
+            [Description("Принят в городе выдачи")]
             AcceptedDestinationCity,
             [Description("Отправлена в пункт выдачи")]
             SentIssuePoint,

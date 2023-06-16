@@ -4,11 +4,6 @@
              xmlns:local="clr-namespace:Faster_than_Light"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                
-                <ResourceDictionary Source="/Styles/ComboboxStyles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
