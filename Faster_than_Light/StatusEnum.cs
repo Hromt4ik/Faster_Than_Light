@@ -18,6 +18,8 @@ namespace Faster_than_Light.classes
             AssignedDriver,
             [Description("Ремонт")]
             Repair,
+            [Description("Списана")]
+            Discarded,
         }
 
         public enum PackageStatuses
