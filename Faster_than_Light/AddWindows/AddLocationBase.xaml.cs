@@ -45,10 +45,19 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
-            if (!Check.IsPositivNumber(NumberBox.Text))
+            if (Check.Empty(RegionBox.Text))
             {
+                MessageBox.Show("Введите Регион", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
+            if (Check.Empty(Convert.ToString(positionView.SelectedValue)))
+            {
+                MessageBox.Show("Выберите Директора", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
 
 
             DatabaseControl.AddLocationBase(new classes.LocationBase

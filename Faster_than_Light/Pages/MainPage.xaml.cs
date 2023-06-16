@@ -205,18 +205,18 @@ namespace Faster_than_Light.Pages
 
         private void LocationBaseDataEditButton_Click(object sender, RoutedEventArgs e)
         {
-            //LocationBase temp = DriverIdentificationDataGridView.SelectedItem as LocationBase;
+            LocationBase temp = LocationBaseDataGridView.SelectedItem as LocationBase;
 
-            //if (temp != null)
-            //{
-            //    EditWindow.EditLocationBase win = new EditWindow.EditLocationBase(temp);
-            //    NavigateMethods.GridStorage.grid = EditLocationBaseDataGridView;
-            //    win.ShowDialog();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
-            //}
+            if (temp != null)
+            {
+                EditWindow.EditLocationBase win = new EditWindow.EditLocationBase(temp);
+                NavigateMethods.GridStorage.grid = LocationBaseDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void LocationBaseRemoveButton_Click(object sender, RoutedEventArgs e)

@@ -314,6 +314,28 @@ namespace Faster_than_Light.Db_API
             }
         }
 
+        public static void UpdateLocationBase(LocationBase locationBase)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                LocationBase temp = ctx.LocationBase.FirstOrDefault(p => p.LocationBaseID
+                == locationBase.LocationBaseID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.Region = locationBase.Region;
+                temp.Director = locationBase.Director;
+                temp.NumberSeats = locationBase.NumberSeats;
+                temp.Address = locationBase.Address;
+
+                ctx.SaveChanges();
+            }
+        }
+
 
         //--------------------------------------------------------------- end
 
