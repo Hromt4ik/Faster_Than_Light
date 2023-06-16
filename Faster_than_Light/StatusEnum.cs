@@ -22,23 +22,23 @@ namespace Faster_than_Light.classes
 
         public enum PackageStatuses
         {
-            [Description("Принята от клиента")]
+            [Description("Принят от клиента")]
             AcceptedFromClient,
-            [Description("Отправлена на склад")]
+            [Description("Отправлен на склад")]
             SentToWarehouse,
-            [Description("Принята на складе")]
+            [Description("Принят на складе")]
             AcceptedToWarehouse,
-            [Description("Отправлена в город выдачи")]
+            [Description("Отправлен в город выдачи")]
             SentToDestinationCity,
             [Description("Принят в городе выдачи")]
             AcceptedDestinationCity,
-            [Description("Отправлена в пункт выдачи")]
+            [Description("Отправлен в пункт выдачи")]
             SentIssuePoint,
-            [Description("Принята в пункте выдачи")]
+            [Description("Принят в пункте выдачи")]
             AcceptedPointIssue,
-            [Description("Утеряна")]
+            [Description("Утерян")]
             Lost,
-            [Description("Выдана")]
+            [Description("Выдан")]
             Issued
         }
 
