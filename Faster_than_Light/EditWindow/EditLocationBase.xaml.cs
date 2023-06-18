@@ -53,7 +53,7 @@ namespace Faster_than_Light.EditWindow
                 MessageBox.Show("Введите Регион", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            if (Check.Empty(Convert.ToString(positionView.SelectedValue)))
+            if (Check.Empty(Convert.ToString(EmployeeID.SelectedValue)))
             {
                 MessageBox.Show("Выберите Директора", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

@@ -23,10 +23,10 @@
                     </StackPanel>
                     <StackPanel Name="PositionStack" Margin="10">
                         <TextBlock>Директор</TextBlock>
-                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="EmployeeID" SelectedValuePath="EmployeeID">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock>
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380" Background="#046380" Name="EmployeeID" SelectedValuePath="EmployeeID">
+                            <ComboBox.ItemTemplate >
+                                <DataTemplate >
+                                    <TextBlock >
                                         <TextBlock.Text>
                                             <MultiBinding StringFormat="{} {0} {1}">
                                                 <Binding Path="EmployeeID" />
