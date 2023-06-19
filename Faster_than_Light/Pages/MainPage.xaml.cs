@@ -173,7 +173,8 @@ namespace Faster_than_Light.Pages
         {
             DriverIdentification temp = DriverIdentificationDataGridView.SelectedItem as DriverIdentification;
 
-                if(temp != null) {
+            if (temp != null)
+            {
                 DatabaseControl.DelDriverIdentification(temp);
 
                 DriverIdentificationDataGridView.ItemsSource = null;
@@ -407,7 +408,7 @@ namespace Faster_than_Light.Pages
 
             if (temp != null)
             {
-                if (MessageBoxResult.No ==  MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален", 
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
                     MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
                 {
                     return;
@@ -448,9 +449,10 @@ namespace Faster_than_Light.Pages
 
         public void CheckCategory()
         {
-   
 
-            if(B.IsChecked == true && BE.IsChecked == true && C.IsChecked == true && CE.IsChecked == true) {
+
+            if (B.IsChecked == true && BE.IsChecked == true && C.IsChecked == true && CE.IsChecked == true)
+            {
                 using (DbAppContext ctx = new DbAppContext())
                 {
                     DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
@@ -459,7 +461,6 @@ namespace Faster_than_Light.Pages
                 }
                 return;
             }
-
             if (B.IsChecked == false && BE.IsChecked == false && C.IsChecked == false && CE.IsChecked == false)
             {
                 DriverIdentificationDataGridView.ItemsSource = null;
@@ -469,7 +470,7 @@ namespace Faster_than_Light.Pages
 
             if (B.IsChecked == true)
             {
-                if(B.IsChecked == true && BE.IsChecked == true && C.IsChecked == true)
+                if (B.IsChecked == true && BE.IsChecked == true && C.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
                     {
@@ -479,7 +480,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
                 if (B.IsChecked == true && BE.IsChecked == true && CE.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
@@ -490,7 +490,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
                 if (B.IsChecked == true && C.IsChecked == true && CE.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
@@ -500,7 +499,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
                 if (B.IsChecked == true && BE.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
@@ -519,7 +517,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
                 if (B.IsChecked == true && CE.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
@@ -529,8 +526,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
-
                 using (DbAppContext ctx = new DbAppContext())
                 {
                     DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
@@ -539,8 +534,6 @@ namespace Faster_than_Light.Pages
                 }
                 return;
             }
-
-
             if (BE.IsChecked == true)
             {
                 if (BE.IsChecked == true && C.IsChecked == true && CE.IsChecked == true)
@@ -553,7 +546,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
                 if (BE.IsChecked == true && C.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
@@ -563,7 +555,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
                 if (BE.IsChecked == true && CE.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
@@ -573,8 +564,6 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
-
                 using (DbAppContext ctx = new DbAppContext())
                 {
                     DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
@@ -583,11 +572,8 @@ namespace Faster_than_Light.Pages
                 }
                 return;
             }
-
             if (C.IsChecked == true)
             {
-
-
                 if (C.IsChecked == true && CE.IsChecked == true)
                 {
                     using (DbAppContext ctx = new DbAppContext())
@@ -597,20 +583,15 @@ namespace Faster_than_Light.Pages
                     }
                     return;
                 }
-
-
                 using (DbAppContext ctx = new DbAppContext())
                 {
                     DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
                         .Where(t => (t.C == true)).ToList();
-
                 }
                 return;
             }
-
             if (CE.IsChecked == true)
             {
-
                 using (DbAppContext ctx = new DbAppContext())
                 {
                     DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
