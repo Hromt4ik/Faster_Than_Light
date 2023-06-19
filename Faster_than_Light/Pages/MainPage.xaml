@@ -210,6 +210,7 @@
                             <Button x:Name="AddClientButton" Click="AddClientButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
                             <Button Click="EditClientButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
                             <Button Click="RemoveClientButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                            <TextBox Background="Transparent" BorderBrush="#046380" MinWidth="200" Margin="10" x:Name="searchTextBox" TextChanged="searchTextBox_TextChanged"/>
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="ClientDataGridView"   AutoGenerateColumns="False"
