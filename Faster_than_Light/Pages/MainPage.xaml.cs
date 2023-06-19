@@ -353,5 +353,46 @@ namespace Faster_than_Light.Pages
                 MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        private void EditCarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Car temp = CarDataGridView.SelectedItem as Car;
+
+            if (temp != null)
+            {
+                EditWindow.EditCar win = new EditWindow.EditCar(temp);
+                NavigateMethods.GridStorage.grid = CarDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void RemoveCarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Car temp = CarDataGridView.SelectedItem as Car;
+
+            if (temp != null)
+            {
+                if (MessageBoxResult.No ==  MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален", 
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
+
+
+                DatabaseControl.DelCar(temp);
+
+                CarDataGridView.ItemsSource = null;
+                CarDataGridView.ItemsSource = DatabaseControl.GetCarForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
     }
 }

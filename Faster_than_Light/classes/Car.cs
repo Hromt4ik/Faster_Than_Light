@@ -22,10 +22,10 @@ namespace Faster_than_Light.classes
         public string Status { get; set; } = StatusEnum.GetDescription(StatusEnum.MachineStatuses.AtTheBase);
 
         [ForeignKey("LocationBaseEntity")] public int LocationBase { get; set; }
-        [ForeignKey("EmployeeEntity")] public int DriverID { get; set; }
+        [ForeignKey("EmployeeEntity")] public int? DriverID { get; set; }
 
         public LocationBase LocationBaseEntity { get; set; }
-        public Employee EmployeeEntity { get; set; }
+        public Employee EmployeeEntity { get; set; } 
         public List<Package> PackageEntites { get; set; }
 
   

@@ -87,7 +87,7 @@ CREATE TABLE "Car"(
     "DriverID" integer,
 	
 	FOREIGN KEY ("LocationBase") REFERENCES "LocationBase" ("LocationBaseID") ON DELETE CASCADE,
-	FOREIGN KEY ("DriverID") REFERENCES "Employee" ("EmployeeID") ON DELETE CASCADE
+	FOREIGN KEY ("DriverID") REFERENCES "Employee" ("EmployeeID") ON DELETE SET NULL
 );
 
 CREATE TABLE "Package"(

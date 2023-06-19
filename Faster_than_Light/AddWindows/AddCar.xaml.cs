@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,6 +42,8 @@ namespace Faster_than_Light.AddWindows
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+
+    
             DatabaseControl.AddCar(new classes.Car
             {
                 VIN = VinBox.Text,
@@ -52,7 +55,7 @@ namespace Faster_than_Light.AddWindows
                 Status = statusComboBox.SelectedItem.ToString(),
 
                 LocationBase = (int)BaseView.SelectedValue,
-                DriverID = (int)DriverView.SelectedValue,
+                DriverID = Convert.ToInt32(DriverView.SelectedValue),
 
 
             });

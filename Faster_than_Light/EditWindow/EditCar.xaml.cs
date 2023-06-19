@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Faster_than_Light.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,21 +20,27 @@ namespace Faster_than_Light.EditWindow
     /// </summary>
     public partial class EditCar : Window
     {
-        public EditCar()
+
+        Car temp = new Car();
+        public EditCar(Car car)
         {
             InitializeComponent();
+            temp = car;
+            VinBox.DataContext = car.VIN;
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+
+            Close();
         }
 
 
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
