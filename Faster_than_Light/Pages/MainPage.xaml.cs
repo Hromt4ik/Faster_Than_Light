@@ -225,6 +225,11 @@ namespace Faster_than_Light.Pages
 
             if (temp != null)
             {
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
                 DatabaseControl.DelLocationBase(temp);
 
                 LocationBaseDataGridView.ItemsSource = null;
@@ -260,6 +265,12 @@ namespace Faster_than_Light.Pages
 
             if (temp != null)
             {
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
                 DatabaseControl.DelCargoCategory(temp);
 
                 CargoCategoryDataGridView.ItemsSource = null;
@@ -281,6 +292,12 @@ namespace Faster_than_Light.Pages
 
             if (temp != null)
             {
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
                 DatabaseControl.DelWarehouse(temp);
 
                 WarehouseDataGridView.ItemsSource = null;
@@ -304,6 +321,12 @@ namespace Faster_than_Light.Pages
 
             if (temp != null)
             {
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
                 DatabaseControl.DelPackage(temp);
 
                 PackageDataGridView.ItemsSource = null;
@@ -343,6 +366,13 @@ namespace Faster_than_Light.Pages
 
             if (temp != null)
             {
+
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
                 DatabaseControl.DelClient(temp);
 
                 ClientDataGridView.ItemsSource = null;
