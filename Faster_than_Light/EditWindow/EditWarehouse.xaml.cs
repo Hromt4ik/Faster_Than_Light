@@ -27,6 +27,8 @@ namespace Faster_than_Light.EditWindow
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+
+            
             Close();
         }
 

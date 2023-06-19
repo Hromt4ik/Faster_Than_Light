@@ -283,6 +283,33 @@ namespace Faster_than_Light.Db_API
             }
         }
 
+        public static void UpdateCar(Car car)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                Car temp = ctx.Car.FirstOrDefault(p => p.CarID
+                == car.CarID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.VIN = car.VIN;
+                temp.StateNumber = car.StateNumber;
+                temp.Stamp = car.Stamp;
+                temp.Model = car.Model;
+                temp.Mileage = car.Mileage;
+                temp.NextMaintenance = car.NextMaintenance;
+                temp.Status = car.Status;
+                temp.LocationBase = car.LocationBase;
+                temp.DriverID = car.DriverID;
+
+                ctx.SaveChanges();
+            }
+        }
+
 
         //--------------------------------------------------------------- end
 

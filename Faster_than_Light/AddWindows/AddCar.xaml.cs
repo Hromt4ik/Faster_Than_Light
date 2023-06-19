@@ -54,7 +54,7 @@ namespace Faster_than_Light.AddWindows
                 NextMaintenance = Convert.ToInt32(NextMileageBox.Text),
                 Status = statusComboBox.SelectedItem.ToString(),
 
-                LocationBase = (int)BaseView.SelectedValue,
+                LocationBase = Convert.ToInt32(BaseView.SelectedValue),
                 DriverID = Convert.ToInt32(DriverView.SelectedValue),
 
 

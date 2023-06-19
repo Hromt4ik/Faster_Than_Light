@@ -1,5 +1,6 @@
 ﻿using Faster_than_Light.classes;
 using Faster_than_Light.Db_API;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -413,7 +414,6 @@ namespace Faster_than_Light.Pages
                 }
 
 
-
                 DatabaseControl.DelCar(temp);
 
                 CarDataGridView.ItemsSource = null;
@@ -423,6 +423,204 @@ namespace Faster_than_Light.Pages
             {
                 MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void B_Click(object sender, RoutedEventArgs e)
+        {
+            CheckCategory();
+        }
+
+        private void BE_Click(object sender, RoutedEventArgs e)
+        {
+            CheckCategory();
+        }
+
+        private void C_Click(object sender, RoutedEventArgs e)
+        {
+            CheckCategory();
+        }
+
+        private void CE_Click(object sender, RoutedEventArgs e)
+        {
+            CheckCategory();
+        }
+
+
+        public void CheckCategory()
+        {
+   
+
+            if(B.IsChecked == true && BE.IsChecked == true && C.IsChecked == true && CE.IsChecked == true) {
+                using (DbAppContext ctx = new DbAppContext())
+                {
+                    DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                        .Where(t => (t.B == true) && (t.BE == true) && (t.C == true) && (t.CE == true)).ToList();
+
+                }
+                return;
+            }
+
+            if (B.IsChecked == false && BE.IsChecked == false && C.IsChecked == false && CE.IsChecked == false)
+            {
+                DriverIdentificationDataGridView.ItemsSource = null;
+                DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
+                return;
+            }
+
+            if (B.IsChecked == true)
+            {
+                if(B.IsChecked == true && BE.IsChecked == true && C.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.B == true) && (t.BE == true) && (t.C == true)).ToList();
+
+                    }
+                    return;
+                }
+
+                if (B.IsChecked == true && BE.IsChecked == true && CE.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.B == true) && (t.BE == true) && (t.CE == true)).ToList();
+
+                    }
+                    return;
+                }
+
+                if (B.IsChecked == true && C.IsChecked == true && CE.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.B == true) && (t.C == true) && (t.CE == true)).ToList();
+                    }
+                    return;
+                }
+
+                if (B.IsChecked == true && BE.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.B == true) && (t.BE == true)).ToList();
+                    }
+                    return;
+                }
+                if (B.IsChecked == true && C.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.B == true) && (t.C == true)).ToList();
+                    }
+                    return;
+                }
+
+                if (B.IsChecked == true && CE.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.B == true) && (t.CE == true)).ToList();
+                    }
+                    return;
+                }
+
+
+                using (DbAppContext ctx = new DbAppContext())
+                {
+                    DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                        .Where(t => (t.B == true)).ToList();
+
+                }
+                return;
+            }
+
+
+            if (BE.IsChecked == true)
+            {
+                if (BE.IsChecked == true && C.IsChecked == true && CE.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.BE == true) && (t.C == true) && (t.CE == true)).ToList();
+
+                    }
+                    return;
+                }
+
+                if (BE.IsChecked == true && C.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.BE == true) && (t.C == true)).ToList();
+                    }
+                    return;
+                }
+
+                if (BE.IsChecked == true && CE.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.BE == true) && (t.CE == true)).ToList();
+                    }
+                    return;
+                }
+
+
+                using (DbAppContext ctx = new DbAppContext())
+                {
+                    DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                        .Where(t => (t.BE == true)).ToList();
+
+                }
+                return;
+            }
+
+            if (C.IsChecked == true)
+            {
+
+
+                if (C.IsChecked == true && CE.IsChecked == true)
+                {
+                    using (DbAppContext ctx = new DbAppContext())
+                    {
+                        DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                            .Where(t => (t.C == true) && (t.CE == true)).ToList();
+                    }
+                    return;
+                }
+
+
+                using (DbAppContext ctx = new DbAppContext())
+                {
+                    DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                        .Where(t => (t.C == true)).ToList();
+
+                }
+                return;
+            }
+
+            if (CE.IsChecked == true)
+            {
+
+                using (DbAppContext ctx = new DbAppContext())
+                {
+                    DriverIdentificationDataGridView.ItemsSource = ctx.DriverIdentification.Include(t => t.EmployeeEntity)
+                        .Where(t => (t.CE == true)).ToList();
+
+                }
+                return;
+            }
+
+
         }
     }
 }
