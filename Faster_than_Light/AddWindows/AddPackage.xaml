@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.AddWindows"
         mc:Ignorable="d"
-       Title="Посылка (Создание)" MinHeight="400" MaxHeight="400" MinWidth="480" MaxWidth="480">
+       Title="Посылка (Создание)" MinHeight="430" MaxHeight="430" MinWidth="480" MaxWidth="480">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
@@ -15,7 +15,7 @@
                 <StackPanel Name="Fio" Orientation="Horizontal">
                     <StackPanel x:Name="ClientIdStack" Margin="10">
                         <TextBlock>Клиент</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="ClientIdView" SelectedValuePath="ClientID">
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="ClientIdView" SelectedValuePath="ClientID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=ClientID}" ></TextBlock>
@@ -26,7 +26,7 @@
      
                     <StackPanel x:Name="SendingStack" Margin="10">
                         <TextBlock>Адрес отправки</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="SendingView" SelectedValuePath="PointID">
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="SendingView" SelectedValuePath="PointID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=PointID}" ></TextBlock>
@@ -36,7 +36,7 @@
                     </StackPanel>
                     <StackPanel x:Name="DeliveryStack" Margin="10">
                         <TextBlock>Адрес доставки</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="DeliveryView" SelectedValuePath="PointID">
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="DeliveryView" SelectedValuePath="PointID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=PointID}" ></TextBlock>
@@ -68,7 +68,7 @@
                     </StackPanel>
                     <StackPanel x:Name="EmployeeStack" Margin="10 0 0 0">
                         <TextBlock>Сотрудник</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="EmployeeView" SelectedValuePath="EmployeeID">
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="EmployeeView" SelectedValuePath="EmployeeID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=EmployeeID}" ></TextBlock>
@@ -78,7 +78,7 @@
                     </StackPanel>
                     <StackPanel x:Name="CategoryStack" Margin="10 0 0 0">
                         <TextBlock>Категория</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="CategoryView" SelectedValuePath="CategoryID">
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="CategoryView" SelectedValuePath="CategoryID" SelectionChanged="CategoryView_SelectionChanged">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=CategoryID}" ></TextBlock>
@@ -92,7 +92,7 @@
 
                     <StackPanel x:Name="WeightStack" Margin="10 5 0 0">
                         <TextBlock>Вес</TextBlock>
-                        <TextBox x:Name="ModelBox" Width="150" BorderBrush="#046380" MaxLength="13" ></TextBox>
+                        <TextBox x:Name="ModelBox" Width="150" BorderBrush="#046380" MaxLength="13" TextChanged="ModelBox_TextChanged" ></TextBox>
                     </StackPanel>
                     <StackPanel x:Name="DateAcceptanceStack" Margin="10 0 0 0">
                         <TextBlock>Дата принятия</TextBlock>
@@ -112,7 +112,7 @@
                     </StackPanel>
                     <StackPanel x:Name="СarIDStack" Margin="10 5 0 0">
                         <TextBlock>Машина</TextBlock>
-                        <ComboBox Height="18" Width="135" x:Name="CarIDView" SelectedValuePath="CarID">
+                        <ComboBox Height="22" Width="135" x:Name="CarIDView" SelectedValuePath="CarID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Path=StateNumber}" ></TextBlock>

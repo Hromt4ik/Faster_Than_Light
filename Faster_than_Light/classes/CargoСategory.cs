@@ -17,5 +17,9 @@ namespace Faster_than_Light.classes
         public string Comments { get; set; }
 
         public List<Package> PackageEntites { get; set; }
+
+
+        public decimal GetTransportationCoefficient() 
+        { return TransportationCoefficient; }
     }
 }

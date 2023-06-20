@@ -95,7 +95,33 @@ namespace Faster_than_Light.AddWindows
 
         private void rezult_Click(object sender, RoutedEventArgs e)
         {
-            //CostBox.Text = Convert.ToInt32(ModelBox.)
+            CostSum();
         }
+
+
+
+        private void ModelBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CostSum();
+        }
+
+        private void CategoryView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CostSum();
+        }
+
+
+        public void CostSum()
+        {
+            if (ModelBox.Text != string.Empty && CategoryView.SelectedItem != null)
+            {
+                CargoCategory temp = CategoryView.SelectedItem as CargoCategory;
+                CostBox.Text = Convert.ToString(Convert.ToDecimal(ModelBox.Text) * temp.GetTransportationCoefficient());
+            }
+
+
+        }
+
+
     }
 }
