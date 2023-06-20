@@ -608,8 +608,9 @@ namespace Faster_than_Light.Pages
         {
             using (DbAppContext ctx = new DbAppContext())
             {
-                ClientDataGridView.ItemsSource = ctx.Client.Where(c => c.Name.ToLower().Contains(searchTextBox.Text.ToLower()) ||  c.Surname.ToLower().Contains(searchTextBox.Text.ToLower()) || c.Patronymic.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
-
+                ClientDataGridView.ItemsSource = ctx.Client.Where(c => c.Name.ToLower().Contains(searchTextBox.Text.ToLower()) 
+                ||  c.Surname.ToLower().Contains(searchTextBox.Text.ToLower())
+                || c.Patronymic.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
             }
         }
     }
