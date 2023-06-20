@@ -175,6 +175,12 @@ namespace Faster_than_Light.Pages
 
             if (temp != null)
             {
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
                 DatabaseControl.DelDriverIdentification(temp);
 
                 DriverIdentificationDataGridView.ItemsSource = null;
