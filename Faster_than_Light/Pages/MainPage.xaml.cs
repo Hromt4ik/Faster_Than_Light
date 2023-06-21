@@ -649,5 +649,7 @@ namespace Faster_than_Light.Pages
                     Where(c => c.StateNumber.ToLower().Contains(searchCarTextBox.Text.ToLower())).ToList();
             }
         }
+
+
     }
 }

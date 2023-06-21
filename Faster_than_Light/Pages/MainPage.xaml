@@ -120,11 +120,9 @@
                                         <Binding Path="EmployeeEntity.Name"/>
                                         <Binding Path="EmployeeEntity.Surname"/>
                                         <Binding Path="EmployeeEntity.Patronymic"/>
-                                </MultiBinding>
-                            </DataGridTextColumn.Binding>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
-
-
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -342,9 +340,17 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Место Базирования"
                                     Binding="{Binding Path=LocationBase}" x:Name="LocationBaseView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Назначеный Водитель"
-                                    Binding="{Binding Path=DriverID}" x:Name="DriverIDView"/>
+                                     x:Name="DriverIDView">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                        <Binding Path="DriverID"/>
+                                        <Binding Path="EmployeeEntity.Name"/>
+                                        <Binding Path="EmployeeEntity.Surname"/>
+                                        <Binding Path="EmployeeEntity.Patronymic"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
-
                     </DataGrid>
 
                 </Grid>
@@ -410,10 +416,17 @@
                                     Binding="{Binding Path=NumberSeats}" x:Name="NumberSeatsView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Регион"
                                     Binding="{Binding Path=Region}" x:Name="RegionView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Директор"
-                                    Binding="{Binding Path=Director}" x:Name="DirectorView"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Директор" x:Name="DirectorView">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                        <Binding Path="Director"/>
+                                    <Binding Path="EmployeeEntity.Name"/>
+                                    <Binding Path="EmployeeEntity.Surname"/>
+                                    <Binding Path="EmployeeEntity.Patronymic"/>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
-
                     </DataGrid>
 
                 </Grid>
@@ -453,7 +466,6 @@
                         </DataGrid.ContextMenu>
 
                         <DataGrid.Columns>
-
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -475,7 +487,16 @@
                             <DataGridTextColumn IsReadOnly="True"  Header="ID Посылки"
                                     Binding="{Binding Path=PackageID}" x:Name="PackageIDiew"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Клиент"
-                                    Binding="{Binding Path=ClientID}" x:Name="ClientID"/>
+                                     x:Name="ClientID">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                    <Binding Path="ClientID"/>
+                                    <Binding Path="ClientEntity.Name"/>
+                                    <Binding Path="ClientEntity.Surname"/>
+                                    <Binding Path="ClientEntity.Patronymic"/>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Комментарий"
                                     Binding="{Binding Path=Comments}" x:Name="Comments"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки"
@@ -490,8 +511,16 @@
                                     Binding="{Binding Path=DateDeliveryToPoint, StringFormat=dd.MM.yyyy}" x:Name="DateDeliveryToPointView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата выдачи"
                                     Binding="{Binding Path=DateIssue, StringFormat=dd.MM.yyyy}" x:Name="DateIssueView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="ID Сотрудника"
-                                    Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDPackageView"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Сотрудник" x:Name="EmployeeIDPackageView">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                        <Binding Path="EmployeeID"/>
+                                        <Binding Path="EmployeeEntity.Name"/>
+                                        <Binding Path="EmployeeEntity.Surname"/>
+                                        <Binding Path="EmployeeEntity.Patronymic"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Длина"
                                     Binding="{Binding Path=Length}" x:Name="LengthView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Ширина"
@@ -571,7 +600,16 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес"
                                     Binding="{Binding Path=Address}" x:Name = "AddressPointView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Директор"
-                                    Binding="{Binding Path=Director}" x:Name = "DirectorPointView"/>
+                                     x:Name = "DirectorPointView">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                        <Binding Path="Director"/>
+                                        <Binding Path="EmployeeEntity.Name"/>
+                                        <Binding Path="EmployeeEntity.Surname"/>
+                                        <Binding Path="EmployeeEntity.Patronymic"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Склад"
                                     Binding="{Binding Path=WarehouseEntity.Region}" x:Name = "WarehouseIDPointView"/>
                         </DataGrid.Columns>
@@ -640,7 +678,16 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Регион"
                                     Binding="{Binding Path=Region}" x:Name = "RegionWarehouseView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Директор"
-                                    Binding="{Binding Path=Director}" x:Name = "DirectorWarehouseView"/>
+                                     x:Name = "DirectorWarehouseView">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                        <Binding Path="Director"/>
+                                        <Binding Path="EmployeeEntity.Name"/>
+                                        <Binding Path="EmployeeEntity.Surname"/>
+                                        <Binding Path="EmployeeEntity.Patronymic"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
