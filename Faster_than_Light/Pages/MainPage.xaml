@@ -280,6 +280,9 @@
                             <Button x:Name="AddCarButton" Click="AddCarButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
                             <Button Margin="10" Click="EditCarButton_Click" Background="White" FontSize="16" Padding="5">Изменить</Button>
                             <Button Margin="10" Click="RemoveCarButton_Click" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                            <TextBlock Margin="10" FontSize="18">Поиск: </TextBlock>
+                            <TextBox Background="Transparent" Height="20" BorderBrush="#046380" MinWidth="200" Margin="0 10 10 10" x:Name="searchCarTextBox" TextChanged="searchCarTextBox_TextChanged"/>
+
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380"  Name="CarDataGridView"   AutoGenerateColumns="False"
@@ -482,11 +485,11 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Вес"
                                     Binding="{Binding Path=Weight}" x:Name="WeightView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Принятия"
-                                    Binding="{Binding Path=DateAcceptance}" x:Name="DateAcceptanceView"/>
+                                    Binding="{Binding Path=DateAcceptance, StringFormat=dd.MM.yyyy}" x:Name="DateAcceptanceView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата доставки"
-                                    Binding="{Binding Path=DateDeliveryToPoint}" x:Name="DateDeliveryToPointView"/>
+                                    Binding="{Binding Path=DateDeliveryToPoint, StringFormat=dd.MM.yyyy}" x:Name="DateDeliveryToPointView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата выдачи"
-                                    Binding="{Binding Path=DateIssue}" x:Name="DateIssueView"/>
+                                    Binding="{Binding Path=DateIssue, StringFormat=dd.MM.yyyy}" x:Name="DateIssueView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="ID Сотрудника"
                                     Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDPackageView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Длина"
@@ -523,8 +526,8 @@
                         <TextBlock FontSize="24">Пункты выдачи</TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="AddPointReceptionButton" Click="AddPointReceptionButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
-                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
-                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                            <Button Click = "EditPointReceptionButton" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Click = "RemovePointReceptionButton" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="PointReceptionDataGridView"   AutoGenerateColumns="False"
@@ -535,15 +538,12 @@
                                 <EventSetter Event="MouseDoubleClick" Handler="PointReceptionDataGridRow_MouseDoubleClick"/>
                             </Style>
                         </DataGrid.Resources>
-                        <!--<DataGrid.ContextMenu>
-                -->
-                        <!--<ContextMenu>
-                    
-                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
-                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
-                </ContextMenu>-->
-                        <!--
-            </DataGrid.ContextMenu>-->
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Редактировать" Click="EditPointReceptionButton"></MenuItem>
+                                <MenuItem Header="Удалить" Click="RemovePointReceptionButton"></MenuItem>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
 
                         <DataGrid.Columns>
 
@@ -553,12 +553,12 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditPointReceptionButton">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemovePointReceptionButton">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
 
                                             </Button>
@@ -657,8 +657,8 @@
                         <TextBlock FontSize="24">Сотрудники</TextBlock>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="AddEmployeeButton" Click="AddEmployeeButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
-                            <Button Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
-                            <Button Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                            <Button Click="EditEmployeeButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                            <Button Click="RemoveEmployeeButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
                         </StackPanel>
                     </StackPanel>
                     <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="EmployeeDataGridView"   AutoGenerateColumns="False"
@@ -669,15 +669,13 @@
                                 <EventSetter Event="MouseDoubleClick" Handler="EmployeeDataGridRow_MouseDoubleClick"/>
                             </Style>
                         </DataGrid.Resources>
-                        <!--<DataGrid.ContextMenu>
-                -->
-                        <!--<ContextMenu>
-                   
-                    <MenuItem Header="Редактировать" Click="editButton_Click"></MenuItem>
-                    <MenuItem Header="Удалить" Click="removeButton_Click"></MenuItem>
-                </ContextMenu>-->
-                        <!--
-            </DataGrid.ContextMenu>-->
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Редактировать" Click="EditEmployeeButton_Click"></MenuItem>
+                                <MenuItem Header="Удалить" Click="RemoveEmployeeButton_Click"></MenuItem>
+                            </ContextMenu>
+
+                        </DataGrid.ContextMenu>
 
                         <DataGrid.Columns>
 
@@ -724,14 +722,14 @@
                 </Grid>
             </TabItem>
 
-            <!--<TabItem HorizontalAlignment="Left">
+            <TabItem HorizontalAlignment="Left">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <Image RenderOptions.BitmapScalingMode="HighQuality"  Source="/Image/gear_with_key_white.png" MaxHeight="50" MinHeight="15" />
-                        <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Администрирование</TextBlock>
+                        <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Отчеты</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-            </TabItem>-->
+            </TabItem>
         </TabControl>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <Button Margin="10 0 0 10" Background="Transparent" BorderBrush="Transparent" Name="Exit" Click="Exit_Click">

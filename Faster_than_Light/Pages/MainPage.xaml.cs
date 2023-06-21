@@ -619,5 +619,35 @@ namespace Faster_than_Light.Pages
                 || c.Patronymic.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
             }
         }
+
+        private void EditEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditPointReceptionButton(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemovePointReceptionButton(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void searchCarTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                CarDataGridView.ItemsSource = ctx.Car.Include(c => c.EmployeeEntity)
+                    .Include(c => c.LocationBaseEntity).
+                    Where(c => c.StateNumber.ToLower().Contains(searchCarTextBox.Text.ToLower())).ToList();
+            }
+        }
     }
 }
