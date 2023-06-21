@@ -501,7 +501,7 @@
                                     Binding="{Binding Path=Comments}" x:Name="Comments"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки" x:Name="SendingAddressView">
                                 <DataGridTextColumn.Binding>
-                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {2} ID Склада: {1}">
+                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {2}; ID Склада: {1}">
                                         <Binding Path="SendingAddress" />
                                         <Binding Path="SendingAddressEntity.WarehouseID" />
                                         <Binding Path="SendingAddressEntity.Address" />
@@ -511,9 +511,9 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес доставки"
                                      x:Name="DeliveryAddressView">
                                 <DataGridTextColumn.Binding>
-                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {1}">
+                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {2}; ID Склада: {1}">
                                         <Binding Path="DeliveryAddress" />
-                                        <!--<Binding Path="DeliveryAddressEntity.WarehouseEntity.Region" />-->
+                                        <Binding Path="DeliveryAddressEntity.WarehouseID" />
                                         <Binding Path="DeliveryAddressEntity.Address" />
                                     </MultiBinding>
                                 </DataGridTextColumn.Binding>
