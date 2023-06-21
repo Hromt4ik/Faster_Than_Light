@@ -499,11 +499,27 @@
                             </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Комментарий"
                                     Binding="{Binding Path=Comments}" x:Name="Comments"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки"
-                                    Binding="{Binding Path=SendingAddress}" x:Name="SendingAddressView"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки" x:Name="SendingAddressView">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {2} ID Склада: {1}">
+                                        <Binding Path="SendingAddress" />
+                                        <Binding Path="SendingAddressEntity.WarehouseID" />
+                                        <Binding Path="SendingAddressEntity.Address" />
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес доставки"
-                                    Binding="{Binding Path=DeliveryAddress}" x:Name="DeliveryAddressView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Вес"
+                                     x:Name="DeliveryAddressView">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {1}">
+                                        <Binding Path="DeliveryAddress" />
+                                        <!--<Binding Path="DeliveryAddressEntity.WarehouseEntity.Region" />-->
+                                        <Binding Path="DeliveryAddressEntity.Address" />
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
+                              
+                                <DataGridTextColumn IsReadOnly="True" Header="Вес"
                                     Binding="{Binding Path=Weight}" x:Name="WeightView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Принятия"
                                     Binding="{Binding Path=DateAcceptance, StringFormat=dd.MM.yyyy}" x:Name="DateAcceptanceView"/>
