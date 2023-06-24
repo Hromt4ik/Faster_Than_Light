@@ -310,6 +310,26 @@ namespace Faster_than_Light.Db_API
             }
         }
 
+        public static void UpdatePointReception(PointReception Point)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                PointReception temp = ctx.PointReception.FirstOrDefault(p => p.PointID
+                == Point.PointID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.Director = Point.Director;
+                temp.WarehouseID = Point.WarehouseID;
+                temp.Address = Point.Address;
+
+                ctx.SaveChanges();
+            }
+        }
 
         //--------------------------------------------------------------- end
 

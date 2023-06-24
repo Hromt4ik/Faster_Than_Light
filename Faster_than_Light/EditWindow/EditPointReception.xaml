@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Faster_than_Light.EditWindow"
         mc:Ignorable="d"
-        Title="EditReception" MinHeight="200" MaxHeight="250" MinWidth="480" MaxWidth="480">
+       Title="Пункты выдачи (Редоктирование)" MinHeight="200" MaxHeight="250" MinWidth="480" MaxWidth="480">
     <Grid>
         <StackPanel>
             <StackPanel Margin=" 10 10 0 0">
-                <TextBlock FontSize="24">Пункты выдачи (Редактирование)</TextBlock>
+                <TextBlock FontSize="24">Пункты выдачи (Редоктирование)</TextBlock>
             </StackPanel>
             <StackPanel Name="Main">
                 <StackPanel Name="Fio" Orientation="Horizontal">
@@ -20,20 +20,27 @@
 
                     <StackPanel Name="PositionStack" Margin="10">
                         <TextBlock>Директор</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="positionView" SelectedValuePath="id_position">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="positionView" SelectedValuePath="EmployeeID">
+                            <ComboBox.ItemTemplate >
+                                <DataTemplate >
+                                    <TextBlock >
+                                        <TextBlock.Text>
+                                            <MultiBinding StringFormat="{} {0} {1}">
+                                                <Binding Path="EmployeeID" />
+                                                <Binding Path="Surname" />
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Name="WareStack" Margin="10">
                         <TextBlock>Склад</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="WareView" SelectedValuePath="id_position">
+                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="WareView" SelectedValuePath="WarehouseID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Path=title}" ></TextBlock>
+                                    <TextBlock Text="{Binding Path=WarehouseID}" ></TextBlock>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
@@ -41,7 +48,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" Height="30" Margin="0 10 0 0" >
-                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Ок</Button>
+                        <Button x:Name="addButton"    Click="addButton_Click" Width="100" Foreground="White" BorderBrush="#046380" Background="#046380" Margin="10 0">Сохранить</Button>
                         <Button x:Name="cancelButton" Click="cancelButton_Click" Width="100" Background="Transparent" BorderBrush="#046380" >Отмена</Button>
                     </StackPanel>
                 </StackPanel>

@@ -627,17 +627,66 @@ namespace Faster_than_Light.Pages
 
         private void RemoveEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
+            Employee temp = EmployeeDataGridView.SelectedItem as Employee;
 
+            if (temp != null)
+            {
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
+
+                DatabaseControl.DelEmployee(temp);
+
+                EmployeeDataGridView.ItemsSource = null;
+                EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void EditPointReceptionButton(object sender, RoutedEventArgs e)
         {
+            PointReception temp = PointReceptionDataGridView.SelectedItem as PointReception;
 
+            if (temp != null)
+            {
+                EditWindow.EditPointReception win = new EditWindow.EditPointReception(temp);
+                NavigateMethods.GridStorage.grid = PointReceptionDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void RemovePointReceptionButton(object sender, RoutedEventArgs e)
         {
+            PointReception temp = PointReceptionDataGridView.SelectedItem as PointReception;
 
+            if (temp != null)
+            {
+                if (MessageBoxResult.No == MessageBox.Show("Вы действительно хотите удалить элемент?", "Элемент будет безвозвратно удален",
+                    MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No))
+                {
+                    return;
+                }
+
+
+                DatabaseControl.DelPointReception(temp);
+
+                PointReceptionDataGridView.ItemsSource = null;
+                PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для удаления", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void searchCarTextBox_TextChanged(object sender, TextChangedEventArgs e)
