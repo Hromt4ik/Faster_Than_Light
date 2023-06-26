@@ -15,6 +15,14 @@ namespace Faster_than_Light.Db_API
     {
 
 
+        public static List<Car> GetCarStatusAtTheBase()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "AtTheBase").ToList();
+            }
+        }
+
         //Get for View All tables--------------------------------------------------
         public static List<Car> GetCarForView()
         {
@@ -326,6 +334,36 @@ namespace Faster_than_Light.Db_API
                 temp.Director = Point.Director;
                 temp.WarehouseID = Point.WarehouseID;
                 temp.Address = Point.Address;
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public static void UpdateEmployee(Employee employee)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                Employee temp = ctx.Employee.FirstOrDefault(p => p.EmployeeID
+                == employee.EmployeeID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.Birthdate = employee.Birthdate;
+                temp.Surname = employee.Surname;
+                temp.PhoneNumber = employee.PhoneNumber;
+                temp.Login = employee.Login;
+                temp.Email = employee.Email;
+                temp.SeriaNumberPassport = employee.SeriaNumberPassport;
+                temp.Password = employee.Password;
+                temp.Post = employee.Post;
+                temp.Name= employee.Name;
+                temp.Patronymic = employee.Patronymic;
+                temp.ResidentialAddress = employee.ResidentialAddress;
+
 
                 ctx.SaveChanges();
             }

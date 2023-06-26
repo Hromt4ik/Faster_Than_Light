@@ -9,7 +9,6 @@
       Title="MainPage">
 
     <Grid Name="mainGrid2" >
-
         <Rectangle Fill="#046380"></Rectangle>
         <TabControl x:Name="MainStackPanel" TabStripPlacement="Left">
             <TabControl.Resources>
@@ -792,7 +791,16 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Отчеты</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
-                
+                <StackPanel>
+                <StackPanel>
+                    <Button Name="ButStatic" Click="ButStatic_Click" FontSize="18" Background="Snow" BorderBrush="#f2cdc7" MinHeight="30" MinWidth="200" MaxHeight="50" MaxWidth="300">Сформировать статистику</Button>
+                </StackPanel>
+                    
+                    <StackPanel  Margin="10 10 0 0" >
+                        <TextBlock FontSize="18">На базе:</TextBlock>
+                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAtTheBase" ></TextBlock>
+                </StackPanel>
+                </StackPanel>
             </TabItem>
         </TabControl>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">

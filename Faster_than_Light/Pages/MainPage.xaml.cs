@@ -35,6 +35,10 @@ namespace Faster_than_Light.Pages
             PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
             PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
             WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
+            MakeReport();
+
+
+
         }
 
 
@@ -622,7 +626,18 @@ namespace Faster_than_Light.Pages
 
         private void EditEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
+            Employee temp = EmployeeDataGridView.SelectedItem as Employee;
 
+            if (temp != null)
+            {
+                EditWindow.EditEmployee win = new EditWindow.EditEmployee(temp);
+                NavigateMethods.GridStorage.grid = EmployeeDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void RemoveEmployeeButton_Click(object sender, RoutedEventArgs e)
@@ -700,5 +715,14 @@ namespace Faster_than_Light.Pages
         }
 
 
+        public void MakeReport()
+        {
+            CarAtTheBase.Text = (DatabaseControl.GetCarStatusAtTheBase().Count).ToString();
+        }
+
+        private void ButStatic_Click(object sender, RoutedEventArgs e)
+        {
+            MakeReport();
+        }
     }
 }
