@@ -792,6 +792,7 @@
                         <TextBlock Margin="10" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left">Отчеты</TextBlock>
                     </StackPanel>
                 </TabItem.Header>
+                
             </TabItem>
         </TabControl>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left">
