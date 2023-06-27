@@ -913,13 +913,13 @@
                     </StackPanel>
 
 
-                    <DataGrid x:Name="AddressGrid">
+                    <!--<DataGrid x:Name="AddressGrid">
                         <DataGrid.Columns>
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки" Binding="{Binding Path=sendingAddress}" CanUserSort="False" SortDirection="Ascending"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес доставки" Binding="{Binding Path=deliveryAddress}" CanUserSort="False" SortDirection="Ascending"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Количество" Binding="{Binding Path=countAddress}" CanUserSort="False" SortDirection="Ascending"/>
                         </DataGrid.Columns>
-                    </DataGrid>
+                    </DataGrid>-->
 
 
                     <StackPanel VerticalAlignment="Bottom">

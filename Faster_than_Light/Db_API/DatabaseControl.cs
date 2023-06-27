@@ -26,7 +26,7 @@ namespace Faster_than_Light.Db_API
         {
             using (DbAppContext ctx = new DbAppContext())
             {
-                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "Назначен водител").ToList();
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "Назначен водитель").ToList();
             }
         }
         public static List<Car> GetCarStatusRepair()
@@ -465,6 +465,28 @@ namespace Faster_than_Light.Db_API
                 temp.Name= employee.Name;
                 temp.Patronymic = employee.Patronymic;
                 temp.ResidentialAddress = employee.ResidentialAddress;
+
+
+                ctx.SaveChanges();
+            }
+        }
+
+        public static void UpdateWarehouse(Warehouse warehouse)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                Warehouse temp = ctx.Warehouse.FirstOrDefault(p => p.WarehouseID
+                == warehouse.WarehouseID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+               temp.Address = warehouse.Address;
+               temp.Region = warehouse.Region;
+               temp.Director = warehouse.Director;
 
 
                 ctx.SaveChanges();

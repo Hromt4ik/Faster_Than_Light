@@ -24,13 +24,15 @@
                     <StackPanel Name="PositionStack" Margin="10">
                         <TextBlock>Директор</TextBlock>
                         <ComboBox Height="22" Width="135"  BorderBrush="#046380" Background="#046380" Name="EmployeeID" SelectedValuePath="EmployeeID">
-                            <ComboBox.ItemTemplate >
-                                <DataTemplate >
-                                    <TextBlock >
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock>
                                         <TextBlock.Text>
-                                            <MultiBinding StringFormat="{} {0} {1}">
-                                                <Binding Path="EmployeeID" />
-                                                <Binding Path="Surname" />
+                                            <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                                <Binding Path="EmployeeID"/>
+                                                <Binding Path="Name"/>
+                                                <Binding Path="Surname"/>
+                                                <Binding Path="Patronymic"/>
                                             </MultiBinding>
                                         </TextBlock.Text>
                                     </TextBlock>
