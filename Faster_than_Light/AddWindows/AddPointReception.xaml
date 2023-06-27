@@ -20,7 +20,7 @@
 
                     <StackPanel Name="PositionStack" Margin="10">
                         <TextBlock>Директор</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="positionView" SelectedValuePath="EmployeeID">
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="positionView" SelectedValuePath="EmployeeID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock>
@@ -39,7 +39,7 @@
                     </StackPanel>
                     <StackPanel Name="WareStack" Margin="10">
                         <TextBlock>Склад</TextBlock>
-                        <ComboBox Height="18" Width="135"  BorderBrush="#046380"  Name="WareView" SelectedValuePath="WarehouseID">
+                        <ComboBox Height="22" Width="135"  BorderBrush="#046380"  Name="WareView" SelectedValuePath="WarehouseID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock>

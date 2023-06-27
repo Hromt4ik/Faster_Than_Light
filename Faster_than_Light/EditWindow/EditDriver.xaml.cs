@@ -28,7 +28,7 @@ namespace Faster_than_Light.EditWindow
             InitializeComponent();
             temp = Driver;
             DriverView.ItemsSource = DatabaseControl.GetEmployeeForView();
-            DriverView.SelectedIndex = Driver.EmployeeID - 1;
+            DriverView.SelectedValue = Driver.EmployeeEntity.EmployeeID;
             DriverLicense.Text = Driver.DriverLicense;
             DateReceipt.SelectedDate = Driver.DateReceipt;
             TerminationDate.SelectedDate = Driver.TerminationDate;

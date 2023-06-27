@@ -71,7 +71,7 @@
                 <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
                     <StackPanel x:Name="BaseStack" Margin="10 0 0 0">
                         <TextBlock>Место базирования</TextBlock>
-                        <ComboBox Height="18" Width="440"  BorderBrush="#046380"  Name="BaseView" SelectedValuePath="LocationBaseID">
+                        <ComboBox Height="22" Width="440"  BorderBrush="#046380"  Name="BaseView" SelectedValuePath="LocationBaseID">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock>

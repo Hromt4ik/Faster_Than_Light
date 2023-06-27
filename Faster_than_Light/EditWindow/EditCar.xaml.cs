@@ -52,8 +52,8 @@ namespace Faster_than_Light.EditWindow
             NextMileageBox.Text = Convert.ToString(car.NextMaintenance);
             statusComboBox.SelectedItem = car.Status;
 
-            BaseView.SelectedIndex = car.LocationBase - 1;
-            DriverView.SelectedIndex = (int)(car.DriverID - 1);
+            BaseView.SelectedValue = car.LocationBaseEntity.LocationBaseID;
+            DriverView.SelectedValue = car.EmployeeEntity.EmployeeID;
 
 
         }

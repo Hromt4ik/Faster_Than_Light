@@ -28,10 +28,11 @@ namespace Faster_than_Light.EditWindow
             InitializeComponent();
             temp = Point;
             positionView.ItemsSource = DatabaseControl.GetEmployeeForView();
-            positionView.SelectedIndex = Point.Director - 1;
             WareView.ItemsSource = DatabaseControl.GetWarehouseForView();
-            WareView.SelectedIndex = Point.WarehouseID - 1;
+            positionView.SelectedValue = Point.EmployeeEntity.EmployeeID;
+            WareView.SelectedValue = Point.WarehouseEntity.WarehouseID;
             AdressBox.Text = Point.Address;
+
 
         }
 

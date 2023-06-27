@@ -76,7 +76,7 @@ namespace Faster_than_Light.AddWindows
                PackageType = typePackageComboBox.SelectedItem.ToString(),
                Status = statusComboBox.SelectedItem.ToString(),
 
-               DeliveryCost = Convert.ToInt32(CostBox.Text),
+               DeliveryCost = Convert.ToDecimal(CostBox.Text),
                Comments = CommBox.Text,
 
 

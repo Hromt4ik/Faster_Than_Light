@@ -54,7 +54,7 @@ namespace Faster_than_Light.Pages
 
                 packagesReport.Add(packageForReport);
             }
-            AddressGrid.ItemsSource = packagesReport;
+            //AddressGrid.ItemsSource = packagesReport;
 
             PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
             PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
@@ -348,7 +348,18 @@ namespace Faster_than_Light.Pages
 
         private void EditPackageButton_Click(object sender, RoutedEventArgs e)
         {
+            Package temp = PackageDataGridView.SelectedItem as Package;
 
+            if (temp != null)
+            {
+                EditWindow.EditPackage win = new EditWindow.EditPackage(temp);
+                NavigateMethods.GridStorage.grid = PackageDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void RemovePackageButton_Click(object sender, RoutedEventArgs e)
@@ -377,7 +388,18 @@ namespace Faster_than_Light.Pages
 
         private void EditWarehouseButton_Click(object sender, RoutedEventArgs e)
         {
+            Warehouse temp = WarehouseDataGridView.SelectedItem as Warehouse;
 
+            if (temp != null)
+            {
+                EditWindow.EditWarehouse win = new EditWindow.EditWarehouse(temp);
+                NavigateMethods.GridStorage.grid = WarehouseDataGridView;
+                win.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите элемент для изменеемя", "Элемент не выбран", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void EditClientButton_Click(object sender, RoutedEventArgs e)
@@ -760,6 +782,8 @@ namespace Faster_than_Light.Pages
             PackageIssued.Text = (DatabaseControl.GetPackageStatusIssued().Count).ToString();
 
             PointCount.Text = (DatabaseControl.GetPointReceptionForView().Count).ToString();
+            ClientCount.Text = (DatabaseControl.GetClientForView().Count).ToString();
+            EmployeeCount.Text = (DatabaseControl.GetEmployeeForView().Count).ToString();
 
 
         }

@@ -29,7 +29,7 @@ namespace Faster_than_Light.EditWindow
             InitializeComponent();
             temp = Location;
             EmployeeID.ItemsSource = DatabaseControl.GetEmployeeForView();
-            EmployeeID.SelectedIndex = Location.Director - 1;
+            EmployeeID.SelectedValue = Location.EmployeeEntity.EmployeeID;
             AdressBox.Text = temp.Address;
             RegionBox.Text = temp.Region;
             NumberBox.Text = Convert.ToString(temp.NumberSeats);

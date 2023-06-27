@@ -633,8 +633,15 @@
                                     </MultiBinding>
                                 </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
-                            <DataGridTextColumn IsReadOnly="True" Header="Склад"
-                                    Binding="{Binding Path=WarehouseEntity.Region}" x:Name = "WarehouseIDPointView"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Склад"  x:Name = "WarehouseIDPointView" >
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {1} {2} " >
+                                        <Binding Path="WarehouseID"/>
+                                        <Binding Path="WarehouseEntity.Region"/>
+                                        <Binding Path="WarehouseEntity.Address"/>
+                                </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -777,8 +784,6 @@
                                     Binding="{Binding Path=Patronymic}" x:Name="PatronymicEmployeeView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Рождения"
                                     Binding="{Binding Path=Birthdate, StringFormat=dd.MM.yyyy}" x:Name="BirthdateEmployeeiew"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Серия и номер паспорта"
-                                    Binding="{Binding Path=SeriaNumberPassport}" x:Name="SeriaNumberPassportEmployeeView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Номер телефона"
                                     Binding="{Binding Path=PhoneNumber}" x:Name="PhoneNumberEmployeeView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Адрес Проживания"
@@ -800,7 +805,10 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel>
-
+                    <StackPanel >
+                        <Button HorizontalAlignment="Left" Name="ButStatic" Click="ButStatic_Click" FontSize="20" Margin="20 20 0 0" Width="110" Height="40" 
+                                    BorderBrush="#046380" Background="#046380" Foreground="White">Обновить</Button>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Orientation="Vertical">
                             <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270" Height="200">
@@ -843,20 +851,24 @@
                                             </StackPanel>
                                         </StackPanel>
                                     </Border>
-                                    <StackPanel  Margin="10 10 0 0" Orientation="Vertical">
-                                        <TextBlock FontSize="18">Популярный пункт отправки:</TextBlock>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock FontSize="18"  Name="Sending" >Нет данных</TextBlock>
-                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="SendingCount" >Нет данных</TextBlock>
+                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                        <StackPanel>
+                                            <TextBlock FontSize="18" >Клиенты</TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="ClientCount">Нет данных</TextBlock>
+                                            </StackPanel>
                                         </StackPanel>
-                                    </StackPanel>
-                                    <StackPanel  Margin="10 10 0 0" Orientation="Vertical">
-                                        <TextBlock FontSize="18">Популярный пункт получения:</TextBlock>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock FontSize="18"  Name="Delivery" >Нет данных</TextBlock>
-                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="DeliveryCount" >Нет данных</TextBlock>
+                                    </Border>
+                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                        <StackPanel>
+                                            <TextBlock FontSize="18" >Сотрудники</TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="EmployeeCount">Нет данных</TextBlock>
+                                            </StackPanel>
                                         </StackPanel>
-                                    </StackPanel>
+                                    </Border>
                                 </StackPanel>
                             </Border>
                         </StackPanel>
@@ -922,10 +934,7 @@
                     </DataGrid>-->
 
 
-                    <StackPanel VerticalAlignment="Bottom">
-                        <Button Name="ButStatic" Click="ButStatic_Click" FontSize="20" Margin="0 0 0 10" Width="110" Height="40" 
-                                    BorderBrush="#046380" Background="#046380" Foreground="White">Обновить</Button>
-                    </StackPanel>
+
                 </StackPanel>
             </TabItem>
         </TabControl>
