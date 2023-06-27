@@ -253,10 +253,7 @@ namespace Faster_than_Light.EditWindow
 
         private void ModelBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!(Check.IsPositivNumber(ModelBox.Text)))
-            {
-                return;
-            }
+
             CostSum();
         }
 
@@ -268,14 +265,15 @@ namespace Faster_than_Light.EditWindow
 
         public void CostSum()
         {
-            
+            if (!(Check.IsPositivNumber(ModelBox.Text)))
+            {
+                return;
+            }
             if (ModelBox.Text != string.Empty && CategoryView.SelectedItem != null)
             {
                 CargoCategory temp = CategoryView.SelectedItem as CargoCategory;
                 CostBox.Text = Convert.ToString(Convert.ToDecimal(ModelBox.Text) * temp.GetTransportationCoefficient());
             }
-
-
         }
     }
 }

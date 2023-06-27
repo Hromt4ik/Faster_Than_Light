@@ -227,6 +227,7 @@ namespace Faster_than_Light.AddWindows
 
         private void ModelBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+
             CostSum();
         }
 
@@ -238,6 +239,10 @@ namespace Faster_than_Light.AddWindows
 
         public void CostSum()
         {
+            if (!(Check.IsPositivNumber(ModelBox.Text)))
+            {
+                return;
+            }
             if (ModelBox.Text != string.Empty && CategoryView.SelectedItem != null)
             {
                 CargoCategory temp = CategoryView.SelectedItem as CargoCategory;
@@ -246,7 +251,5 @@ namespace Faster_than_Light.AddWindows
 
 
         }
-
-
     }
 }
