@@ -96,6 +96,11 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (!Check.Age(Convert.ToDateTime(BirthdateBox.SelectedDate.Value), 18))
+            {
+                return;
+            }
+
             DatabaseControl.AddEmployee(new classes.Employee
             {
                 Password = passwordBox.Text,

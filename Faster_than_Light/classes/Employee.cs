@@ -17,7 +17,7 @@ namespace Faster_than_Light.classes
         public string Password { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Patronymic { get; set; }
+        public string? Patronymic { get; set; } = String.Empty;
         public DateTime Birthdate { get; set; }
         public string SeriaNumberPassport { get; set; }
         public string PhoneNumber { get; set; }

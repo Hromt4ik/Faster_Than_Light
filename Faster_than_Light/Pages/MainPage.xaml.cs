@@ -23,6 +23,12 @@ namespace Faster_than_Light.Pages
     /// </summary>
     public partial class MainPage : Page
     {
+        class packageReport
+        {
+            public string sendingAddress { get; set; }
+            public string deliveryAddress { get; set; }
+            public int countAddress { get; set; }
+        }
         public MainPage()
         {
             InitializeComponent();
@@ -32,6 +38,24 @@ namespace Faster_than_Light.Pages
             DriverIdentificationDataGridView.ItemsSource = DatabaseControl.GetDriverIdentificationForView();
             EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
             LocationBaseDataGridView.ItemsSource = DatabaseControl.GetLocationBaseForView();
+
+            List<Package> packages = new List<Package>();
+            packages = DatabaseControl.GetPackageForView();
+            List<packageReport> packagesReport = new List<packageReport>();
+
+            foreach (Package package in packages)
+            {
+                packageReport packageForReport = new packageReport()
+                {
+                    deliveryAddress = package.DeliveryAddressEntity.Address,
+                    sendingAddress = package.SendingAddressEntity.Address,
+                    countAddress = package.SendingAddressEntity.Address.Count(),
+                };
+
+                packagesReport.Add(packageForReport);
+            }
+            AddressGrid.ItemsSource = packagesReport;
+
             PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
             PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
             WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
@@ -717,7 +741,27 @@ namespace Faster_than_Light.Pages
 
         public void MakeReport()
         {
+
+            CarCount.Text = (DatabaseControl.GetCarForView().Count).ToString();
             CarAtTheBase.Text = (DatabaseControl.GetCarStatusAtTheBase().Count).ToString();
+            CarAssignedDriver.Text = (DatabaseControl.GetCarStatusAssignedDriver().Count).ToString();
+            CarRepair.Text = (DatabaseControl.GetCarStatusRepair().Count).ToString();
+            CarDiscarded.Text = (DatabaseControl.GetCarStatusDiscarded().Count).ToString();
+
+            PackageCount.Text = (DatabaseControl.GetPackageForView().Count).ToString();
+            PackageAcceptedFromClient.Text = (DatabaseControl.GetPackageStatusAcceptedFromClient().Count).ToString();
+            PackageSentToWarehouse.Text = (DatabaseControl.GetPackageStatusSentToWarehouse().Count).ToString();
+            PackageAcceptedToWarehouse.Text = (DatabaseControl.GetPackageStatusAcceptedToWarehouse().Count).ToString();
+            PackageSentToDestinationCity.Text = (DatabaseControl.GetPackageStatusSentToDestinationCity().Count).ToString();
+            PackageAcceptedDestinationCity.Text = (DatabaseControl.GetPackageStatusAcceptedDestinationCity().Count).ToString();
+            PackageSentIssuePoint.Text = (DatabaseControl.GetPackageStatusSentIssuePoint().Count).ToString();
+            PackageAcceptedPointIssue.Text = (DatabaseControl.GetPackageStatusAcceptedPointIssue().Count).ToString();
+            PackageLost.Text = (DatabaseControl.GetPackageStatusLost().Count).ToString();
+            PackageIssued.Text = (DatabaseControl.GetPackageStatusIssued().Count).ToString();
+
+            PointCount.Text = (DatabaseControl.GetPointReceptionForView().Count).ToString();
+
+
         }
 
         private void ButStatic_Click(object sender, RoutedEventArgs e)

@@ -40,8 +40,6 @@ namespace Faster_than_Light.EditWindow
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-
-
             if (Check.Empty(NameBox.Text))
             {
                 MessageBox.Show("Введите имя", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -98,6 +96,11 @@ namespace Faster_than_Light.EditWindow
             if (!(Check.Email(EmailBox.Text)))
             {
                 MessageBox.Show("Введите коректный Email", "Поле заполнено некоректно", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!Check.Age(Convert.ToDateTime(BirthdateBox.SelectedDate.Value), 14))
+            {
                 return;
             }
 

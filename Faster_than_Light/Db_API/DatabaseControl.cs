@@ -19,7 +19,101 @@ namespace Faster_than_Light.Db_API
         {
             using (DbAppContext ctx = new DbAppContext())
             {
-                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "AtTheBase").ToList();
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "На базе").ToList();
+            }
+        }
+        public static List<Car> GetCarStatusAssignedDriver()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "Назначен водител").ToList();
+            }
+        }
+        public static List<Car> GetCarStatusRepair()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "Ремонт").ToList();
+            }
+        }
+        public static List<Car> GetCarStatusDiscarded()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Car.Include(t => t.LocationBaseEntity).Include(t => t.EmployeeEntity).Where(t => t.Status == "Списана").ToList();
+            }
+        }
+
+        public static List<Package> GetPackageStatusAcceptedFromClient()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Принят от клиента").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusSentToWarehouse()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Отправлен на склад").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusAcceptedToWarehouse()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Принят на складе").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusSentToDestinationCity()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Отправлен в город выдачи").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusAcceptedDestinationCity()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Принят в городе выдачи").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusSentIssuePoint()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Отправлен в пункт выдачи").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusAcceptedPointIssue()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Принят в пункте выдачи").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusLost()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Утерян").ToList();
+            }
+        }
+        public static List<Package> GetPackageStatusIssued()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Выдан").ToList();
             }
         }
 
@@ -98,6 +192,14 @@ namespace Faster_than_Light.Db_API
                
             }
         }
+        //public static Package GetSendingAdressAddreses()
+        //{
+        //    using (DbAppContext ctx = new DbAppContext())
+        //    {
+        //        return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+        //            .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).OrderBy(p => p.SendingAddress).ToList();
+        //    }
+        //}
 
 
         //public static bool isPhoneUnique(string phone, string type)

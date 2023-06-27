@@ -55,7 +55,6 @@
                                 <DataTemplate>
                                     <TextBlock>
                                         <TextBlock.Text>
-
                                             <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
                                                 <Binding Path="EmployeeID"/>
                                                 <Binding Path="Name"/>

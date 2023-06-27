@@ -307,12 +307,12 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditCarButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveCarButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
 
                                             </Button>
@@ -336,10 +336,18 @@
                                     Binding="{Binding Path=NextMaintenance}" x:Name="NextMaintenanceView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Статус"
                                     Binding="{Binding Path=Status}" x:Name="StatusView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Место Базирования"
-                                    Binding="{Binding Path=LocationBase}" x:Name="LocationBaseView"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Место Базирования"  x:Name="LocationBaseView">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}ID: {0} Адрес: {1} {2} " >
+                                        <Binding Path="LocationBase"/>
+                                        <Binding Path="LocationBaseEntity.Region"/>
+                                        <Binding Path="LocationBaseEntity.Address"/>
+                                    </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Назначеный Водитель"
                                      x:Name="DriverIDView">
+                              
                                 <DataGridTextColumn.Binding>
                                     <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
                                         <Binding Path="DriverID"/>
@@ -747,12 +755,12 @@
                                         <StackPanel Orientation="Horizontal">
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="editButton" Click="EditButton_Click">
+                                        BorderThickness="0" Name="editButton" Click="EditEmployeeButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
                                             </Button>
                                             <Button Height="25" Width="25"
                                         Background="Transparent"
-                                        BorderThickness="0" Name="removeButton" Click="RemoveButton_Click">
+                                        BorderThickness="0" Name="removeButton" Click="RemoveEmployeeButton_Click">
                                                 <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
                                             </Button>
                                         </StackPanel>
@@ -792,14 +800,132 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel>
-                <StackPanel>
-                    <Button Name="ButStatic" Click="ButStatic_Click" FontSize="18" Background="Snow" BorderBrush="#f2cdc7" MinHeight="30" MinWidth="200" MaxHeight="50" MaxWidth="300">Сформировать статистику</Button>
-                </StackPanel>
-                    
-                    <StackPanel  Margin="10 10 0 0" >
-                        <TextBlock FontSize="18">На базе:</TextBlock>
-                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAtTheBase" ></TextBlock>
-                </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270" Height="200">
+                                <StackPanel  Name="carStack" >
+                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                        <StackPanel>
+                                            <TextBlock FontSize="18" >Машины</TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarCount">Нет данных</TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">На базе:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAtTheBase" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Назначен водитель:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAssignedDriver" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Ремонт:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarRepair" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Списана:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarDiscarded" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270">
+                                <StackPanel  Name="CountStack" >
+                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                        <StackPanel>
+                                            <TextBlock FontSize="18" >Пункты Выдачи</TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="PointCount">Нет данных</TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Vertical">
+                                        <TextBlock FontSize="18">Популярный пункт отправки:</TextBlock>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontSize="18"  Name="Sending" >Нет данных</TextBlock>
+                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="SendingCount" >Нет данных</TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Vertical">
+                                        <TextBlock FontSize="18">Популярный пункт получения:</TextBlock>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontSize="18"  Name="Delivery" >Нет данных</TextBlock>
+                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="DeliveryCount" >Нет данных</TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                        <Border   Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="300" Height="Auto">
+                            <StackPanel  Name="PackageStack" >
+                                <Border   BorderBrush ="#046380" BorderThickness="1" Height="Auto">
+                                    <StackPanel>
+                                        <TextBlock FontSize="18" >Заказы</TextBlock>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock FontSize="18" >Количество:</TextBlock>
+                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageCount" >Нет данных</TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Принят от клиента:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedFromClient" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Отправлен на склад:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentToWarehouse" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Принят на складе:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedToWarehouse" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Отправлен в город выдачи:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentToDestinationCity" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Принят в городе выдачи:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedDestinationCity" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Отправлен в пункт выдачи:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentIssuePoint" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Принят в пункте выдачи:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedPointIssue" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Утерян:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageLost" >Нет данных</TextBlock>
+                                </StackPanel>
+                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                    <TextBlock FontSize="18">Выдан:</TextBlock>
+                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageIssued" >Нет данных</TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+
+                        </Border>
+                    </StackPanel>
+
+
+                    <DataGrid x:Name="AddressGrid">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки" Binding="{Binding Path=sendingAddress}" CanUserSort="False" SortDirection="Ascending"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Адрес доставки" Binding="{Binding Path=deliveryAddress}" CanUserSort="False" SortDirection="Ascending"/>
+                            <DataGridTextColumn IsReadOnly="True" Header="Количество" Binding="{Binding Path=countAddress}" CanUserSort="False" SortDirection="Ascending"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                    <StackPanel VerticalAlignment="Bottom">
+                        <Button Name="ButStatic" Click="ButStatic_Click" FontSize="20" Margin="0 0 0 10" Width="110" Height="40" 
+                                    BorderBrush="#046380" Background="#046380" Foreground="White">Обновить</Button>
+                    </StackPanel>
                 </StackPanel>
             </TabItem>
         </TabControl>

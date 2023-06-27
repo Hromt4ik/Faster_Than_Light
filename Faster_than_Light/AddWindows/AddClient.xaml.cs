@@ -85,6 +85,10 @@ namespace Faster_than_Light.AddWindows
                 MessageBox.Show("Введите коректный Email", "Поле заполнено некоректно", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            if (!Check.Age(Convert.ToDateTime(BirthdateBox.SelectedDate.Value), 14))
+            {
+                return;
+            }
 
 
             DatabaseControl.AddClient(new classes.Client

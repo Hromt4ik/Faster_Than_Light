@@ -47,7 +47,7 @@
                     </StackPanel>
                     <StackPanel x:Name="resAdress" Margin="10 0 0 0">
                         <TextBlock>Адрес проживания</TextBlock>
-                        <TextBox x:Name="resAdressBox" Width="150" BorderBrush="#046380" MaxLength="100"></TextBox>
+                        <TextBox x:Name="resAddressBox" Width="150" BorderBrush="#046380" MaxLength="100"></TextBox>
                     </StackPanel>
                     <StackPanel x:Name="post" Margin="10 0 0 0">
                         <TextBlock>Должность</TextBlock>
