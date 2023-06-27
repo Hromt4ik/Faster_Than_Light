@@ -50,6 +50,18 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (!(DatabaseControl.isDriverIdentificationUnique(DriverLicense.Text)))
+            {
+                MessageBox.Show("Номер удостоверения не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!Check.DateMore(Convert.ToDateTime(DateReceipt.SelectedDate.Value), Convert.ToDateTime(TerminationDate.SelectedDate.Value)))
+            {
+                MessageBox.Show("Дата окончания не может быть меньше даты получения", "Некоректная дата", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             DatabaseControl.AddDriverIdentification(new classes.DriverIdentification
             {
                 DriverLicense = DriverLicense.Text,

@@ -44,88 +44,94 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid  Background="White">
-                    <StackPanel Margin="10">
-                        <TextBlock FontSize="24">Водительские Удостоверения</TextBlock>
-                        <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AddDriverIdentificationButton" Click="AddDriverIdentificationButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
-                            <Button x:Name="EditDriverIdentificationButton" Click="EditDriverIdentificationButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
-                            <Button x:Name ="DelDriverIdentificationButton" Click="DelDriverIdentificationButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
-                            <TextBlock FontSize="20"  Margin="10">Категории Прав:</TextBlock>
-                            <CheckBox FontSize="20" BorderBrush="#046380" Name="B" Content="B" Click="B_Click" Margin="10 " Height="40" VerticalAlignment="Center" ></CheckBox>
-                            <CheckBox FontSize="20" BorderBrush="#046380" Name="BE" Content="BE" Click="BE_Click" Margin="10" Height="40" ></CheckBox>
-                            <CheckBox FontSize="20" BorderBrush="#046380" Name="C" Content="C" Click="C_Click" Margin="10" Height="40" ></CheckBox>
-                            <CheckBox FontSize="20" BorderBrush="#046380" Name="CE" Content="CE" Click="CE_Click" Margin="10" Height="40" ></CheckBox>
+                    <StackPanel>
+                        <StackPanel x:Name="NoAdmin2">
+                            <TextBlock Margin="20 20 0 0" FontSize="30">Нужны права администратора</TextBlock>
                         </StackPanel>
-                    </StackPanel>
-                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="DriverIdentificationDataGridView"   AutoGenerateColumns="False"
+                        <StackPanel Name="AdminLook2" >
+                            <StackPanel Margin="10">
+                                <TextBlock FontSize="24">Водительские Удостоверения</TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="AddDriverIdentificationButton" Click="AddDriverIdentificationButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                                    <Button x:Name="EditDriverIdentificationButton" Click="EditDriverIdentificationButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                                    <Button x:Name ="DelDriverIdentificationButton" Click="DelDriverIdentificationButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                                    <TextBlock FontSize="20"  Margin="10">Категории Прав:</TextBlock>
+                                    <CheckBox FontSize="20" BorderBrush="#046380" Name="B" Content="B" Click="B_Click" Margin="10 " Height="40" VerticalAlignment="Center" ></CheckBox>
+                                    <CheckBox FontSize="20" BorderBrush="#046380" Name="BE" Content="BE" Click="BE_Click" Margin="10" Height="40" ></CheckBox>
+                                    <CheckBox FontSize="20" BorderBrush="#046380" Name="C" Content="C" Click="C_Click" Margin="10" Height="40" ></CheckBox>
+                                    <CheckBox FontSize="20" BorderBrush="#046380" Name="CE" Content="CE" Click="CE_Click" Margin="10" Height="40" ></CheckBox>
+                                </StackPanel>
+                            </StackPanel>
+                            <DataGrid Margin="10 10 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="DriverIdentificationDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">
 
-                        <DataGrid.Resources>
-                            <Style TargetType="DataGridRow">
-                                <EventSetter Event="MouseDoubleClick" Handler="DriverIdentification_MouseDoubleClick"/>
-                            </Style>
-                        </DataGrid.Resources>
-                        <DataGrid.ContextMenu>
+                                <DataGrid.Resources>
+                                    <Style TargetType="DataGridRow">
+                                        <EventSetter Event="MouseDoubleClick" Handler="DriverIdentification_MouseDoubleClick"/>
+                                    </Style>
+                                </DataGrid.Resources>
+                                <DataGrid.ContextMenu>
 
-                            <ContextMenu>
+                                    <ContextMenu>
 
-                                <MenuItem Header="Редактировать" Click="EditDriverIdentificationButton_Click"></MenuItem>
-                                <MenuItem Header="Удалить" Click="DelDriverIdentificationButton_Click"></MenuItem>
-                            </ContextMenu>
+                                        <MenuItem Header="Редактировать" Click="EditDriverIdentificationButton_Click"></MenuItem>
+                                        <MenuItem Header="Удалить" Click="DelDriverIdentificationButton_Click"></MenuItem>
+                                    </ContextMenu>
 
-                        </DataGrid.ContextMenu>
+                                </DataGrid.ContextMenu>
 
-                        <DataGrid.Columns>
+                                <DataGrid.Columns>
 
-                            <DataGridTemplateColumn>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Height="25" Width="25"
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Height="25" Width="25"
                                         Background="Transparent"
                                         BorderThickness="0" Name="editButton" Click="EditDriverIdentificationButton_Click">
-                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
-                                            </Button>
-                                            <Button Height="25" Width="25"
+                                                        <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
+                                                    </Button>
+                                                    <Button Height="25" Width="25"
                                         Background="Transparent"
                                         BorderThickness="0" Name="removeButton" Click="DelDriverIdentificationButton_Click">
-                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
-                                            </Button>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTextColumn IsReadOnly="True"  Header="ID ВУ"
+                                                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn IsReadOnly="True"  Header="ID ВУ"
                                     Binding="{Binding Path=GuideReferencesID}" x:Name="GuideReferencesIDView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Номер водительских прав"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Номер водительских прав"
                                     Binding="{Binding Path=DriverLicense}" x:Name="DriverLicenseView"/>
-                            <DataGridCheckBoxColumn IsReadOnly="True" Header="B"
+                                    <DataGridCheckBoxColumn IsReadOnly="True" Header="B"
                                     Binding="{Binding Path=B}" x:Name="BView"/>
-                            <DataGridCheckBoxColumn IsReadOnly="True" Header="BE"
+                                    <DataGridCheckBoxColumn IsReadOnly="True" Header="BE"
                                     Binding="{Binding Path=BE}" x:Name="BEView"/>
-                            <DataGridCheckBoxColumn IsReadOnly="True" Header="C"
+                                    <DataGridCheckBoxColumn IsReadOnly="True" Header="C"
                                     Binding="{Binding Path=C}" x:Name="CView"/>
-                            <DataGridCheckBoxColumn IsReadOnly="True" Header="CE"
+                                    <DataGridCheckBoxColumn IsReadOnly="True" Header="CE"
                                     Binding="{Binding Path=CE}" x:Name="CEView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Дата Получения"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Дата Получения"
                                     Binding="{Binding Path=DateReceipt, StringFormat=dd.MM.yyyy}" x:Name="DateReceiptView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Дата Окончания"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Дата Окончания"
                                     Binding="{Binding Path=TerminationDate, StringFormat=dd.MM.yyyy}" x:Name="TerminationDateView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Сотрудник"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Сотрудник"
                                      x:Name="EmploeeIDView">
-                                <DataGridTextColumn.Binding>
-                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
-                                        <Binding Path="EmployeeID"/>
-                                        <Binding Path="EmployeeEntity.Name"/>
-                                        <Binding Path="EmployeeEntity.Surname"/>
-                                        <Binding Path="EmployeeEntity.Patronymic"/>
-                                    </MultiBinding>
-                                </DataGridTextColumn.Binding>
-                            </DataGridTextColumn>
-                        </DataGrid.Columns>
+                                        <DataGridTextColumn.Binding>
+                                            <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                                <Binding Path="EmployeeID"/>
+                                                <Binding Path="EmployeeEntity.Name"/>
+                                                <Binding Path="EmployeeEntity.Surname"/>
+                                                <Binding Path="EmployeeEntity.Patronymic"/>
+                                            </MultiBinding>
+                                        </DataGridTextColumn.Binding>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
 
-                    </DataGrid>
-
+                            </DataGrid>
+                        </StackPanel>
+                    </StackPanel>
                 </Grid>
 
             </TabItem>
@@ -138,6 +144,7 @@
                     </StackPanel >
                 </TabItem.Header>
                 <Grid Background="White">
+
                     <StackPanel Margin="10">
                         <TextBlock FontSize="24">Категории</TextBlock>
                         <StackPanel Orientation="Horizontal">
@@ -277,7 +284,7 @@
                             <Button x:Name="AddCarButton" Click="AddCarButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
                             <Button Margin="10" Click="EditCarButton_Click" Background="White" FontSize="16" Padding="5">Изменить</Button>
                             <Button Margin="10" Click="RemoveCarButton_Click" Background="White"  FontSize="16" Padding="5">Удалить</Button>
-                            <TextBlock Margin="10" FontSize="18">Поиск: </TextBlock>
+                            <TextBlock Margin="10" FontSize="18">Поиск:</TextBlock>
                             <TextBox Background="Transparent" Height="20" BorderBrush="#046380" MinWidth="200" Margin="0 10 10 10" x:Name="searchCarTextBox" TextChanged="searchCarTextBox_TextChanged"/>
 
                         </StackPanel>
@@ -337,17 +344,17 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Статус"
                                     Binding="{Binding Path=Status}" x:Name="StatusView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Место Базирования"  x:Name="LocationBaseView">
-                            <DataGridTextColumn.Binding>
-                                <MultiBinding StringFormat="{}ID: {0} Адрес: {1} {2} " >
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} Адрес: {1} {2} " >
                                         <Binding Path="LocationBase"/>
                                         <Binding Path="LocationBaseEntity.Region"/>
                                         <Binding Path="LocationBaseEntity.Address"/>
                                     </MultiBinding>
-                            </DataGridTextColumn.Binding>
+                                </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Назначеный Водитель"
                                      x:Name="DriverIDView">
-                              
+
                                 <DataGridTextColumn.Binding>
                                     <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
                                         <Binding Path="DriverID"/>
@@ -424,14 +431,14 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Регион"
                                     Binding="{Binding Path=Region}" x:Name="RegionView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Директор" x:Name="DirectorView">
-                            <DataGridTextColumn.Binding>
-                                <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
                                         <Binding Path="Director"/>
-                                    <Binding Path="EmployeeEntity.Name"/>
-                                    <Binding Path="EmployeeEntity.Surname"/>
-                                    <Binding Path="EmployeeEntity.Patronymic"/>
-                                </MultiBinding>
-                            </DataGridTextColumn.Binding>
+                                        <Binding Path="EmployeeEntity.Name"/>
+                                        <Binding Path="EmployeeEntity.Surname"/>
+                                        <Binding Path="EmployeeEntity.Patronymic"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -495,14 +502,14 @@
                                     Binding="{Binding Path=PackageID}" x:Name="PackageIDiew"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Клиент"
                                      x:Name="ClientID">
-                            <DataGridTextColumn.Binding>
-                                <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
-                                    <Binding Path="ClientID"/>
-                                    <Binding Path="ClientEntity.Name"/>
-                                    <Binding Path="ClientEntity.Surname"/>
-                                    <Binding Path="ClientEntity.Patronymic"/>
-                                </MultiBinding>
-                            </DataGridTextColumn.Binding>
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat="{}ID: {0} ФИО: {1} {2} {3}" >
+                                        <Binding Path="ClientID"/>
+                                        <Binding Path="ClientEntity.Name"/>
+                                        <Binding Path="ClientEntity.Surname"/>
+                                        <Binding Path="ClientEntity.Patronymic"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
                             <DataGridTextColumn IsReadOnly="True" Header="Комментарий"
                                     Binding="{Binding Path=Comments}" x:Name="Comments"/>
@@ -525,8 +532,8 @@
                                     </MultiBinding>
                                 </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
-                              
-                                <DataGridTextColumn IsReadOnly="True" Header="Вес"
+
+                            <DataGridTextColumn IsReadOnly="True" Header="Вес"
                                     Binding="{Binding Path=Weight}" x:Name="WeightView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Дата Принятия"
                                     Binding="{Binding Path=DateAcceptance, StringFormat=dd.MM.yyyy}" x:Name="DateAcceptanceView"/>
@@ -559,7 +566,7 @@
                             <DataGridTextColumn IsReadOnly="True" Header="Статус"
                                     Binding="{Binding Path=Status}" x:Name="StatusPackageView"/>
                             <DataGridTextColumn IsReadOnly="True" Header="Машина"
-                                    Binding="{Binding Path=CarID}" x:Name="CarIDPackageView"/>
+                                    Binding="{Binding Path=CarEntity.StateNumber}" x:Name="CarIDPackageView"/>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -639,7 +646,7 @@
                                         <Binding Path="WarehouseID"/>
                                         <Binding Path="WarehouseEntity.Region"/>
                                         <Binding Path="WarehouseEntity.Address"/>
-                                </MultiBinding>
+                                    </MultiBinding>
                                 </DataGridTextColumn.Binding>
                             </DataGridTextColumn>
                         </DataGrid.Columns>
@@ -730,70 +737,77 @@
                     </StackPanel>
                 </TabItem.Header>
                 <Grid Background="White">
-                    <StackPanel Margin="10">
-                        <TextBlock FontSize="24">Сотрудники</TextBlock>
-                        <StackPanel Orientation="Horizontal">
-                            <Button x:Name="AddEmployeeButton" Click="AddEmployeeButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
-                            <Button Click="EditEmployeeButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
-                            <Button Click="RemoveEmployeeButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                    <StackPanel>
+                        <StackPanel x:Name="NoAdmin1">
+                            <TextBlock Margin="20 20 0 0" FontSize="30">Нужны права администратора</TextBlock>
                         </StackPanel>
-                    </StackPanel>
-                    <DataGrid Margin="10 100 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="EmployeeDataGridView"   AutoGenerateColumns="False"
+                        <StackPanel Name="AdminLook1" >
+                            <StackPanel Margin="10">
+                                <TextBlock FontSize="24">Сотрудники</TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="AddEmployeeButton" Click="AddEmployeeButton_Click" Margin="0 10 10 10" Background="#046380" FontSize="16" Padding="5" Foreground="White">Добавить</Button>
+                                    <Button Click="EditEmployeeButton_Click" Margin="10" Background="White" FontSize="16" Padding="5">Изменить</Button>
+                                    <Button Click="RemoveEmployeeButton_Click" Margin="10" Background="White"  FontSize="16" Padding="5">Удалить</Button>
+                                </StackPanel>
+                            </StackPanel>
+                            <DataGrid Margin="10 10 10 10 " HorizontalGridLinesBrush="#046380" VerticalGridLinesBrush="#046380"  Name="EmployeeDataGridView"   AutoGenerateColumns="False"
                   FontSize="16">
 
-                        <DataGrid.Resources>
-                            <Style TargetType="DataGridRow">
-                                <EventSetter Event="MouseDoubleClick" Handler="EmployeeDataGridRow_MouseDoubleClick"/>
-                            </Style>
-                        </DataGrid.Resources>
-                        <DataGrid.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Редактировать" Click="EditEmployeeButton_Click"></MenuItem>
-                                <MenuItem Header="Удалить" Click="RemoveEmployeeButton_Click"></MenuItem>
-                            </ContextMenu>
+                                <DataGrid.Resources>
+                                    <Style TargetType="DataGridRow">
+                                        <EventSetter Event="MouseDoubleClick" Handler="EmployeeDataGridRow_MouseDoubleClick"/>
+                                    </Style>
+                                </DataGrid.Resources>
+                                <DataGrid.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Редактировать" Click="EditEmployeeButton_Click"></MenuItem>
+                                        <MenuItem Header="Удалить" Click="RemoveEmployeeButton_Click"></MenuItem>
+                                    </ContextMenu>
 
-                        </DataGrid.ContextMenu>
+                                </DataGrid.ContextMenu>
 
-                        <DataGrid.Columns>
+                                <DataGrid.Columns>
 
-                            <DataGridTemplateColumn>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Height="25" Width="25"
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Height="25" Width="25"
                                         Background="Transparent"
                                         BorderThickness="0" Name="editButton" Click="EditEmployeeButton_Click">
-                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
-                                            </Button>
-                                            <Button Height="25" Width="25"
+                                                        <Image RenderOptions.BitmapScalingMode="HighQuality" Height="20" Source="/Image/edit_blue.png" />
+                                                    </Button>
+                                                    <Button Height="25" Width="25"
                                         Background="Transparent"
                                         BorderThickness="0" Name="removeButton" Click="RemoveEmployeeButton_Click">
-                                                <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
-                                            </Button>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTextColumn IsReadOnly="True"  Header="ID Сотрудника"
+                                                        <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/Image/trashcan_blue.png" />
+                                                    </Button>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn IsReadOnly="True"  Header="ID Сотрудника"
                                     Binding="{Binding Path=EmployeeID}" x:Name="EmployeeIDView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Имя"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Имя"
                                     Binding="{Binding Path=Name}" x:Name="NameEmployeeView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Фамилия"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Фамилия"
                                     Binding="{Binding Path=Surname}" x:Name="SurnameEmployeeView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Отчество"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Отчество"
                                     Binding="{Binding Path=Patronymic}" x:Name="PatronymicEmployeeView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Дата Рождения"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Дата Рождения"
                                     Binding="{Binding Path=Birthdate, StringFormat=dd.MM.yyyy}" x:Name="BirthdateEmployeeiew"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Номер телефона"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Номер телефона"
                                     Binding="{Binding Path=PhoneNumber}" x:Name="PhoneNumberEmployeeView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Адрес Проживания"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Адрес Проживания"
                                     Binding="{Binding Path=ResidentialAddress}" x:Name="ResidentialAddressEmployeeView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Email"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Email"
                                     Binding="{Binding Path=Email}" x:Name="EmailEmployeeView"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Должность"
+                                    <DataGridTextColumn IsReadOnly="True" Header="Должность"
                                     Binding="{Binding Path=Post}" x:Name="PostEmployeeView"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </StackPanel>
                 </Grid>
             </TabItem>
 
@@ -805,136 +819,130 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel>
-                    <StackPanel >
-                        <Button HorizontalAlignment="Left" Name="ButStatic" Click="ButStatic_Click" FontSize="20" Margin="20 20 0 0" Width="110" Height="40" 
-                                    BorderBrush="#046380" Background="#046380" Foreground="White">Обновить</Button>
+                    <StackPanel x:Name="NoAdmin">
+                        <TextBlock Margin="20 20 0 0" FontSize="30">Нужны права администратора</TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel Orientation="Vertical">
-                            <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270" Height="200">
-                                <StackPanel  Name="carStack" >
-                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
-                                        <StackPanel>
-                                            <TextBlock FontSize="18" >Машины</TextBlock>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock FontSize="18" >Количество:</TextBlock>
-                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarCount">Нет данных</TextBlock>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                        <TextBlock FontSize="18">На базе:</TextBlock>
-                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAtTheBase" >Нет данных</TextBlock>
-                                    </StackPanel>
-                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                        <TextBlock FontSize="18">Назначен водитель:</TextBlock>
-                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAssignedDriver" >Нет данных</TextBlock>
-                                    </StackPanel>
-                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                        <TextBlock FontSize="18">Ремонт:</TextBlock>
-                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarRepair" >Нет данных</TextBlock>
-                                    </StackPanel>
-                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                        <TextBlock FontSize="18">Списана:</TextBlock>
-                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarDiscarded" >Нет данных</TextBlock>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                            <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270">
-                                <StackPanel  Name="CountStack" >
-                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
-                                        <StackPanel>
-                                            <TextBlock FontSize="18" >Пункты Выдачи</TextBlock>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock FontSize="18" >Количество:</TextBlock>
-                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="PointCount">Нет данных</TextBlock>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
-                                        <StackPanel>
-                                            <TextBlock FontSize="18" >Клиенты</TextBlock>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock FontSize="18" >Количество:</TextBlock>
-                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="ClientCount">Нет данных</TextBlock>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                    <Border   BorderBrush ="#046380" BorderThickness="1" >
-                                        <StackPanel>
-                                            <TextBlock FontSize="18" >Сотрудники</TextBlock>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock FontSize="18" >Количество:</TextBlock>
-                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="EmployeeCount">Нет данных</TextBlock>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                </StackPanel>
-                            </Border>
+                    <StackPanel Name="AdminLook">
+                        <StackPanel >
+                            <Button HorizontalAlignment="Left" Name="ButStatic" Click="ButStatic_Click" FontSize="20" Margin="20 20 0 0" Width="110" Height="40" 
+                                    BorderBrush="#046380" Background="#046380" Foreground="White">Обновить</Button>
                         </StackPanel>
-                        <Border   Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="300" Height="Auto">
-                            <StackPanel  Name="PackageStack" >
-                                <Border   BorderBrush ="#046380" BorderThickness="1" Height="Auto">
-                                    <StackPanel>
-                                        <TextBlock FontSize="18" >Заказы</TextBlock>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock FontSize="18" >Количество:</TextBlock>
-                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageCount" >Нет данных</TextBlock>
+
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270" Height="200">
+                                    <StackPanel  Name="carStack" >
+                                        <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                            <StackPanel>
+                                                <TextBlock FontSize="18" >Машины</TextBlock>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarCount">Нет данных</TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                        <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                            <TextBlock FontSize="18">На базе:</TextBlock>
+                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAtTheBase" >Нет данных</TextBlock>
+                                        </StackPanel>
+                                        <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                            <TextBlock FontSize="18">Назначен водитель:</TextBlock>
+                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarAssignedDriver" >Нет данных</TextBlock>
+                                        </StackPanel>
+                                        <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                            <TextBlock FontSize="18">Ремонт:</TextBlock>
+                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarRepair" >Нет данных</TextBlock>
+                                        </StackPanel>
+                                        <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                            <TextBlock FontSize="18">Списана:</TextBlock>
+                                            <TextBlock FontSize="18" Margin="10 0 0 0" Name="CarDiscarded" >Нет данных</TextBlock>
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Принят от клиента:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedFromClient" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Отправлен на склад:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentToWarehouse" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Принят на складе:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedToWarehouse" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Отправлен в город выдачи:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentToDestinationCity" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Принят в городе выдачи:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedDestinationCity" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Отправлен в пункт выдачи:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentIssuePoint" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Принят в пункте выдачи:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedPointIssue" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Утерян:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageLost" >Нет данных</TextBlock>
-                                </StackPanel>
-                                <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
-                                    <TextBlock FontSize="18">Выдан:</TextBlock>
-                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageIssued" >Нет данных</TextBlock>
-                                </StackPanel>
+                                <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270">
+                                    <StackPanel  Name="CountStack" >
+                                        <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                            <StackPanel>
+                                                <TextBlock FontSize="18" >Пункты Выдачи</TextBlock>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="PointCount">Нет данных</TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                        <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                            <StackPanel>
+                                                <TextBlock FontSize="18" >Клиенты</TextBlock>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="ClientCount">Нет данных</TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                        <Border   BorderBrush ="#046380" BorderThickness="1" >
+                                            <StackPanel>
+                                                <TextBlock FontSize="18" >Сотрудники</TextBlock>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                    <TextBlock FontSize="18" Margin="10 0 0 0" Name="EmployeeCount">Нет данных</TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                </Border>
                             </StackPanel>
+                            <Border Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="300" Height="Auto">
+                                <StackPanel  Name="PackageStack" >
+                                    <Border   BorderBrush ="#046380" BorderThickness="1" Height="Auto">
+                                        <StackPanel>
+                                            <TextBlock FontSize="18" >Заказы</TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontSize="18" >Количество:</TextBlock>
+                                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageCount" >Нет данных</TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Принят от клиента:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedFromClient" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Отправлен на склад:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentToWarehouse" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Принят на складе:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedToWarehouse" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Отправлен в город выдачи:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentToDestinationCity" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Принят в городе выдачи:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedDestinationCity" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Отправлен в пункт выдачи:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageSentIssuePoint" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Принят в пункте выдачи:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageAcceptedPointIssue" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Утерян:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageLost" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                    <StackPanel  Margin="10 10 0 0" Orientation="Horizontal">
+                                        <TextBlock FontSize="18">Выдан:</TextBlock>
+                                        <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageIssued" >Нет данных</TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
 
-                        </Border>
+                            </Border>
+                        </StackPanel>
                     </StackPanel>
-
-
-                    <!--<DataGrid x:Name="AddressGrid">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn IsReadOnly="True" Header="Адрес отправки" Binding="{Binding Path=sendingAddress}" CanUserSort="False" SortDirection="Ascending"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Адрес доставки" Binding="{Binding Path=deliveryAddress}" CanUserSort="False" SortDirection="Ascending"/>
-                            <DataGridTextColumn IsReadOnly="True" Header="Количество" Binding="{Binding Path=countAddress}" CanUserSort="False" SortDirection="Ascending"/>
-                        </DataGrid.Columns>
-                    </DataGrid>-->
-
-
-
                 </StackPanel>
             </TabItem>
         </TabControl>

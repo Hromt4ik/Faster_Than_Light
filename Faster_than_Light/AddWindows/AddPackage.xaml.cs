@@ -54,6 +54,131 @@ namespace Faster_than_Light.AddWindows
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (Check.Empty(ClientIdView.Text))
+            {
+                MessageBox.Show("Выберите клиента", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }    
+            
+            if (Check.Empty(SendingView.Text))
+            {
+                MessageBox.Show("Выберите адрес отправки", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(DeliveryView.Text))
+            {
+                MessageBox.Show("Выберите адрес доставки", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(LenghtBox.Text))
+            {
+                MessageBox.Show("Введите длину", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (Check.Empty(WidthBox.Text))
+            {
+                MessageBox.Show("Выберите ширину", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(HeightBox.Text))
+            {
+                MessageBox.Show("Выберите высоту", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(Convert.ToString(DateAcceptanceBox.Text)))
+            {
+                MessageBox.Show("Введите дату принятия", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+            if (Check.Empty(ModelBox.Text))
+            {
+                MessageBox.Show("Введит вес", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(CategoryView.Text))
+            {
+                MessageBox.Show("Выберите категорию", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(EmployeeView.Text))
+            {
+                MessageBox.Show("Выберите сотрудника", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (Check.Empty(CarIDView.Text))
+            {
+                MessageBox.Show("Выберите тип упаковки", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (Check.Empty(typePackageComboBox.Text))
+            {
+                MessageBox.Show("Выберите тип упаковки", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(statusComboBox.Text))
+            {
+                MessageBox.Show("Выберите статус посылки", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(CostBox.Text))
+            {
+                MessageBox.Show("Заолните цену", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!(Check.IsPositivNumber(LenghtBox.Text)))
+            {
+                return;
+            }
+            if (!(Check.IsPositivNumber(WidthBox.Text)))
+            {
+                return;
+            }
+            if (!(Check.IsPositivNumber(ModelBox.Text)))
+            {
+                return;
+            }
+            if (!(Check.IsPositivNumber(HeightBox.Text)))
+            {
+                return;
+            }
+            if (!(Check.IsPositivNumber(CostBox.Text)))
+            {
+                return;
+            }
+
+
+            if (!Check.DateMore(Convert.ToDateTime(DateAcceptanceBox.SelectedDate.Value), Convert.ToDateTime(DateDeliveryToPointBox.SelectedDate.Value)))
+            {
+                MessageBox.Show("Дата доставки в пункт не может \n быть меньше даты принятия", "Ошибка даты", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!Check.DateMore( Convert.ToDateTime(DateDeliveryToPointBox.SelectedDate.Value), Convert.ToDateTime(DateIssueBox.SelectedDate.Value)))
+            {
+                MessageBox.Show("Дата получения клиентом в пункт не может \n быть меньше даты доставки в пукт", "Ошибка даты", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (SendingView.Text == DeliveryView.Text)
+            {
+                MessageBox.Show("Адрес доставки и получения не может совпадать", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+
+
             DatabaseControl.AddPackage(new classes.Package
             {
                 ClientID = (int)ClientIdView.SelectedValue,
@@ -66,11 +191,11 @@ namespace Faster_than_Light.AddWindows
                 Length = Convert.ToInt32(LenghtBox.Text),
                 Width = Convert.ToInt32(WidthBox.Text),
                 Height = Convert.ToInt32(HeightBox.Text),
-                Weight = Convert.ToInt32(ModelBox.Text),
+                Weight = Convert.ToDecimal(ModelBox.Text),
 
 
                DateIssue = DateTime.SpecifyKind(Convert.ToDateTime(DateIssueBox.SelectedDate.Value), DateTimeKind.Utc),
-               DateAcceptance = DateTime.SpecifyKind(Convert.ToDateTime(DateAcceptanceeBox.SelectedDate.Value), DateTimeKind.Utc),
+               DateAcceptance = DateTime.SpecifyKind(Convert.ToDateTime(DateAcceptanceBox.SelectedDate.Value), DateTimeKind.Utc),
                DateDeliveryToPoint = DateTime.SpecifyKind(Convert.ToDateTime(DateDeliveryToPointBox.SelectedDate.Value), DateTimeKind.Utc),
 
                PackageType = typePackageComboBox.SelectedItem.ToString(),

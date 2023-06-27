@@ -23,12 +23,7 @@ namespace Faster_than_Light.Pages
     /// </summary>
     public partial class MainPage : Page
     {
-        class packageReport
-        {
-            public string sendingAddress { get; set; }
-            public string deliveryAddress { get; set; }
-            public int countAddress { get; set; }
-        }
+
         public MainPage()
         {
             InitializeComponent();
@@ -39,29 +34,32 @@ namespace Faster_than_Light.Pages
             EmployeeDataGridView.ItemsSource = DatabaseControl.GetEmployeeForView();
             LocationBaseDataGridView.ItemsSource = DatabaseControl.GetLocationBaseForView();
 
-            List<Package> packages = new List<Package>();
-            packages = DatabaseControl.GetPackageForView();
-            List<packageReport> packagesReport = new List<packageReport>();
-
-            foreach (Package package in packages)
-            {
-                packageReport packageForReport = new packageReport()
-                {
-                    deliveryAddress = package.DeliveryAddressEntity.Address,
-                    sendingAddress = package.SendingAddressEntity.Address,
-                    countAddress = package.SendingAddressEntity.Address.Count(),
-                };
-
-                packagesReport.Add(packageForReport);
-            }
-            //AddressGrid.ItemsSource = packagesReport;
-
             PackageDataGridView.ItemsSource = DatabaseControl.GetPackageForView();
             PointReceptionDataGridView.ItemsSource = DatabaseControl.GetPointReceptionForView();
             WarehouseDataGridView.ItemsSource = DatabaseControl.GetWarehouseForView();
+            GetAcsess();
             MakeReport();
 
 
+
+        }
+
+        public void GetAcsess()
+        {
+            if (sessionData.CheckedAdmin())
+            {
+                NoAdmin.Visibility = Visibility.Collapsed;
+                NoAdmin1.Visibility = Visibility.Collapsed;
+                NoAdmin2.Visibility = Visibility.Collapsed;
+                
+            }
+            else
+            {
+                AdminLook.Visibility = Visibility.Collapsed;
+                AdminLook1.Visibility = Visibility.Collapsed;
+                AdminLook2.Visibility = Visibility.Collapsed;
+               
+            }
 
         }
 
@@ -154,6 +152,11 @@ namespace Faster_than_Light.Pages
 
         private void AddCategoriesButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!sessionData.CheckedAdmin())
+            {
+                MessageBox.Show("Недостаточно прав", "Ошибка доступа", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             AddWindows.AddCargoCategory win = new AddWindows.AddCargoCategory();
             NavigateMethods.GridStorage.grid = CargoCategoryDataGridView;
             win.ShowDialog();
@@ -281,6 +284,13 @@ namespace Faster_than_Light.Pages
 
         private void EditCategoriesButton_Click(object sender, RoutedEventArgs e)
         {
+
+            if (!sessionData.CheckedAdmin())
+            {
+                MessageBox.Show("Недостаточно прав", "Ошибка доступа", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             CargoCategory temp = CargoCategoryDataGridView.SelectedItem as CargoCategory;
 
             if (temp != null)
@@ -297,6 +307,12 @@ namespace Faster_than_Light.Pages
 
         private void RemoveCategoriesButton_Click(object sender, RoutedEventArgs e)
         {
+
+            if (!sessionData.CheckedAdmin())
+            {
+                MessageBox.Show("Недостаточно прав", "Ошибка доступа", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             CargoCategory temp = CargoCategoryDataGridView.SelectedItem as CargoCategory;
 
             if (temp != null)

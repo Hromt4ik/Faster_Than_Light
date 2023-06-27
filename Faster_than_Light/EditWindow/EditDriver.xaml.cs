@@ -44,11 +44,38 @@ namespace Faster_than_Light.EditWindow
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (Check.Empty(Convert.ToString(DateReceipt.Text)))
+            {
+                MessageBox.Show("Введите дату получения", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(Convert.ToString(TerminationDate.Text)))
+            {
+                MessageBox.Show("Введите дату оканчания", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (!((bool)BChecked.IsChecked || (bool)BE.IsChecked || (bool)CChecked.IsChecked || (bool)CE.IsChecked))
             {
                 MessageBox.Show("Выберите хотя бы 1 категорию", "Категории не выбраны", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
+            if (!(DatabaseControl.isDriverIdentificationUnique(DriverLicense.Text)))
+            {
+                MessageBox.Show("Номер удостоверения не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+            if(!Check.DateMore(Convert.ToDateTime(DateReceipt.SelectedDate.Value), Convert.ToDateTime(TerminationDate.SelectedDate.Value)))
+            {
+                MessageBox.Show("Дата окончания не может быть меньше даты получения", "Некоректная дата", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
 
             temp.DriverLicense = DriverLicense.Text;
             temp.EmployeeID = (int)DriverView.SelectedValue;

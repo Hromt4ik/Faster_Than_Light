@@ -43,7 +43,13 @@ namespace Faster_than_Light.AddWindows
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
-    
+            if (!Check.NumberCar(StateBox.Text))
+            {
+
+                MessageBox.Show("Введите номер формата: А000АА00 \n или А000АА000", "Неправильный номер", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             DatabaseControl.AddCar(new classes.Car
             {
                 VIN = VinBox.Text,

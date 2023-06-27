@@ -38,7 +38,7 @@
                     </StackPanel>
                     <StackPanel x:Name="DateReceiptStack" Margin="10 10 10 10 ">
                         <TextBlock>Дата получения</TextBlock>
-                        <DatePicker x:Name="DateReceipt" Width="100" BorderBrush="#046380"></DatePicker>
+                        <DatePicker x:Name="DateReceipt" Width="100" BorderBrush="#046380" ></DatePicker>
                     </StackPanel>
                     <StackPanel x:Name="TerminationDateStack" Margin="10">
                         <TextBlock>Действует до</TextBlock>

@@ -202,22 +202,42 @@ namespace Faster_than_Light.Db_API
         //}
 
 
-        //public static bool isPhoneUnique(string phone, string type)
-        //{
-        //    using (DbAppContext ctx = new DbAppContext())
-        //    {
-        //        if (type == "customer" && ctx.Customer.Where(p => p.PhoneNumber == phone).FirstOrDefault() != null)
-        //        {
-        //            return false;
-        //        }
-        //        else if (type == "provider" && ctx.Provider.Where(p => p.PhoneNumber == phone).FirstOrDefault() != null)
-        //        {
-        //            return false;
-        //        }
+        public static bool isDriverIdentificationUnique(string driverLicense)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                if (ctx.DriverIdentification.Where(p => p.DriverLicense == driverLicense).FirstOrDefault() != null)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
 
-        //        return true;
-        //    }
-        //}
+        public static bool isClientPasportUnique(string number)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                if (ctx.Client.Where(p => p.SeriaNumberPassport == number).FirstOrDefault() != null)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+
+        public static bool isEmployeePasportUnique(string number)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                if (ctx.Employee.Where(p => p.SeriaNumberPassport == number).FirstOrDefault() != null)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
 
         //Add all tables -----------------------------------------------------------------
         public static void AddCar(Car Car)
@@ -487,6 +507,44 @@ namespace Faster_than_Light.Db_API
                temp.Address = warehouse.Address;
                temp.Region = warehouse.Region;
                temp.Director = warehouse.Director;
+
+
+                ctx.SaveChanges();
+            }
+        }
+
+
+        public static void UpdatePackage(Package package)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+
+                Package temp = ctx.Package.FirstOrDefault(p => p.PackageID
+                == package.PackageID);
+
+                if (temp == null)
+                {
+                    return;
+                }
+
+                temp.ClientID = package.ClientID;
+                temp.Comments = package.Comments;
+                temp.SendingAddress = package.SendingAddress;
+                temp.DeliveryAddress = package.DeliveryAddress;
+                temp.Weight = package.Weight;
+                temp.DateAcceptance = package.DateAcceptance;
+                temp.DateDeliveryToPoint = package.DateDeliveryToPoint;
+                temp.DateIssue = package.DateIssue;
+                temp.EmployeeID = package.EmployeeID;
+                temp.Length = package.Length;
+                temp.Width = package.Width;
+                temp.Height = package.Height;
+                temp.PackageType = package.PackageType;
+                temp.DeliveryCost = package.DeliveryCost;
+                temp.CargoCategory = package.CargoCategory;
+                temp.Status = package.Status;
+                temp.CarID = package.CarID;
+
 
 
                 ctx.SaveChanges();

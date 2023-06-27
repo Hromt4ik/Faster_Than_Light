@@ -56,11 +56,6 @@ namespace Faster_than_Light.EditWindow
                 return;
             }
 
-            if (Check.Empty(PatronomicBox.Text))
-            {
-                MessageBox.Show("Введите отчество", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
 
             if (Check.Empty(Convert.ToString(BirthdateBox.Text)))
             {
@@ -105,6 +100,12 @@ namespace Faster_than_Light.EditWindow
 
             if (!Check.Age(Convert.ToDateTime(BirthdateBox.SelectedDate.Value), 18))
             {
+                return;
+            }
+
+            if (!(DatabaseControl.isEmployeePasportUnique(SeriaNumberPassportBox.Text)))
+            {
+                MessageBox.Show("серия и номер паспорта не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

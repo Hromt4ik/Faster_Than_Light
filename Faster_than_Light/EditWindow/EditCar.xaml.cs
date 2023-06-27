@@ -62,7 +62,12 @@ namespace Faster_than_Light.EditWindow
         {
 
 
+            if (!Check.NumberCar(StateBox.Text))
+            {
 
+                MessageBox.Show("Введите номер формата: А000АА00 \n или А000АА000", "Неправильный номер", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
             temp.VIN = VinBox.Text;
             temp.StateNumber = StateBox.Text;

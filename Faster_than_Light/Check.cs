@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Faster_than_Light
 {
@@ -24,6 +25,9 @@ namespace Faster_than_Light
         public static bool Phone(string phoneNumber) => Regex.IsMatch(phoneNumber, @"8\d{10}");
  
         public static bool Email(string email) => Regex.IsMatch(email, @"^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$");
+
+        public static bool NumberCar(string number) => Regex.IsMatch(number, @"^[АВЕКМНОРСТУХ]\d{3}(?<!000)[АВЕКМНОРСТУХ]{2}\d{2,3}$");
+
 
         public static bool Age(DateTime time, int ageRestriction)
         {
@@ -61,6 +65,17 @@ namespace Faster_than_Light
             }
 
             MessageBox.Show("Введите число", "Строка не являеться числом", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return false;
+        }
+
+
+        public static bool DateMore(DateTime date1, DateTime date2)
+        {
+
+            if(date1 <= date2)
+            {
+                return true;
+            }
             return false;
         }
 

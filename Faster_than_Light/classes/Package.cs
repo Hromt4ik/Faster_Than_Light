@@ -15,22 +15,22 @@ namespace Faster_than_Light.classes
     {
         [Key] public int PackageID { get; set; }
         [ForeignKey("ClientEntity")] public int ClientID { get; set; }
-        public string Comments { get; set; }
-        [ForeignKey("SendingAddressEntity")] public int SendingAddress { get; set; }
-        [ForeignKey("DeliveryAddressEntity")] public int DeliveryAddress { get; set; }
+        public string? Comments { get; set; }
+        [ForeignKey("SendingAddressEntity")] public int? SendingAddress { get; set; }
+        [ForeignKey("DeliveryAddressEntity")] public int? DeliveryAddress { get; set; }
         public decimal Weight { get; set; }
-        public DateTime? DateAcceptance { get; set; }
-        public DateTime? DateDeliveryToPoint { get; set; }
-        public DateTime? DateIssue { get; set; }
+        public DateTime? DateAcceptance { get; set; } = null;
+        public DateTime? DateDeliveryToPoint { get; set; } = null;
+        public DateTime? DateIssue { get; set; } = null;
         [ForeignKey("EmployeeEntity")] public int EmployeeID { get; set; }
         public int Length { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
-        public string PackageType { get; set; }
+        public string? PackageType { get; set; }
         public decimal DeliveryCost { get; set; }
         [ForeignKey("CargoCategoryEntity")]  public int CargoCategory { get; set; }
         public string? Status { get; set; }
-        [ForeignKey("CarEntity")] public int CarID { get; set; }
+        [ForeignKey("CarEntity")] public int? CarID { get; set; } = null;
 
         public Client ClientEntity { get; set; }
         public PointReception SendingAddressEntity { get; set; }
