@@ -893,7 +893,7 @@
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
-                            <Border Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="2" Width="324" Height="Auto">
+                            <Border Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="2" Width="324"2 Height="Auto">
                                 <StackPanel  Name="PackageStack" >
                                     <Border   BorderBrush ="#046380" BorderThickness="1" Height="Auto">
                                         <StackPanel>
