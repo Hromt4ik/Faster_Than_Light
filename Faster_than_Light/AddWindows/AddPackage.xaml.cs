@@ -170,7 +170,7 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
-            if (SendingView.Text == DeliveryView.Text)
+            if (SendingView.SelectedIndex == DeliveryView.SelectedIndex)
             {
                 MessageBox.Show("Адрес доставки и получения не может совпадать", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

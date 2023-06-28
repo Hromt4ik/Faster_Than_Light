@@ -59,6 +59,7 @@ namespace Faster_than_Light.EditWindow
                 return;
             }
 
+
             if (Check.Empty(SeriaNumberPassportBox.Text))
             {
                 MessageBox.Show("Введите серию и номер паспорта", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -99,9 +100,15 @@ namespace Faster_than_Light.EditWindow
                 return;
             }
 
-            if (!(DatabaseControl.isClientPasportUnique(SeriaNumberPassportBox.Text)))
+            if (!(DatabaseControl.isClientPasportUnique(SeriaNumberPassportBox.Text)) && SeriaNumberPassportBox.Text != temp.SeriaNumberPassport)
             {
                 MessageBox.Show("серия и номер паспорта не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!(DatabaseControl.isEmailClientUnique(EmailBox.Text)) && EmailBox.Text != temp.Email)
+            {
+                MessageBox.Show("Email не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Faster_than_Light.Db_API
 {
@@ -114,6 +115,15 @@ namespace Faster_than_Light.Db_API
             {
                 return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
                     .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Where(t => t.Status == "Выдан").ToList();
+            }
+        }
+
+        public static decimal AllSumCost()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Sum(t => t.DeliveryCost);
             }
         }
 
@@ -238,6 +248,56 @@ namespace Faster_than_Light.Db_API
                 return true;
             }
         }
+
+
+        public static bool isVINUnique(string vin)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                if (ctx.Car.Where(p => p.VIN == vin).FirstOrDefault() != null)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        public static bool isEmailClientUnique(string email)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                if (ctx.Client.Where(p => p.Email == email).FirstOrDefault() != null)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        public static bool isEmailEmployeeUnique(string email)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                if (ctx.Employee.Where(p => p.Email == email).FirstOrDefault() != null)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
+        public static bool isLoginUnique(string login)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                if (ctx.Employee.Where(p => p.Login == login).FirstOrDefault() != null)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
+
 
         //Add all tables -----------------------------------------------------------------
         public static void AddCar(Car Car)

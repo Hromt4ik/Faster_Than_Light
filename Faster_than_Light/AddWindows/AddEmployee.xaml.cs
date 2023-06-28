@@ -52,6 +52,12 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (!Check.IsPositivNumber(SeriaNumberPassportBox.Text))
+            {
+                MessageBox.Show("Введите серию и номер паспорта", "Поле заполнено некоректно", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (Check.Empty(PhoneNumberBox.Text))
             {
                 MessageBox.Show("Введите номер телефона", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -100,6 +106,20 @@ namespace Faster_than_Light.AddWindows
                 MessageBox.Show("серия и номер паспорта не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
+            if (!(DatabaseControl.isEmailEmployeeUnique(EmailBox.Text)))
+            {
+                MessageBox.Show("Email не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+            if (!(DatabaseControl.isLoginUnique(loginBox.Text)))
+            {
+                MessageBox.Show("Логин не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
 
             DatabaseControl.AddEmployee(new classes.Employee
             {

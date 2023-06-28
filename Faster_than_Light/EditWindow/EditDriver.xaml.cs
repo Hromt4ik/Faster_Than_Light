@@ -44,6 +44,23 @@ namespace Faster_than_Light.EditWindow
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (Check.Empty(DriverLicense.Text))
+            {
+                MessageBox.Show("Введите номер удостоверения", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!Check.IsPositivNumber(DriverLicense.Text))
+            {
+                return;
+            }
+
+            if (Check.Empty(DriverView.Text))
+            {
+                MessageBox.Show("ВыберитеСотрудника", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (Check.Empty(Convert.ToString(DateReceipt.Text)))
             {
                 MessageBox.Show("Введите дату получения", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -62,7 +79,7 @@ namespace Faster_than_Light.EditWindow
                 return;
             }
 
-            if (!(DatabaseControl.isDriverIdentificationUnique(DriverLicense.Text)))
+            if (!(DatabaseControl.isDriverIdentificationUnique(DriverLicense.Text)) && DriverLicense.Text != temp.DriverLicense)
             {
                 MessageBox.Show("Номер удостоверения не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

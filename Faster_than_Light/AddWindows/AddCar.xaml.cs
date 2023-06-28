@@ -43,12 +43,83 @@ namespace Faster_than_Light.AddWindows
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
+            if (Check.Empty(VinBox.Text))
+            {
+                MessageBox.Show("Введите VIN", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(StateBox.Text))
+            {
+                MessageBox.Show("Введите Гос. номер", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(VinBox.Text))
+            {
+                MessageBox.Show("Введите VIN", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(StampBox.Text))
+            {
+                MessageBox.Show("Введите марку", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(ModelBox.Text))
+            {
+                MessageBox.Show("Введите модель", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(MileageBox.Text))
+            {
+                MessageBox.Show("Введите пробег", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(NextMileageBox.Text))
+            {
+                MessageBox.Show("Введите пробег для прохождения следующего ТО", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(statusComboBox.Text))
+            {
+                MessageBox.Show("Выберите статус машины", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(BaseView.Text))
+            {
+                MessageBox.Show("Выберите место базирования", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!Check.IsPositivNumber(MileageBox.Text))
+            {
+                return;
+            }
+
+            if (!Check.IsPositivNumber(NextMileageBox.Text))
+            {
+                return;
+            }
+
             if (!Check.NumberCar(StateBox.Text))
             {
 
                 MessageBox.Show("Введите номер формата: А000АА00 \n или А000АА000", "Неправильный номер", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
+            if (!(DatabaseControl.isVINUnique(VinBox.Text)))
+            {
+                MessageBox.Show("VIN номер не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
 
             DatabaseControl.AddCar(new classes.Car
             {

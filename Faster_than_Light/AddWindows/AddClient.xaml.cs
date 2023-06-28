@@ -90,6 +90,12 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (!(DatabaseControl.isEmailClientUnique(EmailBox.Text)))
+            {
+                MessageBox.Show("Email не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             DatabaseControl.AddClient(new classes.Client
             {
                 Name = NameBox.Text,

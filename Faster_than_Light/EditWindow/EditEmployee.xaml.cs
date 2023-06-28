@@ -103,9 +103,21 @@ namespace Faster_than_Light.EditWindow
                 return;
             }
 
-            if (!(DatabaseControl.isEmployeePasportUnique(SeriaNumberPassportBox.Text)))
+            if (!(DatabaseControl.isEmployeePasportUnique(SeriaNumberPassportBox.Text)) && SeriaNumberPassportBox.Text != temp.SeriaNumberPassport)
             {
                 MessageBox.Show("серия и номер паспорта не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!(DatabaseControl.isEmailEmployeeUnique(EmailBox.Text)) && EmailBox.Text != temp.Email )
+            {
+                MessageBox.Show("Email не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!(DatabaseControl.isLoginUnique(loginBox.Text)) && loginBox.Text != temp.Login)
+            {
+                MessageBox.Show("Логин не уникален", "Ошибка уникальности", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

@@ -801,6 +801,7 @@ namespace Faster_than_Light.Pages
             ClientCount.Text = (DatabaseControl.GetClientForView().Count).ToString();
             EmployeeCount.Text = (DatabaseControl.GetEmployeeForView().Count).ToString();
 
+            SumCost.Text = DatabaseControl.AllSumCost().ToString();
 
         }
 

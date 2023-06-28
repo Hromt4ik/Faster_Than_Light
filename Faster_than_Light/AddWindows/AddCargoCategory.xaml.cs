@@ -46,7 +46,6 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
-
             if (Check.Empty(CommBox.Text))
             {
                 MessageBox.Show("Введите Комментарий", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);

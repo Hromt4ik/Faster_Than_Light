@@ -37,8 +37,26 @@ namespace Faster_than_Light.EditWindow
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
-            if (!Check.IsPositivNumber(CoeffBox.Text))
+            if (Check.Empty(NameBox.Text))
             {
+                MessageBox.Show("Введите Наименование", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (Check.Empty(CoeffBox.Text))
+            {
+                MessageBox.Show("Введите Коэфициент", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!(Check.IsPositivNumber(CoeffBox.Text)))
+            {
+                return;
+            }
+
+            if (Check.Empty(CommBox.Text))
+            {
+                MessageBox.Show("Введите Комментарий", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

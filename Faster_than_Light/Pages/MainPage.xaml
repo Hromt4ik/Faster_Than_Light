@@ -830,7 +830,7 @@
 
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Orientation="Vertical">
-                                <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270" Height="200">
+                                <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="2" Width="270" Height="200">
                                     <StackPanel  Name="carStack" >
                                         <Border   BorderBrush ="#046380" BorderThickness="1" >
                                             <StackPanel>
@@ -859,7 +859,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
-                                <Border  Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270">
+                                <Border  Margin="20 20 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="270">
                                     <StackPanel  Name="CountStack" >
                                         <Border   BorderBrush ="#046380" BorderThickness="1" >
                                             <StackPanel>
@@ -891,7 +891,7 @@
                                     </StackPanel>
                                 </Border>
                             </StackPanel>
-                            <Border Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="1" Width="300" Height="Auto">
+                            <Border Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="2" Width="300" Height="Auto">
                                 <StackPanel  Name="PackageStack" >
                                     <Border   BorderBrush ="#046380" BorderThickness="1" Height="Auto">
                                         <StackPanel>
@@ -939,9 +939,14 @@
                                         <TextBlock FontSize="18" Margin="10 0 0 0" Name="PackageIssued" >Нет данных</TextBlock>
                                     </StackPanel>
                                 </StackPanel>
-
                             </Border>
                         </StackPanel>
+                        <Border Margin="20 10 0 0"  HorizontalAlignment="Left" BorderBrush ="#046380" BorderThickness="2" Width="270" Height="Auto">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="18" >Сумма доставок:</TextBlock>
+                                <TextBlock FontSize="18" Margin="10 0 0 0" Name="SumCost" >Нет данных</TextBlock>
+                            </StackPanel>
+                        </Border>
                     </StackPanel>
                 </StackPanel>
             </TabItem>
