@@ -127,6 +127,16 @@ namespace Faster_than_Light.Db_API
             }
         }
 
+        public static decimal AllAvgCost()
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                return ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).Average(t => t.DeliveryCost);
+            }
+        }
+
+
         //Get for View All tables--------------------------------------------------
         public static List<Car> GetCarForView()
         {

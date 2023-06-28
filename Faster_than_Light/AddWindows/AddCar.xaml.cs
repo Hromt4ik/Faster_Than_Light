@@ -97,6 +97,12 @@ namespace Faster_than_Light.AddWindows
                 return;
             }
 
+            if (Check.Empty(DriverView.Text))
+            {
+                MessageBox.Show("Выберите водителя", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (!Check.IsPositivNumber(MileageBox.Text))
             {
                 return;

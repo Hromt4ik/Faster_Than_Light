@@ -802,12 +802,26 @@ namespace Faster_than_Light.Pages
             EmployeeCount.Text = (DatabaseControl.GetEmployeeForView().Count).ToString();
 
             SumCost.Text = DatabaseControl.AllSumCost().ToString();
+            AvgCost.Text = DatabaseControl.AllAvgCost().ToString().TrimEnd('0');
+
 
         }
+
+
 
         private void ButStatic_Click(object sender, RoutedEventArgs e)
         {
             MakeReport();
+        }
+
+        private void searchPackegeTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            using (DbAppContext ctx = new DbAppContext())
+            {
+                PackageDataGridView.ItemsSource = ctx.Package.Include(t => t.ClientEntity).Include(t => t.SendingAddressEntity).Include(t => t.DeliveryAddressEntity)
+                    .Include(t => t.EmployeeEntity).Include(t => t.CargoCategoryEntity).Include(t => t.CarEntity).
+                    Where(p => p.PackageID.ToString().Contains(searchPackegeTextBox.Text)).ToList();
+            }
         }
     }
 }

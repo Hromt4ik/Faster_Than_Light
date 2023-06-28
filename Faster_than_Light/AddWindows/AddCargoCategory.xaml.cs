@@ -31,7 +31,7 @@ namespace Faster_than_Light.AddWindows
 
             if (Check.Empty(NameBox.Text))
             {
-                MessageBox.Show("Введите Имя", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Введите Наименование", "Поле не заполнено", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
